@@ -12,7 +12,7 @@ export const element = createBrowserRouter([
         index: true,
         element: <HomeScreen />,
       },
-      {
+      {   
         path: "/shop-now",
         element: <ShopNow />,
       },
