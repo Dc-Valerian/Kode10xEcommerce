@@ -1,35 +1,67 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { RouterProvider } from "react-router-dom";
+import { element } from "./routes/MainRoutes";
+import useMouse from "@react-hook/mouse-position";
+import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import Online from "./pages/Online/Online";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const ref = useRef(null);
 
+  const [cursorVariant, setCursorVariant] = useState<"default" | "hover">(
+    "default"
+  );
+  console.log(setCursorVariant);
+
+  const mouse = useMouse(ref, {
+    enterDelay: 70,
+    leaveDelay: 80,
+  });
+
+  let mouseXPosition: number | null = mouse.x || null;
+  let mouseYPosition: number | null = mouse.y || null;
+
+  if (mouse.x !== null) {
+    mouseXPosition = mouse.clientX;
+  }
+
+  if (mouse.y !== null) {
+    mouseYPosition = mouse.clientY;
+  }
+
+  const variants = {
+    default: {
+      x: mouseXPosition || 0,
+      y: mouseYPosition || 0,
+    },
+    hover: {
+      x: mouseXPosition || 0,
+      y: mouseYPosition || 0,
+      width: 130,
+      height: 130,
+      fontSize: "20px",
+    },
+  };
+
+  const spring = {
+    stiffness: 500,
+    damping: 25,
+    duration: 0.3,
+    restDelta: 0.001,
+  };
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div ref={ref}>
+      <motion.div
+        className="circle"
+        variants={variants}
+        transition={spring}
+        animate={cursorVariant}
+      />
+      <RouterProvider router={element} />
+      <Online/>
+    </div>
+  );
 }
 
-export default App
+export default App;
