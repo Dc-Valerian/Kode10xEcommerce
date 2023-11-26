@@ -59,7 +59,7 @@ function App() {
         animate={cursorVariant}
       />
       <RouterProvider router={element} />
-      <Online/>
+      <Online />
     </div>
   );
 }
