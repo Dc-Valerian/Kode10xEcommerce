@@ -1,7 +1,9 @@
 
 const About = () => {
   return (
-    <div>About</div>
+    <div
+    className="bg-[gold] h-[500px]"
+    >About</div>
   )
 }
 

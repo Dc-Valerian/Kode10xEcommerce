@@ -1,240 +1,189 @@
-import { useState, useEffect } from "react";
-import { FiMenu } from "react-icons/fi";
-import { NavLink } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { HiMenuAlt3 } from "react-icons/hi";
 import { Dialog } from "@headlessui/react";
-import { AiOutlineClose } from "react-icons/ai";
-import img from "../../assets/IMG-20231115-WA0004.jpg";
+import { GrClose } from "react-icons/gr";
+import "../../App.css";
+import "./HeaderStyles.css"
+import { IoIosArrowDown } from "react-icons/io";
+import { FiHeart } from "react-icons/fi";
+import { FaCartArrowDown } from "react-icons/fa";
 
 const Header = () => {
   const [show, setShow] = useState(false);
   const [open, setOpen] = useState(false);
+  const [drop, setDrop] = useState(false);
 
-  const [click, setClick] = useState(false);
-
-  const Toggle = () => {
-    setClick(!click);
-  };
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const onOpenHandler = () => setOpen(true);
   const onCloseHandler = () => setOpen(false);
+  const onToggleDropdown = () => setDrop(!drop);
 
   const changeHeaderColor = () => {
-    setShow(window.scrollY >= 90);
+    setShow(window.scrollY >= 180);
+  };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node)
+    ) {
+      setDrop(false);
+    }
   };
 
   useEffect(() => {
     window.addEventListener("scroll", changeHeaderColor);
+    document.addEventListener("mousedown", handleClickOutside); // Listen for clicks outside dropdown
     return () => {
       window.removeEventListener("scroll", changeHeaderColor);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   return (
     <section>
       <div
-        className={`w-[100%] h-[80px] flex justify-center ${
-          show ? "fixed bg-[red] z-10" : "bg-[green] fixed z-10"
+        className={` w-[100%] h-[70px] flex justify-center top-0 bg-[] ${
+          show ? "fixed bg-[#FFFFFF] z-[100] bgg" : " fixed z-[1] bg-[]"
         }`}
       >
         <div className="w-[95%] flex items-center justify-between">
-          <img src={img} alt="" className="md:h-[30px]" />
-
-          <div className="flex items-center mt-[12px] lg:hidden">
-            <NavLink to="/">
-              <h3 className="mr-[55px] m-[10px] text-[15px] text-[brown] font-medium cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
-                Home
-              </h3>
-            </NavLink>
-            <NavLink to="/recipies">
-              <h3 className="mr-[55px] m-[10px] text-[15px] text-[#fff] font-medium cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
-                Recipies
-              </h3>
-            </NavLink>
-            <h3 className="mr-[55px] m-[10px] text-[15px] text-[#fff] font-medium cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
-              About Us
-            </h3>
-            <NavLink to="/contact-us">
-              <h3 className="mr-[55px] m-[10px] text-[15px] text-[#fff] font-medium cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
-                Contact Us
-              </h3>
-            </NavLink>
+          <div
+            className={` name text-[23px] h-[45px] w-[130px] top-0 flex items-center justify-center text-[var(--accent)] animate-pulse  z-[99999]  ${
+              show ? "text-[var(--accent)]" : "text-[var(--white)]"
+            }`}
+          >
+            KODE10X
           </div>
 
-          <div className="flex items-center w-[200px] lg:hidden">
-            <>
-              <button
-                type="button"
-                className="group flex shrink-0 items-center rounded-lg transition mt-[15px] relative"
-                onClick={Toggle}
-              >
-                <span className="sr-only">Menu</span>
-                <div className="h-[45px] w-[45px] bg-gray-400 text-white flex justify-center items-center text-[24px] rounded-full object-cover">
-                  Valerian Pedro
+          <div
+            className={`items-center mt-[12px] text-[var(--accent)] text-[20px] hidden  lg:flex ${
+              show ? "text-[var(--accent)]" : "text-[var(--white)]"
+            }`}
+          >
+              <h3 className="mr-[55px] m-[10px  font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--white)]   transition transform hover:scale-x-100">
+               Home
+            </h3>
+            <div
+              className="flex cursor-pointer items-center justify-center pr-[30px] mr-[40px] border-b-2 border-transparent hover:border-[var(--white)] transition transform hover:scale-x-100 relative "
+              onClick={onToggleDropdown}
+              ref={dropdownRef}
+            >
+              <h3 className="font-medium cursor-pointer">Category</h3>
+              <IoIosArrowDown className="absolute right-0 top-0 bottom-0 m-auto h-4 w-4" />
+
+              {drop && (
+                <div className="absolute top-full left-0 bg-[brown] text-black w-[200px] py-2 shadow-md border border-[#12C5E4]">
+                  <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-yellow-500 transition transform hover:scale-x-100">
+                    Watch
+                  </h3>
+                  <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-yellow-500 transition transform hover:scale-x-100">
+                    NeckLace
+                  </h3>
+                  <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-yellow-500 transition transform hover:scale-x-100">
+                    Wrist Bands
+                  </h3>
                 </div>
+              )}
+            </div>
+          
+            <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--white)]  transition transform hover:scale-x-100">
+              Shop
+            </h3>
+            <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--white)]  transition transform hover:scale-x-100">
+              Contact Us
+            </h3>
+          </div>
 
-                <p className="ms-2 text-left text-xs sm:block">
-                  <strong className="flex font-semibold text-[18px] text-[#fff]">
-                    Valerian Pedro
-                  </strong>
+          <div className="icons flex w-[6%] items-center justify-between">
+            <div
+              className="
+            hover:cursor-pointer transition duration-300 ease-in-out hover:scale-[1.09]
+            "
+            >
+              <FiHeart className="text-[28px]  absolute" />
+              <div className="bg-[red] w-[20px] h-[20px] rounded-full flex items-center justify-center text-[14px] relative left-[18px] bottom-[8px] text-[white]">
+                0
+              </div>
+            </div>
 
-                  <span className="text-white"> Valerian Pedro </span>
-                </p>
-
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="ms-4 h-5 w-5 text-white transition sm:block"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-
-                {click ? (
-                  <div className="absolute top-[50px] end-0 z-10 mt-2 w-56 rounded-md border border-gray-100 bg-white shadow-lg">
-                    <div className="pl-[19px] pt-[12px]">
-                      <a
-                        href="#"
-                        className="flex rounded-lg  text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-                        role="menuitem"
-                      >
-                        Log out
-                      </a>
-
-                      <a
-                        href="#"
-                        className="flex rounded-lg mt-[15px] text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-                        role="menuitem"
-                      >
-                        Diactivate Account
-                      </a>
-                    </div>
-                  </div>
-                ) : null}
-              </button>
-            </>
-            ) : (
-            <>
-              <NavLink to="/sign-in">
-                <div className="flex items-center mt-[12px] lg:hidden">
-                  <button className="w-[150px] h-[45px] rounded-md text-[#fff] border border-[#fff]">
-                    Sign In
-                  </button>
-                </div>
-              </NavLink>
-            </>
+            <div
+              className="
+            hover:cursor-pointer transition duration-300 ease-in-out hover:scale-[1.09]
+            "
+            >
+              <FaCartArrowDown className="text-[25px]  hover:cursor-pointer absolute" />
+              <div className="bg-[red] w-[20px] h-[20px] rounded-full flex items-center justify-center text-[14px] relative left-[18px] bottom-[8px] text-[white]">
+                0
+              </div>
+            </div>
           </div>
 
           <div
             onClick={onOpenHandler}
-            className="text-[#fff] text-[33px] cursor-pointer hidden lg:flex mt-[12px] md:text-[30px]"
+            className={`text-[33px] cursor-pointer  lg:hidden mt-[12px] md:text-[30px]  dark:text-[white] text-[var(--accent)]`}
           >
-            <FiMenu />
+            <HiMenuAlt3 />
           </div>
 
           <Dialog
             open={open}
             onClose={onCloseHandler}
-            className="fixed inset-0 bg-white text-black z-50 "
+            className="fixed top-0 right-0 h-full w-[60vw] md:w-[60%] z-50"
             aria-labelledby="dialog-title"
           >
-            <div className="h-screen flex-col lg:flex hidden">
-              <div className="flex justify-between items-center p-4 shadow-md">
-                <h5 className="text-[24px] font-medium">Menu</h5>
-                <button
-                  className="text-black text-[19px]"
-                  onClick={onCloseHandler}
-                >
-                  <AiOutlineClose />
-                </button>
-              </div>
-              <div className="flex flex-col py-3 px-2 overflow-y-auto h-[100%]">
-                <NavLink to="/">
-                  <h3 className="mr-[55px] m-[10px] text-[20px] font-sm cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
+            <div className="h-screen flex">
+              <div
+                className="fixed top-0 left-0 h-full w-[50%] bg-black bg-opacity-50"
+                onClick={onCloseHandler}
+              ></div>
+              <div className="fixed top-0 right-0 bg-[white] text-black w-[50%] h-full md:w-[65%]">
+                <div className="flex justify-end p-4  shadow-md h-[80px]">
+                  <button
+                    className="text-[var(--black)] text-[30px] "
+                    onClick={onCloseHandler}
+                  >
+                    <GrClose />
+                  </button>
+                </div>
+
+                <div className="flex flex-col py-3 px-2 overflow-y-auto text-[var(--accent)] justify-between  h-[80%]">
+               <div>
+               <h3
+                    onClick={onCloseHandler}
+                    className="mr-[55px] m-[10px] text-[20px] font-sm text-[var(--black)]  cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100"
+                  >
                     Home
                   </h3>
-                </NavLink>
-                <NavLink to="/recipies">
-                  <h3 className="mr-[55px] m-[10px] text-[20px] font-sm cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
-                    Recipies
+
+                  <h3
+                    onClick={onCloseHandler}
+                    className="mr-[55px] m-[10px] text-[20px] font-sm cursor-pointer border-b-2 border-transparent text-[var(--black)]  hover:border-yellow-500 transition transform hover:scale-x-100"
+                  >
+                    Shop 
                   </h3>
-                </NavLink>
-                <h3 className="mr-[55px] m-[10px] text-[20px] font-sm cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
-                  About Us
-                </h3>
-                <NavLink to="/contact-us">
-                  <h3 className="mr-[55px] m-[10px] text-[20px] font-sm cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
+
+                  <h3
+                    onClick={onCloseHandler}
+                    className="mr-[55px] m-[10px]  text-[20px] text-[var(--black)]  font-sm cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100"
+                  >
                     Contact Us
                   </h3>
-                </NavLink>
-                <>
-                  <button
-                    type="button"
-                    className="group flex shrink-0 items-center rounded-lg transition mt-[15px] relative"
-                    onClick={Toggle}
+               </div>
+
+                <div
+               
+                >
+                  <text 
+                  className="text-[15px] flex  text-center text-[var(--black)] " 
                   >
-                    <span className="sr-only">Menu</span>
-                    <div className="h-[45px] w-[45px] bg-gray-400 text-white flex justify-center items-center text-[24px] rounded-full object-cover">
-                      VP
-                    </div>
+                  Copyright © KODE10X 2023 | Built by Valerian & Faithia
+                  </text>
 
-                    <p className="ms-2 text-left text-xs sm:block">
-                      <strong className="flex font-semibold text-[18px]">
-                        Valerian Pedro
-                      </strong>
-
-                      <span className=""> Valerianpedro04gmail.com</span>
-                    </p>
-
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="ms-4 h-5 w-5 text-white transition sm:block"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-
-                    {click ? (
-                      <div className="absolute top-[50px] left-[0px] end-0 z-10 mt-2 w-56 rounded-md border border-gray-100 bg-white shadow-lg">
-                        <div className="pl-[19px] pt-[12px]">
-                          <a
-                            href="#"
-                            className="flex rounded-lg  text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-                            role="menuitem"
-                          >
-                            Log out
-                          </a>
-
-                          <a
-                            href="#"
-                            className="flex rounded-lg mt-[15px] text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-                            role="menuitem"
-                          >
-                            Diactivate Account
-                          </a>
-                        </div>
-                      </div>
-                    ) : null}
-                  </button>
-                </>
-                ) : (
-                <>
-                  <NavLink to="/sign-in">
-                    <div className="flex items-center mt-[12px] lg:hidden">
-                      <button className="w-[150px] h-[45px] rounded-md border border-[lightgray]">
-                        Sign In
-                      </button>
-                    </div>
-                  </NavLink>
-                </>
+             
+                </div>
+                </div>
               </div>
             </div>
           </Dialog>

@@ -38,16 +38,16 @@ const Online: React.FC = () => {
         isOnline ? "white" : "black"
       } text-${
         isOnline ? "#ff5d1b" : "red"
-      } backdrop-blur-[3px]  ${displayStyle} text-base md:text-lg transition-all duration-600`}
+      }   ${displayStyle} text-[white] md:text-lg transition-all duration-600`}
     >
       {isOnline && (
-        <div className="flex justify-center items-center text-[green]">
+        <div className="flex justify-center items-center text-[green] bg-[white]">
           <HiStatusOnline className="mr-6 mt-3" />
       Great!!Welcome Back Online!
         </div>
       )}
       {!isOnline && (
-        <div className="flex justify-center items-center text-[white]">
+        <div className="flex justify-center items-center text-[red]">
           <IoCloudOfflineSharp className="mr-6 mt-3" />
          Opps!! Looks like You're Currently Offline! Please connect back to your network and try
           again!
