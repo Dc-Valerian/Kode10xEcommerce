@@ -3,7 +3,7 @@ import { HiMenuAlt3 } from "react-icons/hi";
 import { Dialog } from "@headlessui/react";
 import { GrClose } from "react-icons/gr";
 import "../../App.css";
-import "./HeaderStyles.css"
+import "./HeaderStyles.css";
 import { IoIosArrowDown } from "react-icons/io";
 import { FiHeart } from "react-icons/fi";
 import { FaCartArrowDown } from "react-icons/fa";
@@ -62,8 +62,8 @@ const Header = () => {
               show ? "text-[var(--accent)]" : "text-[var(--white)]"
             }`}
           >
-              <h3 className="mr-[55px] m-[10px  font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--white)]   transition transform hover:scale-x-100">
-               Home
+            <h3 className="mr-[55px] m-[10px  font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--white)]   transition transform hover:scale-x-100">
+              Home
             </h3>
             <div
               className="flex cursor-pointer items-center justify-center pr-[30px] mr-[40px] border-b-2 border-transparent hover:border-[var(--white)] transition transform hover:scale-x-100 relative "
@@ -87,7 +87,7 @@ const Header = () => {
                 </div>
               )}
             </div>
-          
+
             <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--white)]  transition transform hover:scale-x-100">
               Shop
             </h3>
@@ -96,13 +96,17 @@ const Header = () => {
             </h3>
           </div>
 
-          <div className="icons flex w-[6%] items-center justify-between">
+          <div className={`icons flex w-[6%] items-center justify-between `}>
             <div
               className="
             hover:cursor-pointer transition duration-300 ease-in-out hover:scale-[1.09]
             "
             >
-              <FiHeart className="text-[28px]  absolute" />
+              <FiHeart
+                className={`text-[28px]  absolute   ${
+                  show ? "text-[var(--accent)]" : "text-[var(--white)]"
+                } `}
+              />
               <div className="bg-[red] w-[20px] h-[20px] rounded-full flex items-center justify-center text-[14px] relative left-[18px] bottom-[8px] text-[white]">
                 0
               </div>
@@ -113,7 +117,11 @@ const Header = () => {
             hover:cursor-pointer transition duration-300 ease-in-out hover:scale-[1.09]
             "
             >
-              <FaCartArrowDown className="text-[25px]  hover:cursor-pointer absolute" />
+              <FaCartArrowDown 
+                className={`text-[28px]  absolute   ${
+                  show ? "text-[var(--accent)]" : "text-[var(--white)]"
+                } `}
+              />
               <div className="bg-[red] w-[20px] h-[20px] rounded-full flex items-center justify-center text-[14px] relative left-[18px] bottom-[8px] text-[white]">
                 0
               </div>
@@ -149,40 +157,34 @@ const Header = () => {
                 </div>
 
                 <div className="flex flex-col py-3 px-2 overflow-y-auto text-[var(--accent)] justify-between  h-[80%]">
-               <div>
-               <h3
-                    onClick={onCloseHandler}
-                    className="mr-[55px] m-[10px] text-[20px] font-sm text-[var(--black)]  cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100"
-                  >
-                    Home
-                  </h3>
+                  <div>
+                    <h3
+                      onClick={onCloseHandler}
+                      className="mr-[55px] m-[10px] text-[20px] font-sm text-[var(--black)]  cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100"
+                    >
+                      Home
+                    </h3>
 
-                  <h3
-                    onClick={onCloseHandler}
-                    className="mr-[55px] m-[10px] text-[20px] font-sm cursor-pointer border-b-2 border-transparent text-[var(--black)]  hover:border-yellow-500 transition transform hover:scale-x-100"
-                  >
-                    Shop 
-                  </h3>
+                    <h3
+                      onClick={onCloseHandler}
+                      className="mr-[55px] m-[10px] text-[20px] font-sm cursor-pointer border-b-2 border-transparent text-[var(--black)]  hover:border-yellow-500 transition transform hover:scale-x-100"
+                    >
+                      Shop
+                    </h3>
 
-                  <h3
-                    onClick={onCloseHandler}
-                    className="mr-[55px] m-[10px]  text-[20px] text-[var(--black)]  font-sm cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100"
-                  >
-                    Contact Us
-                  </h3>
-               </div>
+                    <h3
+                      onClick={onCloseHandler}
+                      className="mr-[55px] m-[10px]  text-[20px] text-[var(--black)]  font-sm cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100"
+                    >
+                      Contact Us
+                    </h3>
+                  </div>
 
-                <div
-               
-                >
-                  <text 
-                  className="text-[15px] flex  text-center text-[var(--black)] " 
-                  >
-                  Copyright © KODE10X 2023 | Built by Valerian & Faithia
-                  </text>
-
-             
-                </div>
+                  <div>
+                    <text className="text-[15px] flex  text-center text-[var(--black)] ">
+                      Copyright © KODE10X 2023 | Built by Valerian & Faithia
+                    </text>
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,5 +1,5 @@
 import About from "./About";
-import Hero from "./Hero";
+import Hero from "./Hero/Hero";
 
 const HomeScreen = () => {
   return (
