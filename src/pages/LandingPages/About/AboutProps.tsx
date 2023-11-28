@@ -1,8 +1,9 @@
 import SlidingBorderButton from "../../../components/Props/ButtonProps";
+import "./AboutStyle.css"
 
 const AboutProps = () => {
   return (
-    <div className="bg-[#F3F4F6] w-[50%] h-[500px] flex justify-center rounded-[10px] items-center">
+    <div className="bg-[#F3F4F6] w-[48%] h-[500px] flex justify-center rounded-[10px] items-center aboutCard">
       <div className="w-[80%]  h-[88%] flex items-center justify-between flex-col gap-[30px] ">
         <div className="flex items-center flex-col justify-center gap-[10px]">
           <text>Security Smart drone</text>
