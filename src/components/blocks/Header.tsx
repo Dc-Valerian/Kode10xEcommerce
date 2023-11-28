@@ -130,7 +130,9 @@ const Header = () => {
 
           <div
             onClick={onOpenHandler}
-            className={`text-[33px] cursor-pointer  lg:hidden mt-[12px] md:text-[30px]  dark:text-[white] text-[var(--accent)]`}
+            className={`text-[33px] cursor-pointer  lg:hidden mt-[12px] md:text-[30px]    ${
+              show ? "text-[var(--accent)]" : "text-[var(--white)]"
+            } `}
           >
             <HiMenuAlt3 />
           </div>

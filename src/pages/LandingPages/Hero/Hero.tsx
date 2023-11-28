@@ -51,12 +51,12 @@ const Superhero = () => {
   };
 
   return (
-    <div id="home">
+    <div id="home" className="hero">
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <div
-            key={index}
-            className="w-full h-[95vh] flex justify-center  overflow-hidden bg-no-repeat bg-center bg-cover relative"
+          key={index}
+          className="w-full h-[95vh] flex justify-center  overflow-hidden bg-no-repeat bg-center bg-cover relative"
           >
             <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
             <img
@@ -64,13 +64,12 @@ const Superhero = () => {
               alt={`slide-${index}`}
               className="absolute top-0 left-0 object-cover w-full h-full blur-image"
             />
-            <div className="w-full bg-[red] bg-opacity-50 flex-col items-center justify-center flex xmd:justify-center xmd:flex xmd:items-center">
-              <div className="mt-56 w-[800px] text-[white]  xmd:mt-36 text-center">
+
+            <div className="text w-full bg-opacity-50 flex-col items-center justify-center flex xmd:justify-center xmd:flex xmd:items-center z-[200px]">
+              <div className="mt-56 max-w-[500px] w-full text-[white] xmd:mt-36 text-center">
                 <Fade duration={2000}>
                   <div
-                    className={`w-${
-                      index === 0 ? "3/12" : "6/12"
-                    } xmd:w-full text-6xl lg:w-full font-bold xmd:text-4xl xmd:text-center`}
+                    className={`herotext text-[50px] lg:w-full font-bold`}
                   >
                     {slide.title}
                   </div>
@@ -79,7 +78,7 @@ const Superhero = () => {
                   <p className="text-white text-[18px] mt-3 ">{slide.sub}</p>
                 </Fade>
 
-                <div className="bg-[red] h-[500px] mt-[40px]">
+                <div className="mt-[40px] hover:cursor-pointer">
                   <Fade direction="up">
                     <SlidingBorderButton direction="top" text="Shop Now " />
                   </Fade>

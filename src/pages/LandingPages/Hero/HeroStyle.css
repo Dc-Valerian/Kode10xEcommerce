@@ -1,3 +1,36 @@
 .blur-image {
-    filter: blur(3px); /* Adjust the blur value as needed */
+    filter: blur(3px);
+  }
+
+
+
+
+  
+@media screen and (max-width:500px){
+
+    .hero{
+overflow: hidden;
+    }  
+  }
+  
+@media screen and (max-width:500px){
+
+    .herotext{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        width: 400px;
+    }  
+  }
+
+
+@media screen and (max-width:500px){
+
+    .text{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     
+    }  
   }
