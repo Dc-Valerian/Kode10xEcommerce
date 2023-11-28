@@ -39,7 +39,7 @@ const SlidingBorderButton: React.FC<SlidingBorderProps> = ({ direction, text }) 
   return (
     <a
       className="group relative inline-block overflow-hidden border rounded-[8px] border-white-600 px-8 py-3 focus:outline-none focus:ring hover:cursor-pointer bg-[var(--myColor)]"
-      href=""
+      href="/shop-now"
     >
       <span
         className={`absolute ${getBorderDirection()} ${getBackgroundColor()} transition-all duration-300 group-hover:w-full group-hover:h-full`}
