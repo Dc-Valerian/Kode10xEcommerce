@@ -3,8 +3,21 @@
 
 @media screen and (max-width:500px){
 .aboutCard{
-width: 100%;
+width: 90%;
 height:370px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+}
+
+
+
+@media screen and (max-width:500px){
+.main{
+display: flex;
+align-items: center;
+justify-content: center;
 }
 }
 

@@ -130,7 +130,7 @@ const Header = () => {
 
           <div
             onClick={onOpenHandler}
-            className={`text-[33px] cursor-pointer  lg:hidden mt-[12px] md:text-[30px]    ${
+            className={`text-[33px] cursor-pointer lg:hidden mt-[12px] md:text-[30px]    ${
               show ? "text-[var(--accent)]" : "text-[var(--white)]"
             } `}
           >
@@ -140,7 +140,7 @@ const Header = () => {
           <Dialog
             open={open}
             onClose={onCloseHandler}
-            className="fixed top-0 right-0 h-full w-[60vw] md:w-[60%] z-50"
+            className="fixed top-0 right-0 h-full w-[60vw] md:w-[60%] z-50 "
             aria-labelledby="dialog-title"
           >
             <div className="h-screen flex">

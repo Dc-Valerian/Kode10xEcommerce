@@ -4,7 +4,23 @@
 @media screen and (max-width:500px){
     .discountCard{
     width: 100%;
-    height:370px;
+    height:400px;
+    }
+    }
+    
+    
+@media screen and (max-width:500px){
+    .discountText{
+font-size: 30px;
+line-height: 40px;
+width: 100%;
+    }
+    }
+    
+@media screen and (max-width:500px){
+    .counter{
+height: 75px;
+width: 55px;
     }
     }
     
@@ -19,3 +35,4 @@ backdrop-filter: blur( 4px );
 border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+

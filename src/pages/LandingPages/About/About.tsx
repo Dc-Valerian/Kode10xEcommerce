@@ -2,7 +2,7 @@ import AboutProps from "./AboutProps";
 const About = () => {
   return (
     <div className="py-[30px] w-[100%] flex items-center justify-center mt-[70px]">
-      <div className="w-[95%] flex gap-[20px] justify-between flex-wrap ">
+      <div className="w-[95%] flex gap-[20px] justify-between flex-wrap main">
         <AboutProps
           firsttext="SECURITY SMART DRONE"
           secondtext="Just starting at $579.99"
