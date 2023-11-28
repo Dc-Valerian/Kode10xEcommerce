@@ -107,7 +107,7 @@ const Header = () => {
                   show ? "text-[var(--accent)]" : "text-[var(--white)]"
                 } `}
               />
-              <div className="bg-[red] w-[20px] h-[20px] rounded-full flex items-center justify-center text-[14px] relative left-[18px] bottom-[8px] text-[white]">
+              <div className=" bg-[var(--myColor)] w-[20px] h-[20px] rounded-full flex items-center justify-center text-[14px] relative left-[18px] bottom-[8px] text-[white]">
                 0
               </div>
             </div>
@@ -122,7 +122,7 @@ const Header = () => {
                   show ? "text-[var(--accent)]" : "text-[var(--white)]"
                 } `}
               />
-              <div className="bg-[red] w-[20px] h-[20px] rounded-full flex items-center justify-center text-[14px] relative left-[18px] bottom-[8px] text-[white]">
+              <div className="bg-[var(--myColor)] w-[20px] h-[20px] rounded-full flex items-center justify-center text-[14px] relative left-[18px] bottom-[8px] text-[white]">
                 0
               </div>
             </div>

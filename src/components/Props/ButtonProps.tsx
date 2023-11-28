@@ -30,7 +30,7 @@ const SlidingBorderButton: React.FC<SlidingBorderProps> = ({ direction, text }) 
         return 'bg-black-600';
       case 'bottom':
       case 'top':
-        return 'bg-[black]';
+        return 'bg-[var(--black)]';
       default:
         return '';
     }
@@ -38,7 +38,7 @@ const SlidingBorderButton: React.FC<SlidingBorderProps> = ({ direction, text }) 
 
   return (
     <a
-      className="group relative inline-block overflow-hidden border rounded-[8px] border-white-600 px-8 py-3 focus:outline-none focus:ring hover:cursor-pointer"
+      className="group relative inline-block overflow-hidden border rounded-[8px] border-white-600 px-8 py-3 focus:outline-none focus:ring hover:cursor-pointer bg-[var(--myColor)]"
       href=""
     >
       <span
