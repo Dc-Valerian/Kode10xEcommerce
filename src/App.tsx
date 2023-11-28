@@ -5,6 +5,7 @@ import useMouse from "@react-hook/mouse-position";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Online from "./pages/Online/Online";
+import BackToTopButton from "./components/blocks/BackToTopButton";
 
 function App() {
   const ref = useRef(null);
@@ -60,6 +61,7 @@ function App() {
       />
       <RouterProvider router={element} />
       <Online />
+      <BackToTopButton/>
     </div>
   );
 }
