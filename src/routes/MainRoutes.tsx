@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomeLayout from "../components/layout/HomeLayout";
-import HomeScreen from "../pages/LandingPages/HomeScreen";
+import HomeScreen from "../pages/LandingPages/HomeScreen/HomeScreen";
 import ShopNow from "../pages/ShopCollections/ShopNow";
 
 export const element = createBrowserRouter([
@@ -12,7 +12,7 @@ export const element = createBrowserRouter([
         index: true,
         element: <HomeScreen />,
       },
-      {   
+      {
         path: "/shop-now",
         element: <ShopNow />,
       },
