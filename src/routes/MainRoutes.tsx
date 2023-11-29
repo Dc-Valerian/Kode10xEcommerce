@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import HomeLayout from "../components/layout/HomeLayout";
 import HomeScreen from "../pages/LandingPages/HomeScreen/HomeScreen";
 import ShopProduct from "../pages/ShopCollections/ShopProduct";
+import AdminLogin from "../pages/auth/AdminLogin";
 
 export const element = createBrowserRouter([
   {
@@ -17,5 +18,9 @@ export const element = createBrowserRouter([
         element: <ShopProduct />,
       },
     ],
+  },
+  {
+    path: "/admin-login",
+    element: <AdminLogin />,
   },
 ]);
