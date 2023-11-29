@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomeLayout from "../components/layout/HomeLayout";
 import HomeScreen from "../pages/LandingPages/HomeScreen/HomeScreen";
-import ShopNow from "../pages/ShopCollections/ShopNow";
+import ShopProduct from "../pages/ShopCollections/ShopProduct";
 
 export const element = createBrowserRouter([
   {
@@ -14,7 +14,7 @@ export const element = createBrowserRouter([
       },
       {
         path: "/shop-now",
-        element: <ShopNow />,
+        element: <ShopProduct />,
       },
     ],
   },

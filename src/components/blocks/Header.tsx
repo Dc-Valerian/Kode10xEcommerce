@@ -7,6 +7,7 @@ import "./HeaderStyles.css";
 import { IoIosArrowDown } from "react-icons/io";
 import { FiHeart } from "react-icons/fi";
 import { FaCartArrowDown } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [show, setShow] = useState(false);
@@ -45,17 +46,21 @@ const Header = () => {
     <section>
       <div
         className={` w-[100%] h-[70px] flex justify-center top-0 bg-[] ${
-          show ? "fixed bg-[#FFFFFF] z-[100] bgg" : " fixed z-[1] bg-[]"
+          show ? "fixed bg-[white] z-[100] bgg" : " fixed z-[1] bg-[]"
         }`}
       >
         <div className="w-[95%] flex items-center justify-between">
-          <div
+        <NavLink
+        to="/"
+        >
+        <div
             className={` name text-[23px] h-[45px] w-[130px] top-0 flex items-center justify-center text-[var(--accent)] animate-pulse  z-[99999]  ${
               show ? "text-[var(--accent)]" : "text-[var(--white)]"
             }`}
           >
             KODE10X
           </div>
+        </NavLink>
 
           <div
             className={`items-center mt-[12px] text-[var(--accent)] text-[20px] hidden  lg:flex ${

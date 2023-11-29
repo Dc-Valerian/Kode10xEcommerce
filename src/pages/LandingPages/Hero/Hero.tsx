@@ -80,7 +80,7 @@ const Superhero = () => {
 
                 <div className="mt-[40px] hover:cursor-pointer">
                   <Fade direction="up">
-                    <SlidingBorderButton direction="top" text="Shop Now " />
+                    <SlidingBorderButton direction="top" text="Shop Now" />
                   </Fade>
                 </div>
               </div>
