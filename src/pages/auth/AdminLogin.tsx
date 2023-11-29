@@ -1,38 +1,84 @@
-import { TbLockCog } from "react-icons/tb";
+import React from "react";
+import { IoArrowBack } from "react-icons/io5";
+import { useState } from "react";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import "./AdminLoginStyles.css";
 
-const AdminLogin = () => {
+const AdminLogin: React.FC = () => {
+  const handleGoBack = () => {
+    window.history.back();
+  };
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
-    <div className="w-full h-[100vh] bg-white  flex justify-center items-center">
-      <div className="w-[500px] h-[500px] bg-[#F2F4F6] flex justify-center items-center flex-col rounded-[10px] gap-3 ">
-        <div className="w-[370px] h-[100px]   flex  flex-col">
-          <p className="font-bold text-black text-medium">EMAIL ADDRESS</p>
-          <input
-            type="text "
-            placeholder="Email"
-            className="w-[370px] h-[50px] bg-[#ffff] rounded-[10px] border-solid border-2 border-sky-500 focus:border border-[lightgrey] focus:outline-none"
-          />
-        </div>
+    <div className="w-full h-screen flex flex-col overflow-hidden">
+      <div
+        className="w-full h-screen flex flex-col justify-center items-center bg-cover bg-right-bottom relative"
+        style={{
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1613177794106-be20802b11d3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FzaW8lMjB3YXRjaHxlbnwwfHwwfHx8MA%3D%3D)",
+        }}
+      >
+        <h2 className="z-20 text-white absolute top-20 md:top-34 text-4xl md:text-2xl ">
+          Welcome Back
+        </h2>
 
-        <div className="w-[370px] h-[90px]  flex flex-col ">
-          <p className="font-bold text-black text-medium">PASSWORD</p>
-          <input
-            type="text "
-            placeholder="Enter Password"
-            className="w-[370px] h-[50px] bg-[#ffff] rounded-[10px] border-solid border-2 border-sky-500 focus:border border-[lightgrey] focus:outline-none"
-          />
-          <div className="flex absolute ml-[330px] top-[49%] ">
-            <TbLockCog style={{ color: "grey", fontSize: "20px" }} />
+        <div className="z-10 w-full h-full flex flex-col justify-center items-center">
+          <div className="bg-white w-[30%] h-[50%] rounded-md shadow-md p-6 flex flex-col items-center justify-between whiteCard">
+            <form className="w-full flex flex-col items-center ">
+              <div className=" w-[100%] flex items-center justify-between">
+                <h3 className="text-blue-500  text-[25px] capitalize">
+                  Input Your Details
+                </h3>
+                <div
+                  onClick={handleGoBack}
+                  className="cursor-pointer text-white text-xl flex items-center justify-center rounded-full bg-blue-500 w-10 h-10"
+                >
+                  <IoArrowBack />
+                  <div className="absolute bg-black text-white text-xs px-2 py-1 rounded top-full left-1/2 transform -translate-x-1/2 opacity-0 transition-opacity duration-300 pointer-events-none">
+                    Go back
+                  </div>
+                </div>
+              </div>
+
+              <div className=" flex items-center mt-[10px] justify-between flex-col w-[100%] h-[230px] ">
+                <div className=" h-[60%] flex items-center justify-center flex-col w-[95%]">
+                  <input
+                    className="w-[95%]  mb-4 border border-gray-300 rounded px-3 h-[45px]"
+                    required
+                    maxLength={70}
+                    type="email"
+                    placeholder="Email"
+                  />
+
+                  <div className="flex items-center  w-[95%] border border-gray-300  h-[45px] rounded ">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      placeholder="Password"
+                      className="w-[100%] md:w-72 h-[100%] rounded"
+                    />
+                    <div
+                      onClick={togglePasswordVisibility}
+                      className="cursor-pointer flex items-center justify-center w-[10%] h-[100%] text-[25px]"
+                    >
+                      {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
+                    </div>
+                  </div>
+                </div>
+
+                <button className="w-[95%] h-12 font-semibold text-white bg-blue-500 rounded cursor-pointer transition-colors duration-500 hover:bg-blue-600">
+                  Login
+                </button>
+              </div>
+            </form>
           </div>
         </div>
-
-        <div className="w-[380px] h-[50px] flex justify-between items-center">
-          <p className="font-bold text-black">Remember Me</p>
-          <p className="font-bold text-black">Forget Password</p>
-        </div>
-
-        <button className="w-[200px] h-[40px] bg-sky-500 text-white font-bold rounded-[10px] text-center">
-          Log in
-        </button>
+        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-80 z-0"></div>
       </div>
     </div>
   );
