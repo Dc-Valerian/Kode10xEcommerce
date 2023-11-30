@@ -99,6 +99,14 @@ const Header = () => {
             <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--white)]  transition transform hover:scale-x-100">
               Contact Us
             </h3>
+          <NavLink
+          to="/admin-login"
+          style={{textDecoration:"none"}}
+          >
+          <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--white)]  transition transform hover:scale-x-100">
+             Login
+            </h3>
+          </NavLink>
           </div>
 
           <div className={`icons flex w-[6%] items-center justify-between `}>

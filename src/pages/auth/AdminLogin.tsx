@@ -3,6 +3,7 @@ import { IoArrowBack } from "react-icons/io5";
 import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import "./AdminLoginStyles.css";
+import { NavLink } from "react-router-dom";
 
 const AdminLogin: React.FC = () => {
   const handleGoBack = () => {
@@ -51,7 +52,7 @@ const AdminLogin: React.FC = () => {
                   <input
                     className="w-[95%]  mb-4 border border-gray-300 rounded px-3 h-[45px]"
                     required
-                    maxLength={70}
+                    maxLength={50}
                     type="email"
                     placeholder="Email"
                   />
@@ -60,7 +61,7 @@ const AdminLogin: React.FC = () => {
                     <input
                       type={showPassword ? "text" : "password"}
                       placeholder="Password"
-                      className="w-[100%] md:w-72 h-[100%] rounded"
+                      className="w-[100%] md:w-72 h-[100%] rounded px-3"
                     />
                     <div
                       onClick={togglePasswordVisibility}
@@ -70,9 +71,15 @@ const AdminLogin: React.FC = () => {
                     </div>
                   </div>
                 </div>
+               
 
-                <button className="w-[95%] h-12 font-semibold text-white bg-blue-500 rounded cursor-pointer transition-colors duration-500 hover:bg-blue-600">
+              <button className="w-[95%] h-12 font-semibold text-white bg-blue-500 rounded cursor-pointer transition-colors duration-500 hover:bg-blue-600">
+              <NavLink
+              to="/upload-page"
+              style={{textDecoration:"none"}}
+              >
                   Login
+              </NavLink>
                 </button>
               </div>
             </form>
