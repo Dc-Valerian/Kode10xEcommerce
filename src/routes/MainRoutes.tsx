@@ -3,6 +3,7 @@ import HomeLayout from "../components/layout/HomeLayout";
 import HomeScreen from "../pages/LandingPages/HomeScreen/HomeScreen";
 import ShopProduct from "../pages/ShopCollections/ShopProduct";
 import AdminLogin from "../pages/auth/AdminLogin";
+import UploadPage from "../pages/UploadPage/UploadPage";
 
 export const element = createBrowserRouter([
   {
@@ -22,5 +23,9 @@ export const element = createBrowserRouter([
   {
     path: "/admin-login",
     element: <AdminLogin />,
+  },
+  {
+    path: "/upload-page",
+    element: <UploadPage />,
   },
 ]);

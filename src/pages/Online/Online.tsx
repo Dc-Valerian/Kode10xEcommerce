@@ -34,7 +34,7 @@ const Online: React.FC = () => {
 
   return (
     <div
-      className={`w-full h-30 mb-30 z-[999] fixed top-0 justify-center items-center bg-${
+      className={`w-full h-30 mb-30 z-[999] fixed top-0 justify-center items-center text-center bg-${
         isOnline ? "white" : "black"
       } text-${
         isOnline ? "#ff5d1b" : "red"
@@ -42,15 +42,14 @@ const Online: React.FC = () => {
     >
       {isOnline && (
         <div className="flex justify-center items-center text-[green] bg-[white]">
-          <HiStatusOnline className="mr-6 mt-3" />
-      Great!!Welcome Back Online!
+          <HiStatusOnline className="mr-6" />
+          Great!!Welcome Back Online!
         </div>
       )}
       {!isOnline && (
         <div className="flex justify-center items-center text-[red]">
-          <IoCloudOfflineSharp className="mr-6 mt-3" />
-         Opps!! Looks like You're Currently Offline! Please connect back to your network and try
-          again!
+          <IoCloudOfflineSharp className="mr-6" />
+          Opps!! Looks like You're Currently Offline!
         </div>
       )}
     </div>
