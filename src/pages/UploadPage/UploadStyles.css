@@ -1,15 +1,13 @@
 
 @media screen and (max-width:500px){
 .uploadHome{
-background-color: brown;
-height: 90vh;
+height: 50vh;
 }
 }
 
 @media screen and (max-width:500px){
 .uploadTitle{
-background-color: red;
-height: 250px;
+height: 95%;
 padding-bottom: 20px;
 }
 }
@@ -19,9 +17,77 @@ padding-bottom: 20px;
 .uploadUpload{width: 100%;
 }
 }
+
 @media screen and (max-width:500px){
 .uploadUploadText{
     font-size: 32px;
     line-height: 40px;
+    margin-top: 20px;
+}
+}
+
+
+
+@media screen and (max-width:500px){
+.mainUploadHolder{
+ height: fit-content;
+}
+}
+
+@media screen and (max-width:500px){
+.uploadImageHold{
+ width: 90%;
+}
+}
+@media screen and (max-width:500px){
+.uploadImageHolder{
+ height:150px;
+}
+}
+
+@media screen and (max-width:500px){
+.uploadLabel{
+width:50%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+}
+
+@media screen and (max-width:500px){
+.uploadBottom{
+width:100%;
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+margin-top: 10px;
+}
+}
+
+@media screen and (max-width:500px){
+.uploadInput{
+width:100%;
+display: flex;
+align-items: center;
+flex-direction: column;
+gap: 5px;
+}
+}
+
+@media screen and (max-width:500px){
+.uploadMainInput{
+width:100%;
+
+}
+}
+
+
+@media screen and (max-width:500px){
+.uploadUploadHolder{
+ display: flex;
+ flex-direction: column;
+ height: fit-content;
+ margin-top: 5px;
 }
 }

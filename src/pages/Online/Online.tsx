@@ -43,14 +43,13 @@ const Online: React.FC = () => {
       {isOnline && (
         <div className="flex justify-center items-center text-[green] bg-[white]">
           <HiStatusOnline className="mr-6" />
-      Great!!Welcome Back Online!
+          Great!!Welcome Back Online!
         </div>
       )}
       {!isOnline && (
         <div className="flex justify-center items-center text-[red]">
           <IoCloudOfflineSharp className="mr-6" />
-         Opps!! Looks like You're Currently Offline! 
-          again!
+          Opps!! Looks like You're Currently Offline!
         </div>
       )}
     </div>

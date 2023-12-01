@@ -1,9 +1,10 @@
+import { NavLink } from "react-router-dom";
 import "./UploadStyles.css";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
 const UploadHead = () => {
   return (
-    <div className="bg-[red] h-[60vh]  uploadHome">
+    <div className=" h-[60vh]  uploadHome">
         
       <div className="uploadTitle w-[100%] h-[95%] flex justify-center  bg-cover bg-right-bottom relative"
         style={{
@@ -24,9 +25,14 @@ const UploadHead = () => {
               <button className="bg-[grey] text-[white] w-[140px] h-[40px] rounded-[20px] flex items-center justify-center">
                 Upload Products
               </button>
-              <div className="bg-[orange] w-[40px] flex items-center justify-center rounded-[50%] h-[40px] text-[white] text-[18px]">
+            <NavLink
+            to="/"
+            style={{textDecoration:"none"}}
+            >
+            <div className="bg-[orange] w-[40px] flex items-center justify-center rounded-[50%] h-[40px] text-[white] text-[18px]">
                 A
               </div>
+            </NavLink>
             </div>
           </div>
 

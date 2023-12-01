@@ -3,7 +3,9 @@ import UploadHead from "./UploadHead";
 
 const UploadPage = () => {
   return (
-    <div>
+    <div
+    className="bg-[#F3F4F6]"
+    >
       <UploadHead />
       <MainUploadPage />
     </div>
