@@ -5,9 +5,9 @@ import { GrClose } from "react-icons/gr";
 import "../../App.css";
 import "./HeaderStyles.css";
 import { IoIosArrowDown } from "react-icons/io";
-import { FiHeart } from "react-icons/fi";
-import { FaCartArrowDown } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { RiShoppingCartLine } from "react-icons/ri";
+import { useAppDispatch, useAppSelector } from "../../APIS/Store";
 
 const Header = () => {
   const [show, setShow] = useState(false);
@@ -42,6 +42,10 @@ const Header = () => {
     };
   }, []);
 
+  const readCartQuantity = useAppSelector((state) => state.totalQuantity);
+
+  console.log("The Current Cart Quantity: ", readCartQuantity);
+
   return (
     <section>
       <div
@@ -50,17 +54,15 @@ const Header = () => {
         }`}
       >
         <div className="w-[95%] flex items-center justify-between">
-        <NavLink
-        to="/"
-        >
-        <div
-            className={` name text-[23px] h-[45px] w-[130px] top-0 flex items-center justify-center text-[var(--accent)] animate-pulse  z-[99999]  ${
-              show ? "text-[var(--accent)]" : "text-[var(--white)]"
-            }`}
-          >
-            KODE10X
-          </div>
-        </NavLink>
+          <NavLink to="/">
+            <div
+              className={` name text-[23px] h-[45px] w-[130px] top-0 flex items-center justify-center text-[var(--accent)] animate-pulse  z-[99999]  ${
+                show ? "text-[var(--accent)]" : "text-[var(--white)]"
+              }`}
+            >
+              KODE10X
+            </div>
+          </NavLink>
 
           <div
             className={`items-center mt-[12px] text-[var(--accent)] text-[20px] hidden  lg:flex ${
@@ -99,14 +101,11 @@ const Header = () => {
             <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--white)]  transition transform hover:scale-x-100">
               Contact Us
             </h3>
-          <NavLink
-          to="/admin-login"
-          style={{textDecoration:"none"}}
-          >
-          <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--white)]  transition transform hover:scale-x-100">
-             Login
-            </h3>
-          </NavLink>
+            <NavLink to="/admin-login" style={{ textDecoration: "none" }}>
+              <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--white)]  transition transform hover:scale-x-100">
+                Login
+              </h3>
+            </NavLink>
           </div>
 
           <div className={`icons flex w-[6%] items-center justify-between `}>
@@ -115,28 +114,13 @@ const Header = () => {
             hover:cursor-pointer transition duration-300 ease-in-out hover:scale-[1.09]
             "
             >
-              <FiHeart
+              <RiShoppingCartLine
                 className={`text-[28px]  absolute   ${
                   show ? "text-[var(--accent)]" : "text-[var(--white)]"
                 } `}
               />
               <div className=" bg-[var(--myColor)] w-[20px] h-[20px] rounded-full flex items-center justify-center text-[14px] relative left-[18px] bottom-[8px] text-[white]">
-                0
-              </div>
-            </div>
-
-            <div
-              className="
-            hover:cursor-pointer transition duration-300 ease-in-out hover:scale-[1.09]
-            "
-            >
-              <FaCartArrowDown 
-                className={`text-[28px]  absolute   ${
-                  show ? "text-[var(--accent)]" : "text-[var(--white)]"
-                } `}
-              />
-              <div className="bg-[var(--myColor)] w-[20px] h-[20px] rounded-full flex items-center justify-center text-[14px] relative left-[18px] bottom-[8px] text-[white]">
-                0
+                {readCartQuantity}
               </div>
             </div>
           </div>

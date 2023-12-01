@@ -4,6 +4,7 @@ import HomeScreen from "../pages/LandingPages/HomeScreen/HomeScreen";
 import ShopProduct from "../pages/ShopCollections/ShopProduct";
 import AdminLogin from "../pages/auth/AdminLogin";
 import UploadPage from "../pages/UploadPage/UploadPage";
+import DetailPage from "../pages/Detail/DetailPage";
 
 export const element = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ export const element = createBrowserRouter([
       {
         path: "/shop-now",
         element: <ShopProduct />,
+      },
+      {
+        path: "/product-details",
+        element: <DetailPage/>
       },
     ],
   },
