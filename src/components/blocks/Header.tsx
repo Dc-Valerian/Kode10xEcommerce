@@ -7,7 +7,7 @@ import "./HeaderStyles.css";
 import { IoIosArrowDown } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import { RiShoppingCartLine } from "react-icons/ri";
-import { useAppDispatch, useAppSelector } from "../../APIS/Store";
+import {  useAppSelector } from "../../APIS/Store";
 
 const Header = () => {
   const [show, setShow] = useState(false);
