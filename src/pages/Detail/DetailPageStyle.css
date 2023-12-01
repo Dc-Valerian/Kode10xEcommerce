@@ -1,0 +1,67 @@
+@media screen and (max-width:500px){
+.mainDetailStyle{
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: fit-content;
+}
+}
+
+@media screen and (max-width:500px){
+    .mainDefaultStyle{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        height: fit-content;
+        margin-top: 20px;
+        border-radius: 10px;
+        padding-bottom: 20px;
+}
+}
+
+@media screen and (max-width:500px){
+.detailImageHolder{
+width: 100%;
+height: 90%;
+margin-bottom: 20px;
+}
+}
+
+@media screen and (max-width:500px){
+.detailImage{
+width: 90%;
+height: 90%;
+object-fit: contain;
+}}
+
+@media screen and (max-width:500px){
+.detailDetail{
+width:95%;
+}}
+
+
+@media screen and (max-width:500px){
+.detailInfo{
+width:95%;
+}}
+
+@media screen and (max-width:500px){
+.detailInfo1{
+font-size:30px;
+line-height: 20px;
+}}
+
+@media screen and (max-width:500px){
+.detailFunction{
+    height: 140px;
+    margin-top: 10px;
+    width: 95%;
+}}
+
+@media screen and (max-width:500px){
+.detailFunctionButton{
+    height: 35px;
+    font-size: 20px;
+    width: 35px;
+}}
