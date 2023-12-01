@@ -31,6 +31,16 @@ const DetailPage = () => {
       return SingleProducts2(productID);
     },
   });
+
+  // Check if data exists and is not undefined before accessing nested properties
+  const productTitle = OneProducts?.data?.data?.title || "";
+  const productPrice = OneProducts?.data?.data?.price || "";
+  const productDesc = OneProducts?.data?.data?.desc || "";
+  const productQuantity = OneProducts?.data?.data?.quantity || 0;
+
+  const phoneNumber = "+2349059493764";
+  const message = encodeURIComponent(`${productTitle} has been ordered `);
+
   return (
     <div className="w-[100%] h-screen  flex justify-center items-center overflow-y-hidden mt-[60px] mainDetailStyle">
       <div className="w-[80%] h-[80%] bg-[#F3F4F6] rounded-[20px] flex justify-around items-center mainDefaultStyle">
@@ -47,14 +57,10 @@ const DetailPage = () => {
             <p className="font-semi-bold text-xl text-[#3B82F6] ">
               Running shoes
             </p>
-            <p className="font-bold text-4xl detailInfo1 ">
-              {OneProducts?.data?.data.title}
-            </p>
+            <p className="font-bold text-4xl detailInfo1 ">{productTitle}</p>
             <p className="font-semi-bold text-grey text-[15px]">
-              <span className="text-grey  text-xl ">
-                ${OneProducts?.data?.data.price}
-              </span>
-              {OneProducts?.data?.data.desc}
+              <span className="text-grey  text-xl ">${productPrice}</span>
+              {productDesc}
             </p>
             <p className="font-semi-bold text-xl ">
               Category:
@@ -82,8 +88,7 @@ const DetailPage = () => {
                 </div>
                 <div
                   className={`w-[20%] h-[60%] bg-[white] border-solid border-[1px] border-[#ebe8e8] flex justify-center items-center hover:cursor-pointer detailFunctionButton ${
-                    readSingleItem[0]?.CartQuantity ===
-                    OneProducts?.data?.data.quantity
+                    readSingleItem[0]?.CartQuantity === productQuantity
                       ? disabledStyle
                       : ""
                   }`}
@@ -100,14 +105,20 @@ const DetailPage = () => {
                 </div>
               </div>
               <div className="w-[50%] h-[80%] flex justify-center items-center">
-                <button
-                  className="w-[70%] h-[80%] bg-[#3B82F6] text-white rounded-[8px] font-bold"
-                  onClick={() => {
-                    dispatch(addToCart(OneProducts?.data?.data));
-                  }}
+                <a
+                  href={`https://wa.me/${phoneNumber}?text=${message}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Add to Cart
-                </button>
+                  <button
+                    className="w-[150px] h-[45px] bg-[#3B82F6] text-white rounded-[8px] font-bold"
+                    onClick={() => {
+                      dispatch(addToCart(OneProducts?.data?.data));
+                    }}
+                  >
+                    Add to Cart
+                  </button>
+                </a>
               </div>
             </div>
           </div>
