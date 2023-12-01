@@ -5,8 +5,6 @@ import { GrClose } from "react-icons/gr";
 import "../../App.css";
 import "./HeaderStyles.css";
 import { IoIosArrowDown } from "react-icons/io";
-import { FiHeart } from "react-icons/fi";
-import { CiSearch } from "react-icons/ci";
 import { NavLink } from "react-router-dom";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { useAppDispatch, useAppSelector } from "../../APIS/Store";
