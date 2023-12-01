@@ -5,7 +5,6 @@ interface Product {
   name: string;
   price: number;
   discountedPrice: number;
-  ratings: number[];
 }
 
 export const ProductDetail: React.FC<Product> = ({
@@ -15,7 +14,7 @@ export const ProductDetail: React.FC<Product> = ({
   discountedPrice,
 }) => {
   return (
-    <div className="w-[300px] h-[400px] flex justify-center items-center flex-col">
+    <div className="w-[300px] h-[350px] flex justify-center items-center flex-col">
       <div className="w-[300px] h-[300px] bg-[#F2F4F6] flex justify-center items-center">
         <img
           src={imageUrl}

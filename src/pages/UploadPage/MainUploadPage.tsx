@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent } from "react";
 import { Link } from "react-router-dom";
 
 const MainUploadPage: React.FC = () => {
@@ -21,11 +21,14 @@ const MainUploadPage: React.FC = () => {
   return (
     <div className="flex justify-center items-center flex-col mainUploadHolder">
       <div className="w-[90%] p-4 mt-5 flex h-[400px]  items-center justify-between uploadUploadHolder">
-      
         <div className=" flex flex-col items-center justify-center w-[30%] h-[80%] uploadImageHold">
           <div className="rounded-[10px] bg-gray-300 h-[250px] w-60 flex justify-center items-center uploadImageHolder">
             {previewImage ? (
-              <img src={previewImage} alt="Preview" className="rounded-[10px] h-[92%] object-cover w-[92%]" />
+              <img
+                src={previewImage}
+                alt="Preview"
+                className="rounded-[10px] h-[92%] object-cover w-[92%]"
+              />
             ) : (
               <div className="text-gray-500 text-2xl">Upload Image</div>
             )}
