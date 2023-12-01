@@ -8,6 +8,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { useAppSelector } from "../../APIS/Store";
+import { Link } from "react-scroll";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -55,11 +56,14 @@ const Header = () => {
           <div
             className={`items-center mt-[12px] text-[var(--accent)] text-[20px] hidden  lg:flex`}
           >
-            <h3 className="mr-[55px] m-[10px  font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--white)]   transition transform hover:scale-x-100">
-              Home
-            </h3>
+            <Link to="home" smooth={true} duration="900">
+              <h3 className="mr-[55px] m-[10px  font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--black)]   transition transform hover:scale-x-100">
+                Home
+              </h3>
+            </Link>
+
             <div
-              className="flex cursor-pointer items-center justify-center pr-[30px] mr-[40px] border-b-2 border-transparent hover:border-[var(--white)] transition transform hover:scale-x-100 relative "
+              className="flex cursor-pointer items-center justify-center pr-[30px] mr-[40px] border-b-2 border-transparent hover:border-[var(--black)] transition transform hover:scale-x-100 relative "
               onClick={onToggleDropdown}
               ref={dropdownRef}
             >
@@ -80,15 +84,18 @@ const Header = () => {
                 </div>
               )}
             </div>
-
-            <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--white)]  transition transform hover:scale-x-100">
-              Shop
-            </h3>
-            <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--white)]  transition transform hover:scale-x-100">
-              Contact Us
-            </h3>
+            <Link to="shop" smooth={true} duration="900">
+              <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--black)]  transition transform hover:scale-x-100">
+                Shop
+              </h3>
+            </Link>
+            <Link to="contact" smooth={true} duration="900">
+              <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--black)]  transition transform hover:scale-x-100">
+                Contact Us
+              </h3>
+            </Link>
             <NavLink to="/admin-login" style={{ textDecoration: "none" }}>
-              <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--white)]  transition transform hover:scale-x-100">
+              <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--black)]  transition transform hover:scale-x-100">
                 Login
               </h3>
             </NavLink>
