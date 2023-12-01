@@ -46,8 +46,6 @@ const Header = () => {
 
   console.log("The Current Cart Quantity: ", readCartQuantity);
 
-  const dispatch = useAppDispatch();
-
   return (
     <section>
       <div
