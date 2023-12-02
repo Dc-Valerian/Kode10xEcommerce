@@ -1,6 +1,11 @@
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { MdCancel } from "react-icons/md";
+import { useAppDispatch, useAppSelector } from "../../APIS/Store";
+import { useParams } from "react-router-dom";
+import { SingleProducts2 } from "../../APIS/Api";
+import { useQuery } from "@tanstack/react-query";
+import { addToCart, removeFromCart } from "../../APIS/ReduxState";
 
 interface ExampleProps {
   open: boolean;
@@ -43,13 +48,67 @@ const products: Product[] = [
     imageAlt:
       "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
   },
-  // More products...
+  {
+    id: 2,
+    name: "Medium Stuff Satchel",
+    href: "#",
+    color: "Blue",
+    price: "$32.00",
+    quantity: 1,
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
+    imageAlt:
+      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
+  },
+  {
+    id: 2,
+    name: "Medium Stuff Satchel",
+    href: "#",
+    color: "Blue",
+    price: "$32.00",
+    quantity: 1,
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
+    imageAlt:
+      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
+  },
 ];
 
 const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
   const onCloseHandler = () => {
     setOpen(false);
   };
+
+  const { productID } = useParams();
+  const dispatch = useAppDispatch();
+
+  const readMyCart = useAppSelector((state) => state.cart);
+
+  const readSingleItem = readMyCart.filter((item) => item._id === productID);
+
+  const TotalPrice = (item: any) =>
+    item.reduce(
+      (allItems: number, oneItem: any) =>
+        allItems + oneItem.CartQuantity * oneItem.price,
+      0
+    );
+
+  const disabledStyle = "disabled-div";
+
+  const OneProducts = useQuery({
+    queryKey: ["oneProduct", productID],
+    queryFn: () => {
+      return SingleProducts2(productID);
+    },
+  });
+
+  const phoneNumber = "+2349059493764";
+  const message = encodeURIComponent(
+    `${OneProducts?.data?.data.title}has been ordered `
+  );
+
+  const productQuantity = OneProducts?.data?.data?.quantity || 0;
+
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog
@@ -137,6 +196,41 @@ const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
                             </p>
                           </div>
                           <div className="flex flex-1 items-end justify-between text-sm">
+                            <div className="w-[45%] h-[80%] flex items-center justify-center ">
+                              <div
+                                className="w-[20%] h-[60%] bg-[white] border-solid border-[1px] border-[#ebe8e8] flex justify-center items-center hover:cursor-pointer detailFunctionButton"
+                                onClick={() => {
+                                  dispatch(
+                                    removeFromCart(OneProducts?.data?.data)
+                                  );
+                                }}
+                              >
+                                -
+                              </div>
+                              <div className="w-[20%] h-[60%] bg-[white] border-solid border-[1px] border-[#ebe8e8] flex justify-center items-center hover:cursor-pointer detailFunctionButton">
+                                {readSingleItem[0]?.CartQuantity}
+                              </div>
+                              <div
+                                className={`w-[20%] h-[60%] bg-[white] border-solid border-[1px] border-[#ebe8e8] flex justify-center items-center hover:cursor-pointer detailFunctionButton ${
+                                  readSingleItem[0]?.CartQuantity ===
+                                  productQuantity
+                                    ? disabledStyle
+                                    : ""
+                                }`}
+                                onClick={() => {
+                                  if (
+                                    readSingleItem[0]?.CartQuantity !==
+                                    OneProducts?.data?.data.quantity
+                                  ) {
+                                    dispatch(
+                                      addToCart(OneProducts?.data?.data)
+                                    );
+                                  }
+                                }}
+                              >
+                                +
+                              </div>
+                            </div>
                             <p className="text-gray-500">
                               Qty {product.quantity}
                             </p>
@@ -144,7 +238,7 @@ const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
                             <div className="flex">
                               <button
                                 type="button"
-                                className="font-medium text-indigo-600 hover:text-indigo-500"
+                                className="font-medium text-[var(--myColor)] hover:text-[black]"
                               >
                                 Remove
                               </button>
@@ -167,18 +261,20 @@ const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
                 </p>
                 <div className="mt-6">
                   <a
-                    href="#"
-                    className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                    href={`https://wa.me/${phoneNumber}?text=${message}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center rounded-md border border-transparent bg-[var(--myColor)] px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-[black]"
                   >
                     Checkout
                   </a>
                 </div>
                 <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
-                  <p>
+                  <p className="text-[17px]">
                     or{" "}
                     <button
                       type="button"
-                      className="font-medium text-indigo-600 hover:text-indigo-500"
+                      className="font-medium text-[--myColor] hover:text-[black]"
                     >
                       Continue Shopping <span aria-hidden="true">&rarr;</span>
                     </button>

@@ -1,20 +1,19 @@
 import { NavLink } from "react-router-dom";
 import "./UploadStyles.css";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { FiLogOut } from "react-icons/fi";
 
 const UploadHead = () => {
   return (
     <div className=" h-[60vh]  uploadHome">
-        
-      <div className="uploadTitle w-[100%] h-[95%] flex justify-center  bg-cover bg-right-bottom relative"
+      <div
+        className="uploadTitle w-[100%] h-[95%] flex justify-center  bg-cover bg-right-bottom relative"
         style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1613177794106-be20802b11d3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FzaW8lMjB3YXRjaHxlbnwwfHwwfHx8MA%3D%3D)",
-          }}
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1613177794106-be20802b11d3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FzaW8lMjB3YXRjaHxlbnwwfHwwfHx8MA%3D%3D)",
+        }}
       >
         <div className=" w-[90%] mt-[10px] z-20">
-         
-
           <hr className=" h-[2px] mb-[15px] mt-[10px]" />
 
           <div className="flex items-center justify-between">
@@ -25,14 +24,11 @@ const UploadHead = () => {
               <button className="bg-[grey] text-[white] w-[140px] h-[40px] rounded-[20px] flex items-center justify-center">
                 Upload Products
               </button>
-            <NavLink
-            to="/"
-            style={{textDecoration:"none"}}
-            >
-            <div className="bg-[orange] w-[40px] flex items-center justify-center rounded-[50%] h-[40px] text-[white] text-[18px]">
-                A
-              </div>
-            </NavLink>
+              <NavLink to="/" style={{ textDecoration: "none" }}>
+                <div className="bg-[orange] w-[40px] flex items-center justify-center rounded-[50%] h-[40px] text-[white] text-[18px]">
+                  <FiLogOut />
+                </div>
+              </NavLink>
             </div>
           </div>
 
@@ -53,7 +49,6 @@ const UploadHead = () => {
         </div>
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-0"></div>
       </div>
-
     </div>
   );
 };

@@ -1,7 +1,10 @@
 
 @media screen and (max-width:500px){
 .uploadHome{
-height: 50vh;
+height: 40vh;
+position: fixed;
+width: 100%;
+top: 0;
 }
 }
 
@@ -31,6 +34,7 @@ padding-bottom: 20px;
 @media screen and (max-width:500px){
 .mainUploadHolder{
  height: fit-content;
+margin-top: 210px;
 }
 }
 

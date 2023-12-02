@@ -3,7 +3,7 @@ import { Oval } from "react-loader-spinner";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { GetAllProducts2 } from "../../APIS/Api";
-import "./ProductStyle.css"
+import "./ProductStyle.css";
 
 interface PaginationProps {
   productsPerPage: number;
@@ -87,13 +87,7 @@ const ShopProduct = () => {
   const renderProducts = () => {
     return currentProducts?.length >= 1 ? (
       currentProducts.map((product: any, index: number) => (
-        <ProductDetail
-          key={index}
-          imageUrl={product.imageUrl}
-          name={product.name}
-          price={product.price}
-          discountedPrice={product.discountedPrice}
-        />
+        <ProductDetail product={product} key={index} />
       ))
     ) : (
       <div>No Data Found</div>
@@ -101,7 +95,7 @@ const ShopProduct = () => {
   };
 
   return (
-    <div className="w-full h-full bg-[#F2F4F6] mt-20 flex justify-center flex-col items-center">
+    <div className="w-full h-full bg-[#F2F4F6] mt-20 flex justify-center flex-col items-center overflow-hidden">
       <div className=" w-[70%] flex p-5 justify-between searchHolder">
         <input
           type="text"
