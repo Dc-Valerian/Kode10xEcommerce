@@ -1,42 +1,52 @@
 export const categoriesData = [
-    {
-      imageUrl: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_PC_2x._SY608_CB431800964_.jpg",
-      text: "Category 1",
-    },
-    {
-      imageUrl: "https://images-na.ssl-images-amazon.com/images/G/01/events/GFAH/GWDesktop_SingleImageCard_fitathome_2x._SY608_CB434924743_.jpg",
-      text: "Category 2",
-    },
-    {
-      imageUrl: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2022/BTS/Fuji_dash_BTS_backpack_2X._SY608_CB630082004_.jpg",
-      text: "Category 2",
-    },
-    {
-      imageUrl: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2022/BTS/Fuji_dash_BTS_backpack_2X._SY608_CB630082004_.jpg",
-      text: "Category 2",
-    },
-    {
-      imageUrl: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2022/BTS/Fuji_dash_BTS_backpack_2X._SY608_CB630082004_.jpg",
-      text: "Category 2",
-    },
-    {
-      imageUrl: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2022/BTS/Fuji_dash_BTS_backpack_2X._SY608_CB630082004_.jpg",
-      text: "Category 2",
-    },
-    {
-      imageUrl: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2022/BTS/Fuji_dash_BTS_backpack_2X._SY608_CB630082004_.jpg",
-      text: "Category 2",
-    },
-    {
-      imageUrl: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2022/BTS/Fuji_dash_BTS_backpack_2X._SY608_CB630082004_.jpg",
-      text: "Category 2",
-    },
-    {
-      imageUrl: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2022/BTS/Fuji_dash_BTS_backpack_2X._SY608_CB630082004_.jpg",
-      text: "Category 2",
-    },
-    {
-      imageUrl: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2022/BTS/Fuji_dash_BTS_backpack_2X._SY608_CB630082004_.jpg",
-      text: "Category 2",
-    },
-  ];
+  {
+    imageUrl:
+      "https://media.istockphoto.com/id/650233226/photo/military-style-watch.jpg?s=612x612&w=0&k=20&c=PknuHX2Dh0SN2JTKF60Ftxowdiwoudc_zTu9Vd2UD-w=",
+    text: "G shock ",
+  },
+  {
+    imageUrl:
+      "https://media.istockphoto.com/id/650233226/photo/military-style-watch.jpg?s=612x612&w=0&k=20&c=PknuHX2Dh0SN2JTKF60Ftxowdiwoudc_zTu9Vd2UD-w=",
+    text: "Casio",
+  },
+  {
+    imageUrl:
+      "https://media.istockphoto.com/id/650233226/photo/military-style-watch.jpg?s=612x612&w=0&k=20&c=PknuHX2Dh0SN2JTKF60Ftxowdiwoudc_zTu9Vd2UD-w=",
+    text: "Naviforce",
+  },
+  {
+    imageUrl:
+      "https://media.istockphoto.com/id/650233226/photo/military-style-watch.jpg?s=612x612&w=0&k=20&c=PknuHX2Dh0SN2JTKF60Ftxowdiwoudc_zTu9Vd2UD-w=",
+    text: "Skmei",
+  },
+  {
+    imageUrl:
+      "https://media.istockphoto.com/id/650233226/photo/military-style-watch.jpg?s=612x612&w=0&k=20&c=PknuHX2Dh0SN2JTKF60Ftxowdiwoudc_zTu9Vd2UD-w=",
+    text: "Cartier",
+  },
+  {
+    imageUrl:
+      "https://media.istockphoto.com/id/650233226/photo/military-style-watch.jpg?s=612x612&w=0&k=20&c=PknuHX2Dh0SN2JTKF60Ftxowdiwoudc_zTu9Vd2UD-w=",
+    text: "Patek Philippe",
+  },
+  {
+    imageUrl:
+      "https://media.istockphoto.com/id/650233226/photo/military-style-watch.jpg?s=612x612&w=0&k=20&c=PknuHX2Dh0SN2JTKF60Ftxowdiwoudc_zTu9Vd2UD-w=",
+    text: "Rolex",
+  },
+  {
+    imageUrl:
+      "https://media.istockphoto.com/id/650233226/photo/military-style-watch.jpg?s=612x612&w=0&k=20&c=PknuHX2Dh0SN2JTKF60Ftxowdiwoudc_zTu9Vd2UD-w=",
+    text: "Richard Mille",
+  },
+  {
+    imageUrl:
+      "https://media.istockphoto.com/id/650233226/photo/military-style-watch.jpg?s=612x612&w=0&k=20&c=PknuHX2Dh0SN2JTKF60Ftxowdiwoudc_zTu9Vd2UD-w=",
+    text: "Tissot ",
+  },
+  {
+    imageUrl:
+      "https://media.istockphoto.com/id/650233226/photo/military-style-watch.jpg?s=612x612&w=0&k=20&c=PknuHX2Dh0SN2JTKF60Ftxowdiwoudc_zTu9Vd2UD-w=",
+    text: "Rado",
+  },
+];

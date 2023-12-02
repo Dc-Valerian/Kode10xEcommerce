@@ -9,8 +9,10 @@ import { NavLink } from "react-router-dom";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { useAppSelector } from "../../APIS/Store";
 import { Link } from "react-scroll";
+import Example from "../../pages/CartPage/Cart2";
 
 const Header = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [drop, setDrop] = useState(false);
 
@@ -40,11 +42,13 @@ const Header = () => {
 
   console.log("The Current Cart Quantity: ", readCartQuantity);
 
+  const toggleDialog = () => setIsDialogOpen(!isDialogOpen);
+
   return (
     <section>
       <div
         className=" w-[100%] h-[70px] flex justify-center top-0 
-         fixed z-[1] bg-[white]"
+          fixed z-[1] bg-[white]"
       >
         <div className="w-[95%] flex items-center justify-between">
           <NavLink to="/">
@@ -104,8 +108,9 @@ const Header = () => {
           <div className={`icons flex w-[6%] items-center justify-between `}>
             <div
               className="
-            hover:cursor-pointer transition duration-300 ease-in-out hover:scale-[1.09]
-            "
+              hover:cursor-pointer transition duration-300 ease-in-out hover:scale-[1.09]
+              "
+              onClick={toggleDialog}
             >
               <RiShoppingCartLine className="text-[28px]  absolute" />
               <div className=" bg-[var(--myColor)] w-[20px] h-[20px] rounded-full flex items-center justify-center text-[14px] relative left-[18px] bottom-[8px] text-[white]">
@@ -116,14 +121,17 @@ const Header = () => {
 
           <div
             onClick={onOpenHandler}
-            className="text-[33px] cursor-pointer lg:hidden mt-[12px] md:text-[30px]  "
+            className="text-[33px] cursor-pointer lg:hidden mt-[12px] md:text-[30px]"
           >
             <HiMenuAlt3 />
           </div>
+  
+
+          <Example open={isDialogOpen} setOpen={setIsDialogOpen} />
 
           <Dialog
             open={open}
-            onClose={onCloseHandler}
+            onClose={() => setOpen(false)}
             className="fixed top-0 right-0 h-full w-[60vw] md:w-[60%] z-50 "
             aria-labelledby="dialog-title"
           >
