@@ -7,10 +7,12 @@ import "./HeaderStyles.css";
 import { IoIosArrowDown } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import { RiShoppingCartLine } from "react-icons/ri";
-import {  useAppSelector } from "../../APIS/Store";
+import { useAppSelector } from "../../APIS/Store";
+import { Link } from "react-scroll";
+import Example from "../../pages/CartPage/Cart2";
 
 const Header = () => {
-  const [show, setShow] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [drop, setDrop] = useState(false);
 
@@ -19,10 +21,6 @@ const Header = () => {
   const onOpenHandler = () => setOpen(true);
   const onCloseHandler = () => setOpen(false);
   const onToggleDropdown = () => setDrop(!drop);
-
-  const changeHeaderColor = () => {
-    setShow(window.scrollY >= 180);
-  };
 
   const handleClickOutside = (event: MouseEvent) => {
     if (
@@ -34,10 +32,8 @@ const Header = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", changeHeaderColor);
-    document.addEventListener("mousedown", handleClickOutside); // Listen for clicks outside dropdown
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      window.removeEventListener("scroll", changeHeaderColor);
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
@@ -46,34 +42,32 @@ const Header = () => {
 
   console.log("The Current Cart Quantity: ", readCartQuantity);
 
+  const toggleDialog = () => setIsDialogOpen(!isDialogOpen);
+
   return (
     <section>
       <div
-        className={` w-[100%] h-[70px] flex justify-center top-0 bg-[] ${
-          show ? "fixed bg-[white] z-[100] bgg" : " fixed z-[1] bg-[]"
-        }`}
+        className=" w-[100%] h-[70px] flex justify-center top-0 
+          fixed z-[1] bg-[white]"
       >
         <div className="w-[95%] flex items-center justify-between">
           <NavLink to="/">
-            <div
-              className={` name text-[23px] h-[45px] w-[130px] top-0 flex items-center justify-center text-[var(--accent)] animate-pulse  z-[99999]  ${
-                show ? "text-[var(--accent)]" : "text-[var(--white)]"
-              }`}
-            >
+            <div className=" name text-[23px] h-[45px] w-[130px] top-0 flex items-center justify-center text-[var(--accent)] animate-pulse  z-[99999] ">
               KODE10X
             </div>
           </NavLink>
 
           <div
-            className={`items-center mt-[12px] text-[var(--accent)] text-[20px] hidden  lg:flex ${
-              show ? "text-[var(--accent)]" : "text-[var(--white)]"
-            }`}
+            className={`items-center mt-[12px] text-[var(--accent)] text-[20px] hidden  lg:flex`}
           >
-            <h3 className="mr-[55px] m-[10px  font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--white)]   transition transform hover:scale-x-100">
-              Home
-            </h3>
+            <Link to="home" smooth={true} duration="900">
+              <h3 className="mr-[55px] m-[10px  font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--black)]   transition transform hover:scale-x-100">
+                Home
+              </h3>
+            </Link>
+
             <div
-              className="flex cursor-pointer items-center justify-center pr-[30px] mr-[40px] border-b-2 border-transparent hover:border-[var(--white)] transition transform hover:scale-x-100 relative "
+              className="flex cursor-pointer items-center justify-center pr-[30px] mr-[40px] border-b-2 border-transparent hover:border-[var(--black)] transition transform hover:scale-x-100 relative "
               onClick={onToggleDropdown}
               ref={dropdownRef}
             >
@@ -94,15 +88,18 @@ const Header = () => {
                 </div>
               )}
             </div>
-
-            <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--white)]  transition transform hover:scale-x-100">
-              Shop
-            </h3>
-            <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--white)]  transition transform hover:scale-x-100">
-              Contact Us
-            </h3>
+            <Link to="shop" smooth={true} duration="900">
+              <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--black)]  transition transform hover:scale-x-100">
+                Shop
+              </h3>
+            </Link>
+            <Link to="contact" smooth={true} duration="900">
+              <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--black)]  transition transform hover:scale-x-100">
+                Contact Us
+              </h3>
+            </Link>
             <NavLink to="/admin-login" style={{ textDecoration: "none" }}>
-              <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--white)]  transition transform hover:scale-x-100">
+              <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--black)]  transition transform hover:scale-x-100">
                 Login
               </h3>
             </NavLink>
@@ -111,14 +108,11 @@ const Header = () => {
           <div className={`icons flex w-[6%] items-center justify-between `}>
             <div
               className="
-            hover:cursor-pointer transition duration-300 ease-in-out hover:scale-[1.09]
-            "
+              hover:cursor-pointer transition duration-300 ease-in-out hover:scale-[1.09]
+              "
+              onClick={toggleDialog}
             >
-              <RiShoppingCartLine
-                className={`text-[28px]  absolute   ${
-                  show ? "text-[var(--accent)]" : "text-[var(--white)]"
-                } `}
-              />
+              <RiShoppingCartLine className="text-[28px]  absolute" />
               <div className=" bg-[var(--myColor)] w-[20px] h-[20px] rounded-full flex items-center justify-center text-[14px] relative left-[18px] bottom-[8px] text-[white]">
                 {readCartQuantity}
               </div>
@@ -127,16 +121,16 @@ const Header = () => {
 
           <div
             onClick={onOpenHandler}
-            className={`text-[33px] cursor-pointer lg:hidden mt-[12px] md:text-[30px]    ${
-              show ? "text-[var(--accent)]" : "text-[var(--white)]"
-            } `}
+            className="text-[33px] cursor-pointer lg:hidden mt-[12px] md:text-[30px]"
           >
             <HiMenuAlt3 />
           </div>
 
+          <Example open={isDialogOpen} setOpen={setIsDialogOpen} />
+
           <Dialog
             open={open}
-            onClose={onCloseHandler}
+            onClose={() => setOpen(false)}
             className="fixed top-0 right-0 h-full w-[60vw] md:w-[60%] z-50 "
             aria-labelledby="dialog-title"
           >
@@ -171,12 +165,16 @@ const Header = () => {
                       Shop
                     </h3>
 
-                    <h3
-                      onClick={onCloseHandler}
-                      className="mr-[55px] m-[10px]  text-[20px] text-[var(--black)]  font-sm cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100"
+              
+
+                    <NavLink
+                      to="/admin-login"
+                      style={{ textDecoration: "none" }}
                     >
-                      Contact Us
-                    </h3>
+                      <h3 className="mr-[55px] m-[10px]  text-[20px] text-[var(--black)]  font-sm cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
+                        Login
+                      </h3>
+                    </NavLink>
                   </div>
 
                   <div>

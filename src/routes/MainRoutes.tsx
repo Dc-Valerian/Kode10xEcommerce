@@ -20,8 +20,8 @@ export const element = createBrowserRouter([
         element: <ShopProduct />,
       },
       {
-        path: "/product-details",
-        element: <DetailPage/>
+        path: "/product-details/:productID",
+        element: <DetailPage />,
       },
     ],
   },

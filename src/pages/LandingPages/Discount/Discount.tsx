@@ -7,7 +7,7 @@ const Discount = () => {
   targetTime.setDate(targetTime.getDate() + 40);
 
   return (
-    <div className="bg-[#F3F4F6] w-[100%] flex items-center justify-center ">
+    <div className="bg-[#F3F4F6] w-[100%] flex items-center justify-center " id="shop">
       <div className="w-[95%] flex justify-between flex-wrap">
         <div className=" w-[45%] h-[500px]  discountCard flex  justify-center items-center">
           <div className=" w-[70%] h-[90%] flex items-center justify-center flex-col">
