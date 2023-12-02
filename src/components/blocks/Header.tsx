@@ -125,7 +125,6 @@ const Header = () => {
           >
             <HiMenuAlt3 />
           </div>
-  
 
           <Example open={isDialogOpen} setOpen={setIsDialogOpen} />
 
@@ -166,12 +165,16 @@ const Header = () => {
                       Shop
                     </h3>
 
-                    <h3
-                      onClick={onCloseHandler}
-                      className="mr-[55px] m-[10px]  text-[20px] text-[var(--black)]  font-sm cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100"
+              
+
+                    <NavLink
+                      to="/admin-login"
+                      style={{ textDecoration: "none" }}
                     >
-                      Contact Us
-                    </h3>
+                      <h3 className="mr-[55px] m-[10px]  text-[20px] text-[var(--black)]  font-sm cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
+                        Login
+                      </h3>
+                    </NavLink>
                   </div>
 
                   <div>

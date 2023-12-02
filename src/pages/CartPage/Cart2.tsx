@@ -86,12 +86,12 @@ const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
 
   const readSingleItem = readMyCart.filter((item) => item._id === productID);
 
-  const TotalPrice = (item: any) =>
-    item.reduce(
-      (allItems: number, oneItem: any) =>
-        allItems + oneItem.CartQuantity * oneItem.price,
-      0
-    );
+  // const TotalPrice = (item: any) =>
+  //   item.reduce(
+  //     (allItems: number, oneItem: any) =>
+  //       allItems + oneItem.CartQuantity * oneItem.price,
+  //     0
+  //   );
 
   const disabledStyle = "disabled-div";
 
