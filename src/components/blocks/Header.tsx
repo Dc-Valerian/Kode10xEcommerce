@@ -53,7 +53,7 @@ const Header = () => {
         <div className="w-[95%] flex items-center justify-between">
           <NavLink to="/">
             <div className="h-[85px] w-[150px] top-0 flex items-center justify-center z-[99999] ">
-             <img src="https://res.cloudinary.com/dbpcptmco/image/upload/v1701640814/WhatsApp_Image_2023-12-02_at_04.56.00_5d4d92c4_wuip3v.jpg" className=" w-[70%] h-[70%] object-cover"/>
+             <img src="https://res.cloudinary.com/dbpcptmco/image/upload/v1701640814/WhatsApp_Image_2023-12-02_at_04.56.00_5d4d92c4_wuip3v.jpg" className=" w-[70%] h-[70%] object-cover rounded-[5px]"/>
             </div>
           </NavLink>
 
