@@ -18,7 +18,7 @@ const UploadHead = () => {
 
           <div className="flex items-center justify-between">
             <div className="text-[#FFFFFF] text-[24px] font-[700] ">
-              KODE10X
+              Admin
             </div>
             <div className="flex   w-[200px] items-center justify-between">
               <button className="bg-[grey] text-[white] w-[140px] h-[40px] rounded-[20px] flex items-center justify-center">
