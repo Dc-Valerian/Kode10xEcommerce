@@ -52,8 +52,8 @@ const Header = () => {
       >
         <div className="w-[95%] flex items-center justify-between">
           <NavLink to="/">
-            <div className=" name text-[23px] h-[45px] w-[130px] top-0 flex items-center justify-center text-[var(--accent)] animate-pulse  z-[99999] ">
-              KODE10X
+            <div className="h-[85px] w-[150px] top-0 flex items-center justify-center z-[99999] ">
+             <img src="https://res.cloudinary.com/dbpcptmco/image/upload/v1701640814/WhatsApp_Image_2023-12-02_at_04.56.00_5d4d92c4_wuip3v.jpg" className=" w-[70%] h-[70%] object-cover"/>
             </div>
           </NavLink>
 
@@ -75,16 +75,59 @@ const Header = () => {
               <IoIosArrowDown className="absolute right-0 top-0 bottom-0 m-auto h-4 w-4" />
 
               {drop && (
-                <div className="absolute top-full left-0 bg-[brown] text-black w-[200px] py-2 shadow-md border border-[#12C5E4]">
-                  <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-yellow-500 transition transform hover:scale-x-100">
-                    Watch
+                <div className="absolute top-full left-0 bg-[white] text-black px-[5px]  py-[5px] shadow-md border flex">
+                 <div
+                 className="w-[130px]"
+                 >
+                 <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)] transition transform hover:scale-x-100">
+                 Casio
                   </h3>
-                  <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-yellow-500 transition transform hover:scale-x-100">
-                    NeckLace
+                  <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100 ">
+                  G shock 
                   </h3>
-                  <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-yellow-500 transition transform hover:scale-x-100">
-                    Wrist Bands
+                  <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100">
+                  Skmei
                   </h3>
+                  <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100">
+                  Skmei
+                  </h3>
+                 </div>
+                 <div
+                 className="w-[130px]"
+                 >
+                 <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100">
+                 Cartier 
+                  </h3>
+                  <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100">
+                  Rolex 
+                  </h3>
+                  <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4
+                  hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100">
+                    Rado
+                  </h3>
+                  <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4
+                  hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100">
+                    Rado
+                  </h3>
+                 </div>
+                 <div
+                 className="w-[130px]"
+                 >
+                 <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100">
+                 Cartier 
+                  </h3>
+                  <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100">
+                  Rolex 
+                  </h3>
+                  <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4
+                  hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100">
+                    Rado
+                  </h3>
+                  <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4
+                  hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100">
+                    Rado
+                  </h3>
+                 </div>
                 </div>
               )}
             </div>
@@ -164,8 +207,6 @@ const Header = () => {
                     >
                       Shop
                     </h3>
-
-              
 
                     <NavLink
                       to="/admin-login"
