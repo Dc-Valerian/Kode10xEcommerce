@@ -1,9 +1,33 @@
-import { FaFacebook } from "react-icons/fa6";
-import { BsWhatsapp } from "react-icons/bs";
-import { FaTwitter } from "react-icons/fa";
-import { FiInstagram } from "react-icons/fi";
+import { FaLinkedin } from "react-icons/fa";
+import { BsGithub } from "react-icons/bs";
+import { SiFacebook } from "react-icons/si";
+import { FaXTwitter } from "react-icons/fa6";
+import { ImWhatsapp } from "react-icons/im";
+import { motion } from "framer-motion";
+
+interface ButtonData {
+  icon: JSX.Element;
+  url: string;
+}
 
 const Footer = () => {
+  const buttonData: ButtonData[] = [
+    {
+      icon: <FaLinkedin />,
+      url: "https://www.linkedin.com/in/valerian-adimike-a95160248/",
+    },
+    { icon: <BsGithub />, url: "https://github.com/Dc-Valerian" },
+    { icon: <SiFacebook />, url: "https://www.facebook.com/valerianpedr/" },
+    { icon: <FaXTwitter />, url: "https://twitter.com/ValerianPedro" },
+    { icon: <ImWhatsapp />, url: "https://wa.me/+2349059493764" },
+  ];
+
+  const handleClicURL = (url: string) => {
+    return () => {
+      window.open(url, "_blank");
+    };
+  };
+
   return (
     <div className="w-full min-h-[150px]  flex flex-col md:flex-row md:justify-between md:items-center text-[black] font-roboto overflow-hidden pt-[40px] pb-[40px] pl-[20px] md:p-0  items-center justify-center">
       <div className="md:text-center  leading-4 md:ml-[50px] font-roboto mb-[20px] md:mb-0 h-[90px] w-[130px] flex gap-[10px] flex-col items-center justify-center hover:cursor-pointer">
@@ -60,19 +84,20 @@ const Footer = () => {
       </div>
 
       <div className="flex mr-[40px] flex-col mb-[20px] md:mb-0 ">
-        <div className=" text-[20px] gap-[10px] flex items-center justify-center ">
-          <div className="bg-[#F3F4F6] w-[35px] h-[35px] flex items-center justify-center rounded-[20px] animate-pulse">
-            <FaFacebook />
-          </div>
-          <div className="bg-[#F3F4F6] w-[35px] h-[35px] flex items-center justify-center rounded-[20px] animate-pulse">
-            <BsWhatsapp />
-          </div>
-          <div className="bg-[#F3F4F6] w-[35px] h-[35px] flex items-center justify-center rounded-[20px] animate-pulse">
-            <FaTwitter />
-          </div>
-          <div className="bg-[#F3F4F6] w-[35px] h-[35px] flex items-center justify-center rounded-[20px] animate-pulse">
-            <FiInstagram />
-          </div>
+        <div className="flex items-center justify-center  gap-[8px]">
+          {buttonData.map((button, index) => (
+            <motion.div
+              key={index}
+              className=" text-[white] cursor-pointer rounded-lg overflow-hidden relative flex items-center justify-center  p-[8px] transition duration-300 ease-in-out hover:bg-opacity-40 backdrop-blur-3xl animate-pulse bg-[var(--accent)]"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={handleClicURL(button.url)}
+            >
+              <div className="bg-opacity-20 hover:bg-opacity-40 p-[1px] h-[23px] w-[23px] text-[23px]">
+                {button.icon}
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         <div className="font-bold text-[16px] mt-[15px] flex items-center justify-center ">
