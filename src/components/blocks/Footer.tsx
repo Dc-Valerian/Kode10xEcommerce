@@ -33,7 +33,7 @@ const Footer = () => {
       <div className="md:text-center  leading-4 md:ml-[50px] font-roboto mb-[20px] md:mb-0 h-[90px] w-[130px] flex gap-[10px] flex-col items-center justify-center hover:cursor-pointer">
         <img
           src="https://res.cloudinary.com/dbpcptmco/image/upload/v1701640814/WhatsApp_Image_2023-12-02_at_04.56.00_5d4d92c4_wuip3v.jpg"
-          className=" w-[100%] h-[100%] object-cover"
+          className=" w-[90%] h-[100%] object-cover rounded-[10px]"
         />
       </div>
 
