@@ -1,6 +1,7 @@
 import { FaInstagram } from "react-icons/fa";
 import { SiFacebook } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
+import { ImWhatsapp } from "react-icons/im";
 import { motion } from "framer-motion";
 
 interface ButtonData {
@@ -14,7 +15,12 @@ const Footer = () => {
       icon: <FaInstagram />,
       url: "https://www.instagram.com/shopwithfamousshop/",
     },
-    { icon: <SiFacebook />, url: "https://www.facebook.com/valerianpedr/" },
+    { icon: <ImWhatsapp />, url: "https://wa.me/+2347018549555" },
+
+    {
+      icon: <SiFacebook />,
+      url: "https://web.facebook.com/profile.php?id=61554003966869",
+    },
     { icon: <FaXTwitter />, url: "https://twitter.com/shopwithfamous" },
   ];
 
@@ -25,17 +31,21 @@ const Footer = () => {
   };
 
   return (
-    <div className="w-full min-h-[150px]  flex flex-col md:flex-row md:justify-between md:items-center text-[black] font-roboto overflow-hidden pt-[40px] pb-[40px] pl-[20px] md:p-0  items-center justify-center">
-      <div className="md:text-center  leading-4 md:ml-[50px] font-roboto mb-[20px] md:mb-0 h-[90px] w-[130px] flex gap-[10px] flex-col items-center justify-center hover:cursor-pointer">
+    <div
+      id="contact"
+      className="w-full min-h-[150px]  flex flex-col md:flex-row md:justify-between md:items-center text-[black] font-roboto overflow-hidden pt-[40px] pb-[40px] pl-[20px] md:p-0  items-center justify-center"
+    >
+      <div className="md:text-center  leading-4 md:ml-[50px] font-roboto mb-[20px] md:mb-0 h-[130px] w-[130px] flex  flex-col items-center gap-[10px] hover:cursor-pointer ">
         <img
-          src="https://res.cloudinary.com/dbpcptmco/image/upload/v1701640814/WhatsApp_Image_2023-12-02_at_04.56.00_5d4d92c4_wuip3v.jpg"
-          className=" w-[90%] h-[100%] object-cover rounded-[10px]"
+          src="https://res.cloudinary.com/dbpcptmco/image/upload/v1701695953/WhatsApp_Image_2023-12-02_at_04.56.01_9fa268ad-removebg-preview_qmfbvw.png"
+          className=" w-[100%] h-[60%] object-cover "
         />
+        <text className="text-[18px]">0701 854 9555</text>
       </div>
 
       <div className=" font-roboto mb-[20px] md:mb-0 ">
         <h5 className="text-black text-xl font-medium mb-2 text-center">
-          ADDRESS: Suite 14, Volatic Towers, Victoria-Island, Lagos, Nigeria.
+          35/37 Isale Agbede St, Idumagbo Ave, Lagos Island,Lagos 101101,Lagos
         </h5>
       </div>
 
@@ -96,7 +106,7 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="font-bold text-[16px] mt-[15px] flex items-center justify-center ">
+        <div className="font-bold text-[16px] mt-[15px] flex items-center justify-center w-[100%] text-center">
           All Right Reserved. C.2023
         </div>
       </div>
