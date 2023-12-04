@@ -1,8 +1,6 @@
-import { FaLinkedin } from "react-icons/fa";
-import { BsGithub } from "react-icons/bs";
+import { FaInstagram } from "react-icons/fa";
 import { SiFacebook } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
-import { ImWhatsapp } from "react-icons/im";
 import { motion } from "framer-motion";
 
 interface ButtonData {
@@ -13,13 +11,11 @@ interface ButtonData {
 const Footer = () => {
   const buttonData: ButtonData[] = [
     {
-      icon: <FaLinkedin />,
-      url: "https://www.linkedin.com/in/valerian-adimike-a95160248/",
+      icon: <FaInstagram />,
+      url: "https://www.instagram.com/shopwithfamousshop/",
     },
-    { icon: <BsGithub />, url: "https://github.com/Dc-Valerian" },
     { icon: <SiFacebook />, url: "https://www.facebook.com/valerianpedr/" },
-    { icon: <FaXTwitter />, url: "https://twitter.com/ValerianPedro" },
-    { icon: <ImWhatsapp />, url: "https://wa.me/+2349059493764" },
+    { icon: <FaXTwitter />, url: "https://twitter.com/shopwithfamous" },
   ];
 
   const handleClicURL = (url: string) => {
