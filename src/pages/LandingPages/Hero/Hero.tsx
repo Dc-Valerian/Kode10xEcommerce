@@ -9,21 +9,22 @@ import CountdownTimer from "../Discount/CountDownTimer";
 
 const slides = [
   {
-    bgImage: "https://zonnova.vercel.app/assets/asusproart-123712a4.png",
-    title: "Apple Watch Series",
+    bgImage: "https://zonnova.vercel.app/assets/watch-2a5a0ee6.png",
+    title: "Casio Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
   },
   {
-    bgImage: "https://zonnova.vercel.app/assets/watch-2a5a0ee6.png",
-    title: "Apple Watch Series",
+    bgImage: "https://zonnova.vercel.app/assets/asusproart-123712a4.png",
+    title: "Tv Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
   },
+
   {
     bgImage:
       "https://media.istockphoto.com/id/650233226/photo/military-style-watch.jpg?s=612x612&w=0&k=20&c=PknuHX2Dh0SN2JTKF60Ftxowdiwoudc_zTu9Vd2UD-w=",
-    title: "Apple Watch Series",
+    title: "Rolex Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
   },

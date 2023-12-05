@@ -80,63 +80,36 @@ const Header = () => {
               {drop && (
                 <div className="absolute top-full left-0 bg-[white] text-black px-[5px]  py-[5px] shadow-md border flex">
                   <div className="w-[130px]">
-                    <Link to="category" smooth={true} duration="900" offset={-140}>
+                    <Link
+                      to="category"
+                      smooth={true}
+                      duration="900"
+                      offset={-140}
+                    >
                       <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)] transition transform hover:scale-x-100">
                         Casio
                       </h3>
                     </Link>
-                    <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100 ">
-                      G shock
-                    </h3>
-                    <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100">
-                      Skmei
-                    </h3>
-                    <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100">
-                      Skmei
-                    </h3>
-                  </div>
-                  <div className="w-[130px]">
                     <Link to="rolex" smooth={true} duration="900" offset={-140}>
-                      <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100">
-                        Rolex
+                      <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100 ">
+                        G shock
                       </h3>
                     </Link>
-
-                    <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100">
-                      Rolex
-                    </h3>
-                    <h3
-                      className="text-[20px] font-medium cursor-pointer py-1 px-4
-                  hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100"
+                    <Link
+                      to="category"
+                      smooth={true}
+                      duration="900"
+                      offset={-140}
                     >
-                      Rado
-                    </h3>
-                    <h3
-                      className="text-[20px] font-medium cursor-pointer py-1 px-4
-                  hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100"
-                    >
-                      Rado
-                    </h3>
-                  </div>
-                  <div className="w-[130px]">
-                    <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100">
-                      Cartier
-                    </h3>
-                    <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100">
-                      Rolex
-                    </h3>
-                    <h3
-                      className="text-[20px] font-medium cursor-pointer py-1 px-4
-                  hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100"
-                    >
-                      Rado
-                    </h3>
-                    <h3
-                      className="text-[20px] font-medium cursor-pointer py-1 px-4
-                  hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100"
-                    >
-                      Rado
-                    </h3>
+                      <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100">
+                        Skmei
+                      </h3>
+                    </Link>
+                    <Link to="rolex" smooth={true} duration="900" offset={-140}>
+                      <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100">
+                      Others
+                      </h3>
+                    </Link>
                   </div>
                 </div>
               )}
@@ -153,7 +126,7 @@ const Header = () => {
             </Link>
             <NavLink to="/admin-login" style={{ textDecoration: "none" }}>
               <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--black)]  transition transform hover:scale-x-100">
-                Login
+               Admin Login
               </h3>
             </NavLink>
           </div>
@@ -223,7 +196,7 @@ const Header = () => {
                       style={{ textDecoration: "none" }}
                     >
                       <h3 className="mr-[55px] m-[10px]  text-[20px] text-[var(--black)]  font-sm cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
-                        Login
+                      Admin Login
                       </h3>
                     </NavLink>
                   </div>

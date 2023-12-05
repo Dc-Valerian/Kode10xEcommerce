@@ -26,7 +26,7 @@ const AdminLogin: React.FC = () => {
         }}
       >
         <h2 className="z-20 text-white absolute top-20 md:top-34 text-4xl md:text-2xl ">
-          Welcome Back
+          Welcome Back Admin
         </h2>
 
         <div className="z-10 w-full h-full flex flex-col justify-center items-center">
