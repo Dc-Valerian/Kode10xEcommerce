@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 interface Product {
-  _id: string;
   imageUrl: string;
   name: string;
   price: number;
@@ -10,11 +9,11 @@ interface Product {
 }
 
 export const ProductDetail: React.FC<{ product: Product }> = ({ product }) => {
-  const { imageUrl, name, price, discountedPrice, _id } = product;
+  const { imageUrl, name, price, discountedPrice } = product;
 
   return (
     <div className="w-[300px] h-[350px] flex justify-center items-center flex-col">
-      <NavLink to={`/productdetails/${_id}`} style={{ textDecoration: "none" }}>
+      <NavLink to={`/product-details`} style={{ textDecoration: "none" }}>
         <div className="w-[300px] h-[300px] bg-[#F2F4F6] flex justify-center items-center">
           <img
             src={imageUrl}

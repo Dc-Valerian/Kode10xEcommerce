@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomeLayout from "../components/layout/HomeLayout";
 import HomeScreen from "../pages/LandingPages/HomeScreen/HomeScreen";
-import ShopProduct from "../pages/ShopCollections/ShopProduct";
 import AdminLogin from "../pages/auth/AdminLogin";
 import UploadPage from "../pages/UploadPage/UploadPage";
 import DetailPage from "../pages/Detail/DetailPage";
+import ShopNow from "../pages/ShopCollections/ShopNow";
 
 export const element = createBrowserRouter([
   {
@@ -17,13 +17,12 @@ export const element = createBrowserRouter([
       },
       {
         path: "/shop-now",
-        element: <ShopProduct />,
+        element: <ShopNow />,
       },
       {
-        path: "/product-details/:productID",
+        path: "/product-details",
         element: <DetailPage />,
       },
-   
     ],
   },
   {
