@@ -1,29 +1,11 @@
 import axios from "axios";
 
-interface UserData {
-  name: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-}
-
-const Endpoint = "http://localhost:4573/api";
-
-export const CreateNewUser2 = async ({
-  name,
-  email,
-  password,
-  confirmPassword,
-}: UserData) => {
-  return await axios
-    .post(`${Endpoint}/register`, { name, email, password, confirmPassword })
-    .then((res) => res.data);
-};
+const Endpoint = "https://watch-e-commerce-w6mv.onrender.com";
 
 // Get all products:
 export const GetAllProducts2 = async () => {
   return await axios
-    .get(`${Endpoint}/all-products`)
+    .get(`${Endpoint}/api/products/allproducts`)
     .then((res) => res.data)
     .catch((err) => {
       console.log(err);
@@ -33,6 +15,6 @@ export const GetAllProducts2 = async () => {
 // Get single products:
 export const SingleProducts2 = async (productID: any) => {
   return await axios
-    .get(`${Endpoint}/all-products/${productID}`)
+    .get(`${Endpoint}/api/products/allproducts/${productID}`)
     .then((res) => res.data);
 };

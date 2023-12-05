@@ -57,7 +57,7 @@ const MainUploadPage: React.FC = () => {
             />
             <input
               onChange={(e) => setAuthor(e.target.value)}
-              placeholder="Enter Author name"
+              placeholder="Enter Price"
               className="border border-gray-300 rounded px-2 py-[10px]  w-[32%] uploadMainInput "
             />
             <select
@@ -65,9 +65,20 @@ const MainUploadPage: React.FC = () => {
               className="border border-gray-300 rounded px-2 py-[10px]  w-[32%]  uploadMainInput h-[45px]"
             >
               <option value="">select a category</option>
-              <option value="comedy">Comedy</option>
-              <option value="music">Music</option>
-              <option value="romance">Romance</option>
+              <option value="Casio">Casio</option>
+              <option value="Gshock">G shock </option>
+              <option value="Naviforce">Naviforce </option>
+              <option value="Skmei">Skmei</option>
+              <option value="Cartier">Cartier</option>
+              <option value="Rolex">Rolex</option>
+              <option
+                value="Richard Mille 
+"
+              >
+                Richard Mille
+              </option>
+              <option value="Audemars piquet">Audemars piquet</option>
+              <option value="Tissot">Tissot</option>
             </select>
           </div>
           <div className="flex items-center justify-between p-[10px] uploadInput">
