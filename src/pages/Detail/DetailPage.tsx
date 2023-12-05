@@ -23,8 +23,6 @@ const DetailPage = () => {
     },
   });
 
-
-
   return (
     <div className="w-[100%] h-screen  flex justify-center items-center overflow-y-hidden mt-[60px] mainDetailStyle">
       <div className="w-[80%] h-[80%] bg-[#F3F4F6] rounded-[20px] flex justify-around items-center mainDefaultStyle">
@@ -61,11 +59,9 @@ const DetailPage = () => {
           </div>
 
           <div className="w-[90%]   flex flex-col  justify-center detailFunction ">
-        
-              <button className="w-[150px] h-[45px] bg-[#3B82F6] text-white rounded-[8px] font-bold">
-                Add to Cart
-              </button>
-           
+            <button className="w-[150px] h-[45px] bg-[#3B82F6] text-white rounded-[8px] font-bold">
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
