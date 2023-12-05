@@ -5,18 +5,17 @@ import "slick-carousel/slick/slick-theme.css";
 import { Fade } from "react-awesome-reveal";
 import "./HeroStyle.css";
 import SlidingBorderButton from "../../../components/Props/ButtonProps";
+import CountdownTimer from "../Discount/CountDownTimer";
 
 const slides = [
   {
-    bgImage:
-      "https://zonnova.vercel.app/assets/asusproart-123712a4.png",
+    bgImage: "https://zonnova.vercel.app/assets/asusproart-123712a4.png",
     title: "Apple Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
   },
   {
-    bgImage:
-      "https://zonnova.vercel.app/assets/watch-2a5a0ee6.png",
+    bgImage: "https://zonnova.vercel.app/assets/watch-2a5a0ee6.png",
     title: "Apple Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
@@ -31,6 +30,9 @@ const slides = [
 ];
 
 const Superhero = () => {
+  const targetTime = new Date();
+  targetTime.setDate(targetTime.getDate() + 10);
+
   useEffect(() => {
     document.body.style.overflowX = "hidden";
     return () => {
@@ -60,7 +62,6 @@ const Superhero = () => {
           >
             <div className="bg-[#F3F4F6] w-full bg-opacity-50 items-center justify-center flex h-[90%] mt-[30px] ">
               <div className="w-[95%] flex items-center justify-center h-[95%] mainHero">
-
                 <div className=" w-[50%] h-[90%] flex flex-col justify-center gap-[30px] mainHeroFirst">
                   <Fade
                     delay={1e3}
@@ -71,21 +72,23 @@ const Superhero = () => {
                     SALE UP TO 30% OFF
                   </Fade>
                   <h1 className="text-[#161616] text-[50px] font-[600] leading-[50px] mainHeroFirstTitle">
-                  {slide.title}
+                    {slide.title}
                   </h1>
-                  <p className="text-[18px] font-[400] w-[70%] mainHeroFirstSub">
+                  {/* <p className="text-[18px] font-[400] w-[70%] mainHeroFirstSub">
                   {slide.sub}
-                  </p>
-                  <div>
+                  </p> */}
+                  <CountdownTimer targetTime={targetTime} />
+
+                  <div className=" mt-[20px] flex items-center">
                     <SlidingBorderButton direction="top" text="Shop Now" />
                   </div>
                 </div>
 
                 <div className=" w-[50%] h-[90%] flex items-center justify-center mainHeroSecond">
-                 <img
-                 src={slide.bgImage}
-                 className="w-[95%] h-[95%] object-cover rounded-[20px]"
-                 />
+                  <img
+                    src={slide.bgImage}
+                    className="w-[95%] h-[95%] object-cover rounded-[20px]"
+                  />
                 </div>
               </div>
             </div>

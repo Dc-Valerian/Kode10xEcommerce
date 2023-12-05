@@ -9,7 +9,7 @@ const HomeScreen = () => {
       <Hero />
       <Category />
       <About />
-      <Discount/>
+      <Discount />
     </div>
   );
 };
