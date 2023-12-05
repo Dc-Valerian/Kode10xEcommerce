@@ -1,27 +1,27 @@
-import { useParams } from "react-router-dom";
-import { useAppSelector } from "../../APIS/Store";
+// import { useParams } from "react-router-dom";
+// import { useAppSelector } from "../../APIS/Store";
 import "./DetailPageStyle.css";
-import { useQuery } from "@tanstack/react-query";
-import { SingleProducts2 } from "../../APIS/Api";
+// import { useQuery } from "@tanstack/react-query";
+// import { SingleProducts2 } from "../../APIS/Api";
 
 const DetailPage = () => {
-  const { productID } = useParams();
+  // const { productID } = useParams();
 
-  const readMyCart = useAppSelector((state) => state.cart);
+  // const readMyCart = useAppSelector((state) => state.cart);
 
-  const TotalPrice = (item: any) =>
-    item.reduce(
-      (allItems: number, oneItem: any) =>
-        allItems + oneItem.CartQuantity * oneItem.price,
-      0
-    );
+  // const TotalPrice = (item: any) =>
+  //   item.reduce(
+  //     (allItems: number, oneItem: any) =>
+  //       allItems + oneItem.CartQuantity * oneItem.price,
+  //     0
+  //   );
 
-  const OneProducts = useQuery({
-    queryKey: ["oneProduct", productID],
-    queryFn: () => {
-      return SingleProducts2(productID);
-    },
-  });
+  // const OneProducts = useQuery({
+  //   queryKey: ["oneProduct", productID],
+  //   queryFn: () => {
+  //     return SingleProducts2(productID);
+  //   },
+  // });
 
   return (
     <div className="w-[100%] h-screen  flex justify-center items-center overflow-y-hidden mt-[60px] mainDetailStyle">
@@ -40,13 +40,20 @@ const DetailPage = () => {
               Running shoes
             </p>
             <p className="font-bold text-4xl detailInfo1 ">
-              {OneProducts?.data?.data.title}
+              {/* {OneProducts?.data?.data.title} */}
+              Air Pro X3 Blue
             </p>
             <p className="font-semi-bold text-grey text-[15px]">
               <span className="text-grey  text-xl ">
-                ${OneProducts?.data?.data.price}
+                {/* ${OneProducts?.data?.data.price} */}
+                #55.00
               </span>
-              {OneProducts?.data?.data.desc}
+              {/* {OneProducts?.data?.data.desc} */}
+              Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non
+              mauris vitae erat consequat auctor eu in elit. Class aptent taciti
+              sociosqu ad litora torquent per conubia nostra, per inceptos
+              himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus
+              condimentum sit amet a augue. Sed non neque elit sed.
             </p>
             <p className="font-semi-bold text-xl ">
               Category:
@@ -55,10 +62,13 @@ const DetailPage = () => {
               </span>
             </p>
 
-            <div>Total Price: {TotalPrice(readMyCart)} </div>
+            <div>
+              Total Price:0
+              {/* {TotalPrice(readMyCart)}  */}
+            </div>
           </div>
 
-          <div className="w-[90%]   flex flex-col  justify-center detailFunction ">
+          <div className="w-[90%]   flex flex-col  justify-center detailFunction mt-[90px]">
             <button className="w-[150px] h-[45px] bg-[#3B82F6] text-white rounded-[8px] font-bold">
               Add to Cart
             </button>
