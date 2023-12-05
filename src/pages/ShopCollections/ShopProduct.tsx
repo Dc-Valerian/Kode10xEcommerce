@@ -119,7 +119,7 @@ const ShopProduct = () => {
         {isLoading ? (
           <div>
             Getting All Data
-            <Oval height={80} width={80} color="#4fa94d" />
+            <Oval height={80} width={80} color="#E9522E" />
           </div>
         ) : (
           <>{renderProducts()}</>

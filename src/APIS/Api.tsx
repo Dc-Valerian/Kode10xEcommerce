@@ -1,38 +1,33 @@
 import axios from "axios";
 
-interface UserData {
-  name: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-}
+const Endpoint = "https://watch-e-commerce-w6mv.onrender.com";
 
-const Endpoint = "http://localhost:4573/api";
-
-export const CreateNewUser2 = async ({
-  name,
-  email,
-  password,
-  confirmPassword,
-}: UserData) => {
-  return await axios
-    .post(`${Endpoint}/register`, { name, email, password, confirmPassword })
-    .then((res) => res.data);
-};
-
-// Get all products:
+// -GET ALL PRODUCTS
 export const GetAllProducts2 = async () => {
   return await axios
-    .get(`${Endpoint}/all-products`)
+    .get(`${Endpoint}/api/products/allproducts`)
     .then((res) => res.data)
     .catch((err) => {
-      console.log(err);
+      console.log(err, "couldn't get all products");
     });
 };
 
-// Get single products:
-export const SingleProducts2 = async (productID: any) => {
-  return await axios
-    .get(`${Endpoint}/all-products/${productID}`)
-    .then((res) => res.data);
+// -GET ONE PRODUCT
+export const SingleProducts2 = async (id: number) => {
+  try {
+    const response = await axios.get(
+      `${Endpoint}/api/products/allproducts/${id}`
+    );
+    return response.data;
+  } catch (error) {
+    throw new Error(`Failed to fetch a single product data ${id}`);
+  }
 };
+
+// export const adminUpload = async () => {
+//   try {
+//     const response = await axios.get(
+//       `${Endpoint}/api/products/allproducts/${id}`
+//     );
+//   } catch (error) {}
+// };

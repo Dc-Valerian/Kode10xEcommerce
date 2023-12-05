@@ -23,6 +23,7 @@ export const element = createBrowserRouter([
         path: "/product-details/:productID",
         element: <DetailPage />,
       },
+   
     ],
   },
   {

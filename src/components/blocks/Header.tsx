@@ -48,7 +48,7 @@ const Header = () => {
     <section>
       <div
         className=" w-[100%] h-[70px] flex justify-center top-0 
-          fixed z-[1] bg-[white]"
+          fixed z-20 bg-[white]"
       >
         <div className="w-[95%] flex items-center justify-between">
           <NavLink to="/">
