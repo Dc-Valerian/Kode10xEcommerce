@@ -7,12 +7,12 @@ import "./HeaderStyles.css";
 import { IoIosArrowDown } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import { RiShoppingCartLine } from "react-icons/ri";
-import { useAppSelector } from "../../APIS/Store";
+// import { useAppSelector } from "../../APIS/Store";
 import { Link } from "react-scroll";
-import Example from "../../pages/CartPage/Cart2";
+// import Example from "../../pages/CartPage/Cart2";
 
 const Header = () => {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  // const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [drop, setDrop] = useState(false);
 
@@ -38,11 +38,11 @@ const Header = () => {
     };
   }, []);
 
-  const readCartQuantity = useAppSelector((state) => state.totalQuantity);
+  // const readCartQuantity = useAppSelector((state) => state.totalQuantity);
 
-  console.log("The Current Cart Quantity: ", readCartQuantity);
+  // console.log("The Current Cart Quantity: ", readCartQuantity);
 
-  const toggleDialog = () => setIsDialogOpen(!isDialogOpen);
+  // const toggleDialog = () => setIsDialogOpen(!isDialogOpen);
 
   return (
     <section>
@@ -107,7 +107,7 @@ const Header = () => {
                     </Link>
                     <Link to="rolex" smooth={true} duration="900" offset={-140}>
                       <h3 className="text-[20px] font-medium cursor-pointer py-1 px-4 hover:bg-[#F3F4F6] hover:text-[var(--myColor)]  transition transform hover:scale-x-100">
-                      Others
+                        Others
                       </h3>
                     </Link>
                   </div>
@@ -126,7 +126,7 @@ const Header = () => {
             </Link>
             <NavLink to="/admin-login" style={{ textDecoration: "none" }}>
               <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--black)]  transition transform hover:scale-x-100">
-               Admin Login
+                Admin Login
               </h3>
             </NavLink>
           </div>
@@ -136,11 +136,11 @@ const Header = () => {
               className="
               hover:cursor-pointer transition duration-300 ease-in-out hover:scale-[1.09]
               "
-              onClick={toggleDialog}
+              // onClick={toggleDialog}
             >
               <RiShoppingCartLine className="text-[28px]  absolute" />
               <div className=" bg-[var(--myColor)] w-[20px] h-[20px] rounded-full flex items-center justify-center text-[14px] relative left-[18px] bottom-[8px] text-[white]">
-                {readCartQuantity}
+                {/* {readCartQuantity} */}2
               </div>
             </div>
           </div>
@@ -152,7 +152,7 @@ const Header = () => {
             <HiMenuAlt3 />
           </div>
 
-          <Example open={isDialogOpen} setOpen={setIsDialogOpen} />
+          {/* <Example open={isDialogOpen} setOpen={setIsDialogOpen} /> */}
 
           <Dialog
             open={open}
@@ -196,7 +196,7 @@ const Header = () => {
                       style={{ textDecoration: "none" }}
                     >
                       <h3 className="mr-[55px] m-[10px]  text-[20px] text-[var(--black)]  font-sm cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
-                      Admin Login
+                        Admin Login
                       </h3>
                     </NavLink>
                   </div>
