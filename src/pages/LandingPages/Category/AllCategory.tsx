@@ -1,5 +1,5 @@
 import React from "react";
-import "./Category.css"
+import "./Category.css";
 
 interface AllCategoryProps {
   imageUrl: string;
@@ -16,9 +16,9 @@ const AllCategory: React.FC<AllCategoryProps> = ({ imageUrl, text }) => {
           alt="Casio"
         />
         <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-50 flex items-center justify-center ">
-          <text className="text-white z-[50px]">{text}</text>
+          <h1 className="text-white z-[50px]">{text}</h1>
         </div>
-        <text>{text}</text>
+        <h2>{text}</h2>
       </div>
     </div>
   );

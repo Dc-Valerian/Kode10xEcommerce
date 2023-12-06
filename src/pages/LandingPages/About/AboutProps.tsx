@@ -17,15 +17,10 @@ const AboutProps: React.FC<AboutCardProps> = ({
     <div className="bg-[#F3F4F6] w-[48%] h-[500px] flex justify-center rounded-[10px] items-center aboutCard">
       <div className="w-[80%]  h-[88%] flex items-center justify-between flex-col gap-[30px] ">
         <div className="flex items-center flex-col justify-center gap-[10px]">
-          <text
-          className="text-[black] text-[16px] font-medium">
-            {firsttext}
-          </text>
-          <h2
-          className=" font-semibold text-[23px] text-[black]"
-          >
+          <h3 className="text-[black] text-[16px] font-medium">{firsttext}</h3>
+          <h2 className=" font-semibold text-[23px] text-[black]">
             {secondtext}
-            </h2>
+          </h2>
 
           <SlidingBorderButton direction="bottom" text="Shop Now" />
         </div>
