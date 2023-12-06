@@ -8,7 +8,6 @@ import { IoIosArrowDown } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { Link } from "react-scroll";
-import { SiH3 } from "react-icons/si";
 
 const Header = () => {
   // const [isDialogOpen, setIsDialogOpen] = useState(false);
