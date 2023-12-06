@@ -7,9 +7,7 @@ import "./HeaderStyles.css";
 import { IoIosArrowDown } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import { RiShoppingCartLine } from "react-icons/ri";
-// import { useAppSelector } from "../../APIS/Store";
 import { Link } from "react-scroll";
-// import Example from "../../pages/CartPage/Cart2";
 
 const Header = () => {
   // const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -38,12 +36,6 @@ const Header = () => {
     };
   }, []);
 
-  // const readCartQuantity = useAppSelector((state) => state.totalQuantity);
-
-  // console.log("The Current Cart Quantity: ", readCartQuantity);
-
-  // const toggleDialog = () => setIsDialogOpen(!isDialogOpen);
-
   return (
     <section>
       <div
@@ -63,11 +55,9 @@ const Header = () => {
           <div
             className={`items-center mt-[12px] text-[var(--accent)] text-[20px] hidden  lg:flex`}
           >
-            <Link to="home" smooth={true} duration="900">
-              <h3 className="mr-[55px] m-[10px  font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--black)]   transition transform hover:scale-x-100">
-                Home
-              </h3>
-            </Link>
+            <h3 className="mr-[55px] m-[10px  font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--black)]   transition transform hover:scale-x-100">
+              Home
+            </h3>
 
             <div
               className="flex cursor-pointer items-center justify-center pr-[30px] mr-[40px] border-b-2 border-transparent hover:border-[var(--black)] transition transform hover:scale-x-100 relative "
@@ -114,16 +104,14 @@ const Header = () => {
                 </div>
               )}
             </div>
-            <Link to="shop" smooth={true} duration="900" offset={-100}>
-              <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--black)]  transition transform hover:scale-x-100">
-                Shop
-              </h3>
-            </Link>
-            <Link to="contact" smooth={true} duration="900">
-              <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--black)]  transition transform hover:scale-x-100">
-                Contact Us
-              </h3>
-            </Link>
+
+            <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--black)]  transition transform hover:scale-x-100">
+              Shop
+            </h3>
+
+            <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--black)]  transition transform hover:scale-x-100">
+              Contact Us
+            </h3>
             <NavLink to="/admin-login" style={{ textDecoration: "none" }}>
               <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--black)]  transition transform hover:scale-x-100">
                 Admin Login
@@ -202,9 +190,9 @@ const Header = () => {
                   </div>
 
                   <div>
-                    <text className="text-[15px] flex  text-center text-[var(--black)] ">
+                    <h3 className="text-[15px] flex  text-center text-[var(--black)] ">
                       Copyright © KODE10X 2023 | Built by Valerian & Faithia
-                    </text>
+                    </h3>
                   </div>
                 </div>
               </div>

@@ -5,21 +5,17 @@ const Category = () => {
   return (
     <div className="mt-[20px] w-[100%] flex items-center justify-center">
       <div className=" w-[95%]">
-        <text className="text-[black] text-[25px] ">
-          Categories
-        </text>
-       <div
-       className=" mt-[20px]"
-       >
-       <div className="mb-[20px]">
-          <text className="text-[black] text-[25px]">Rolex</text>
-          <Rolex />
+        <h2 className="text-[black] text-[25px] ">Categories</h2>
+        <div className=" mt-[20px]">
+          <div className="mb-[20px]">
+            <h1 className="text-[black] text-[25px]">Rolex</h1>
+            <Rolex />
+          </div>
+          <div>
+            <h2 className="text-[black] text-[25px]">Casio</h2>
+            <Casio />
+          </div>
         </div>
-        <div>
-          <text className="text-[black] text-[25px]">Casio</text>
-          <Casio />
-        </div>
-       </div>
       </div>
     </div>
   );
