@@ -1,4 +1,3 @@
-
 import { ProductDetail } from "./ProductDetail";
 
 const ShopNow = () => {
