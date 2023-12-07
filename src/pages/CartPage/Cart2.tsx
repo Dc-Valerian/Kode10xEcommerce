@@ -4,7 +4,6 @@ import { MdCancel } from "react-icons/md";
 // import { useAppDispatch, useAppSelector } from "../../APIS/Store";
 // import { useParams } from "react-router-dom";
 // import { SingleProducts2 } from "../../APIS/Api";
-import { useQuery } from "@tanstack/react-query";
 import { UseAppDispatch, useAppSelector } from "../../global/Store";
 import {
   addToCart,
@@ -18,44 +17,6 @@ interface ExampleProps {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
-
-interface Product {
-  id: number;
-  name: string;
-  href: string;
-  color: string;
-  price: string;
-  quantity: number;
-  imageSrc: string;
-  imageAlt: string;
-}
-
-const products: Product[] = [
-  {
-    id: 1,
-    name: "Throwback Hip Bag",
-    href: "#",
-    color: "Salmon",
-    price: "$90.00",
-    quantity: 1,
-    imageSrc:
-      "https://media.istockphoto.com/id/650233226/photo/military-style-watch.jpg?s=612x612&w=0&k=20&c=PknuHX2Dh0SN2JTKF60Ftxowdiwoudc_zTu9Vd2UD-w=",
-    imageAlt:
-      "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
-  },
-  {
-    id: 2,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    price: "$32.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
-  },
-];
 
 const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
   const onCloseHandler = () => {

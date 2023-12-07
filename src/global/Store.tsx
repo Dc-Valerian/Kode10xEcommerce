@@ -4,9 +4,8 @@ import { useSelector } from "react-redux";
 import { TypedUseSelectorHook } from "react-redux/es/types";
 
 import storage from "redux-persist/lib/storage";
-import myReducer from "./ReduxState"
+import myReducer from "./ReduxState";
 import {
-  persistStore,
   persistReducer,
   PAUSE,
   PURGE,

@@ -1,12 +1,10 @@
 import { useState, ChangeEvent } from "react";
-import { Link } from "react-router-dom";
 import { api, getAllCategory } from "../../api/Apicall";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 const MainUploadPage: React.FC = () => {
   const [title, setTitle] = useState<string>("");
   const [summary, setSummary] = useState<string>("");
-  const [author, setAuthor] = useState<string>("");
   const [category, setCategory] = useState<string>("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState<File | string>("");
@@ -106,14 +104,12 @@ const MainUploadPage: React.FC = () => {
           </div>
 
           {title !== "" && summary !== "" && price !== "" && image !== "" ? (
-          
-              <button
-                onClick={uploadData}
-                className="mt-4 px-4 py-2 rounded text-white bg-red-500 cursor-pointer transition-all duration-350 hover:scale-95"
-              >
-                Submit
-              </button>
-      
+            <button
+              onClick={uploadData}
+              className="mt-4 px-4 py-2 rounded text-white bg-red-500 cursor-pointer transition-all duration-350 hover:scale-95"
+            >
+              Submit
+            </button>
           ) : (
             <button className="mt-4 px-4 py-2 ml-[13px] rounded text-white bg-gray-400 cursor-not-allowed">
               Submit

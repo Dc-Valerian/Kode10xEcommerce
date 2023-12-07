@@ -9,10 +9,9 @@ import { NavLink } from "react-router-dom";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { Link } from "react-scroll";
 import Example from "../../pages/CartPage/Cart2";
-import { UseAppDispatch, useAppSelector } from "../../global/Store";
+import {  useAppSelector } from "../../global/Store";
 
 const Header = () => {
-  const dispatch = UseAppDispatch();
 
   const readCartQuantity = useAppSelector((state) => state.totalQuantity);
 
