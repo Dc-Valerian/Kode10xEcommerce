@@ -3,7 +3,7 @@ import { IoArrowBack } from "react-icons/io5";
 import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import "./AdminLoginStyles.css";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { UseAppDispatch } from "../../global/Store";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -144,9 +144,9 @@ const AdminLogin: React.FC = () => {
                   className="w-[95%] h-12 font-semibold text-white bg-blue-500 rounded cursor-pointer transition-colors duration-500 hover:bg-blue-600"
                   type="submit"
                 >
-                  <NavLink to="/upload-page" style={{ textDecoration: "none" }}>
+               
                     Login
-                  </NavLink>
+                
                 </button>
               </div>
             </form>
