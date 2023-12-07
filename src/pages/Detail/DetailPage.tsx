@@ -1,11 +1,23 @@
 // import { useParams } from "react-router-dom";
 // import { useAppSelector } from "../../APIS/Store";
+import { useParams } from "react-router-dom";
 import "./DetailPageStyle.css";
-// import { useQuery } from "@tanstack/react-query";
+import { SingleProduct } from "../../api/Apicall";
+import { useQuery } from "@tanstack/react-query";
+import { addToCart } from "../../global/ReduxState";
+import { UseAppDispatch } from "../../global/Store";
 // import { SingleProducts2 } from "../../APIS/Api";
 
 const DetailPage = () => {
-  // const { productID } = useParams();
+  const { id } = useParams();
+
+  const getData = useQuery({
+    queryKey: ["product", id],
+    queryFn: () => {
+      return SingleProduct(id);
+    },
+  });
+  const dispatch = UseAppDispatch();
 
   // const readMyCart = useAppSelector((state) => state.cart);
 
@@ -28,48 +40,44 @@ const DetailPage = () => {
       <div className="w-[80%] h-[80%] bg-[#F3F4F6] rounded-[20px] flex justify-around items-center mainDefaultStyle">
         <div className="w-[40%] h-[80%]   flex justify-center items-center rounded-[20px] detailImageHolder">
           <img
-            src="https://websitedemos.net/shoe-store-04/wp-content/uploads/sites/247/2021/03/sports-shoe5.jpg"
+            src={getData?.data?.data?.productImage}
             alt=""
             className="w-[90%] h-[90%] flex justify-center items-center object-contain detailImage"
           />
         </div>
 
-        <div className="w-[48%] h-[80%]  flex items-center justify-center flex-col  detailDetail">
-          <div className="w-[90%] h-[60%]  flex  flex-col gap-5 detailInfo">
+        <div className="w-[48%]   flex items-center justify-center flex-col  detailDetail ">
+          <div className="w-[90%] flex  flex-col gap-5 detailInfo">
             <p className="font-semi-bold text-xl text-[#3B82F6] ">
-              Running shoes
+              Famous Shop Store
             </p>
             <p className="font-bold text-4xl detailInfo1 ">
               {/* {OneProducts?.data?.data.title} */}
-              Air Pro X3 Blue
+              {getData?.data?.data?.title}
             </p>
             <p className="font-semi-bold text-grey text-[15px]">
               <span className="text-grey  text-xl ">
-                {/* ${OneProducts?.data?.data.price} */}
-                #55.00
+                ₦:
+                {getData?.data?.data?.price}
               </span>
-              {/* {OneProducts?.data?.data.desc} */}
-              Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non
-              mauris vitae erat consequat auctor eu in elit. Class aptent taciti
-              sociosqu ad litora torquent per conubia nostra, per inceptos
-              himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus
-              condimentum sit amet a augue. Sed non neque elit sed.
             </p>
+            <div className="text-[18px]">{getData?.data?.data?.desc}</div>
             <p className="font-semi-bold text-xl ">
               Category:
               <span className="font-semi-bold text-xl text-[#3B82F6]">
-                Running shoes
+                {getData?.data?.data?.category}
               </span>
             </p>
-
-            <div>
-              Total Price:0
-              {/* {TotalPrice(readMyCart)}  */}
-            </div>
           </div>
 
-          <div className="w-[90%]   flex flex-col  justify-center detailFunction mt-[90px]">
-            <button className="w-[150px] h-[45px] bg-[#3B82F6] text-white rounded-[8px] font-bold">
+          <div className="w-[90%]   flex flex-col  justify-center detailFunction mt-[50px]">
+            <button
+              className="w-[150px] h-[45px] bg-[#3B82F6] text-white rounded-[8px] font-bold "
+              onClick={() => {
+                dispatch(addToCart(getData?.data?.data));
+                alert("added successfully");
+              }}
+            >
               Add to Cart
             </button>
           </div>

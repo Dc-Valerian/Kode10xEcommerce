@@ -8,11 +8,18 @@ import { IoIosArrowDown } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { Link } from "react-scroll";
+import Example from "../../pages/CartPage/Cart2";
+import {  useAppSelector } from "../../global/Store";
 
 const Header = () => {
-  // const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const readCartQuantity = useAppSelector((state) => state.totalQuantity);
+
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [drop, setDrop] = useState(false);
+
+  const toggleDialog = () => setIsDialogOpen(!isDialogOpen);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -124,11 +131,11 @@ const Header = () => {
               className="
               hover:cursor-pointer transition duration-300 ease-in-out hover:scale-[1.09]
               "
-              // onClick={toggleDialog}
+              onClick={toggleDialog}
             >
               <RiShoppingCartLine className="text-[28px]  absolute" />
               <div className=" bg-[var(--myColor)] w-[20px] h-[20px] rounded-full flex items-center justify-center text-[14px] relative left-[18px] bottom-[8px] text-[white]">
-                {/* {readCartQuantity} */}2
+                {readCartQuantity}
               </div>
             </div>
           </div>
@@ -140,7 +147,7 @@ const Header = () => {
             <HiMenuAlt3 />
           </div>
 
-          {/* <Example open={isDialogOpen} setOpen={setIsDialogOpen} /> */}
+          <Example open={isDialogOpen} setOpen={setIsDialogOpen} />
 
           <Dialog
             open={open}
