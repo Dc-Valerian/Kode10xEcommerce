@@ -9,10 +9,9 @@ import { NavLink } from "react-router-dom";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { Link } from "react-scroll";
 import Example from "../../pages/CartPage/Cart2";
-import {  useAppSelector } from "../../global/Store";
+import { useAppSelector } from "../../global/Store";
 
 const Header = () => {
-
   const readCartQuantity = useAppSelector((state) => state.totalQuantity);
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -62,9 +61,11 @@ const Header = () => {
           <div
             className={`items-center mt-[12px] text-[var(--accent)] text-[20px] hidden  lg:flex`}
           >
-            <h3 className="mr-[55px] m-[10px  font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--black)]   transition transform hover:scale-x-100">
-              Home
-            </h3>
+            <NavLink to="/">
+              <h3 className="mr-[55px] m-[10px  font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--black)]   transition transform hover:scale-x-100">
+                Home
+              </h3>
+            </NavLink>
 
             <div
               className="flex cursor-pointer items-center justify-center pr-[30px] mr-[40px] border-b-2 border-transparent hover:border-[var(--black)] transition transform hover:scale-x-100 relative "
@@ -112,13 +113,17 @@ const Header = () => {
               )}
             </div>
 
-            <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--black)]  transition transform hover:scale-x-100">
-              Shop
-            </h3>
+            <NavLink to="/shop-now">
+              <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent  hover:border-[var(--black)]  transition transform hover:scale-x-100">
+                Shop
+              </h3>
+            </NavLink>
 
-            <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--black)]  transition transform hover:scale-x-100">
-              Contact Us
-            </h3>
+            <Link to="contact" smooth={true} duration="1000">
+              <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--black)]  transition transform hover:scale-x-100">
+                Contact Us
+              </h3>
+            </Link>
             <NavLink to="/admin-login" style={{ textDecoration: "none" }}>
               <h3 className="mr-[55px] m-[10px] font-medium cursor-pointer border-b-2 border-transparent hover:border-[var(--black)]  transition transform hover:scale-x-100">
                 Admin Login
