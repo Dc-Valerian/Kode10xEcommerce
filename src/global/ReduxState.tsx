@@ -1,22 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { PayloadAction } from "@reduxjs/toolkit";
 
-// interface userData {
-//   name: string;
-//   email: string;
-//   password: string;
-//   _id: string;
-// }
-
-// interface cartData {
-//   title: string;
-//   description: string;
-//   price: number;
-//   category: string;
-//   _id: string;
-//   cartQuantity: number;
-// }
-
 const initialState = {
   currentUser: {} as any | null,
   cart: [] as Array<any>,

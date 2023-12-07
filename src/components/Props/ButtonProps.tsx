@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
 type BorderDirection = "left" | "right" | "top" | "bottom";
 
@@ -41,11 +40,10 @@ const SlidingBorderButton: React.FC<SlidingBorderProps> = ({
   };
 
   return (
-    // <a
-    //   className="group relative inline-block overflow-hidden border rounded-[8px] border-white-600 px-8 py-3 focus:outline-none focus:ring hover:cursor-pointer bg-[var(--myColor)]"
-    //   href="/shop-now"
-    // >
-    <NavLink to="/shop-now">
+    <a
+      className="group relative inline-block overflow-hidden border rounded-[8px] border-white-600 px-8 py-3 focus:outline-none focus:ring hover:cursor-pointer bg-[var(--myColor)]"
+      href="/shop-now"
+    >
       <span
         className={`absolute ${getBorderDirection()} ${getBackgroundColor()} transition-all duration-300 group-hover:w-full group-hover:h-full`}
       ></span>
@@ -53,8 +51,7 @@ const SlidingBorderButton: React.FC<SlidingBorderProps> = ({
       <span className="relative text-sm font-medium text-white-600 transition-colors group-hover:text-white">
         {text}
       </span>
-    </NavLink>
-    // </a>
+    </a>
   );
 };
 

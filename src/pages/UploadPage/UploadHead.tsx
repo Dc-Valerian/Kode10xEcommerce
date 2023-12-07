@@ -1,9 +1,25 @@
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./UploadStyles.css";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
+import { logoutUser } from "../../global/ReduxState";
+import { UseAppDispatch } from "../../global/Store";
+import Swal from "sweetalert2";
 
 const UploadHead = () => {
+  const dispatch = UseAppDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    Swal.fire({
+      title: "You logged out",
+      icon: "success",
+      timer: 1500, // Optional: Automatically close the alert after 1.5 seconds
+    }).then(() => {
+      dispatch(logoutUser());
+      navigate("/");
+    });
+  };
   return (
     <div className=" h-[60vh]  uploadHome">
       <div
@@ -17,18 +33,17 @@ const UploadHead = () => {
           <hr className=" h-[2px] mb-[15px] mt-[10px]" />
 
           <div className="flex items-center justify-between">
-            <div className="text-[#FFFFFF] text-[24px] font-[700] ">
-              Admin
-            </div>
+            <div className="text-[#FFFFFF] text-[24px] font-[700] ">Admin</div>
             <div className="flex   w-[200px] items-center justify-between">
               <button className="bg-[grey] text-[white] w-[140px] h-[40px] rounded-[20px] flex items-center justify-center">
                 Upload Products
               </button>
-              <NavLink to="/" style={{ textDecoration: "none" }}>
-                <div className="bg-[orange] w-[40px] flex items-center justify-center rounded-[50%] h-[40px] text-[white] text-[18px]">
-                  <FiLogOut />
-                </div>
-              </NavLink>
+              <div
+                className="bg-[orange] w-[40px] flex items-center justify-center rounded-[50%] h-[40px] text-[white] text-[18px]"
+                onClick={handleLogout}
+              >
+                <FiLogOut />
+              </div>
             </div>
           </div>
 
