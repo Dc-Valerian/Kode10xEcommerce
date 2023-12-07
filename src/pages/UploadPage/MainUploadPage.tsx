@@ -1,13 +1,21 @@
 import { useState, ChangeEvent } from "react";
 import { Link } from "react-router-dom";
-
+import { api, getAllCategory } from "../../api/Apicall";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 const MainUploadPage: React.FC = () => {
   const [title, setTitle] = useState<string>("");
   const [summary, setSummary] = useState<string>("");
   const [author, setAuthor] = useState<string>("");
   const [category, setCategory] = useState<string>("");
-  const [image, setImage] = useState<File | null>(null);
+  const [price, setPrice] = useState("");
+  const [image, setImage] = useState<File | string>("");
   const [previewImage, setPreviewImage] = useState<string>("");
+
+  const getCategories = useQuery({
+    queryKey: ["allcategories"],
+    queryFn: getAllCategory,
+  });
 
   const ImageOnchange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -16,6 +24,25 @@ const MainUploadPage: React.FC = () => {
       const url = URL.createObjectURL(file);
       setPreviewImage(url);
     }
+  };
+
+  const categories = getCategories?.data?.data;
+
+  const uploadData = async () => {
+    const formData = new FormData();
+
+    formData.append("title", title);
+    formData.append("productImage", image);
+    formData.append("desc", summary);
+    formData.append("price", price);
+    formData.append("category", category);
+
+    await axios.post(`${api}/products/new-product`, formData).then((res) => {
+      console.log(res);
+      alert("Uploaded");
+
+      // navigate("/product");
+    });
   };
 
   return (
@@ -56,29 +83,18 @@ const MainUploadPage: React.FC = () => {
               className="border border-gray-300 rounded px-2 py-[10px]  w-[32%] uploadMainInput"
             />
             <input
-              onChange={(e) => setAuthor(e.target.value)}
+              onChange={(e) => setPrice(e.target.value)}
               placeholder="Enter Price"
               className="border border-gray-300 rounded px-2 py-[10px]  w-[32%] uploadMainInput "
             />
+
             <select
               onChange={(e) => setCategory(e.target.value)}
               className="border border-gray-300 rounded px-2 py-[10px]  w-[32%]  uploadMainInput h-[45px]"
             >
-              <option value="">select a category</option>
-              <option value="Casio">Casio</option>
-              <option value="Gshock">G shock </option>
-              <option value="Naviforce">Naviforce </option>
-              <option value="Skmei">Skmei</option>
-              <option value="Cartier">Cartier</option>
-              <option value="Rolex">Rolex</option>
-              <option
-                value="Richard Mille 
-"
-              >
-                Richard Mille
-              </option>
-              <option value="Audemars piquet">Audemars piquet</option>
-              <option value="Tissot">Tissot</option>
+              {categories?.map((el: any) => (
+                <option>{el?.name}</option>
+              ))}
             </select>
           </div>
           <div className="flex items-center justify-between p-[10px] uploadInput">
@@ -89,16 +105,15 @@ const MainUploadPage: React.FC = () => {
             ></textarea>
           </div>
 
-          {title !== "" &&
-          category !== "" &&
-          author !== "" &&
-          summary !== "" &&
-          image !== null ? (
-            <Link to={"/"}>
-              <button className="mt-4 px-4 py-2 rounded text-white bg-red-500 cursor-pointer transition-all duration-350 hover:scale-95">
+          {title !== "" && summary !== "" && price !== "" && image !== "" ? (
+          
+              <button
+                onClick={uploadData}
+                className="mt-4 px-4 py-2 rounded text-white bg-red-500 cursor-pointer transition-all duration-350 hover:scale-95"
+              >
                 Submit
               </button>
-            </Link>
+      
           ) : (
             <button className="mt-4 px-4 py-2 ml-[13px] rounded text-white bg-gray-400 cursor-not-allowed">
               Submit

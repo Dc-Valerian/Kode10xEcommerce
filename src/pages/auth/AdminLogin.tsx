@@ -3,7 +3,15 @@ import { IoArrowBack } from "react-icons/io5";
 import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import "./AdminLoginStyles.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { UseAppDispatch } from "../../global/Store";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import { useMutation } from "@tanstack/react-query";
+import { createUser } from "../../api/Apicall";
+import { loginUser } from "../../global/ReduxState";
+import Swal from "sweetalert2";
 
 const AdminLogin: React.FC = () => {
   const handleGoBack = () => {
@@ -15,6 +23,61 @@ const AdminLogin: React.FC = () => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+  const dispatch = UseAppDispatch();
+
+  const navigate = useNavigate();
+
+  const userSchema = yup
+    .object({
+      email: yup.string().required("please enter a email"),
+      password: yup.string().required("please enter a password"),
+    })
+    .required();
+
+  type formData = yup.InferType<typeof userSchema>;
+
+  const { handleSubmit, reset, register } = useForm<formData>({
+    resolver: yupResolver(userSchema),
+  });
+
+  const post = useMutation({
+    mutationKey: ["postUser"],
+    mutationFn: createUser,
+
+    onSuccess: (data: any) => {
+      // dispatch(loginUser(data));
+      console.log(data);
+    },
+  });
+
+  const submit = handleSubmit((data) => {
+    post.mutate(data);
+    dispatch(loginUser(data));
+    // passwordHold = post.mutate(data?.password)
+
+    console.log("this is sign up data", data);
+    if (data?.password === "famousshop") {
+      navigate("/upload-page");
+      reset();
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "welcome back ",
+        showConfirmButton: false,
+        timer: 2500,
+      });
+    } else {
+      reset();
+      navigate("/");
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "you cannot sign up",
+        showConfirmButton: false,
+        timer: 2500,
+      });
+    }
+  });
 
   return (
     <div className="w-full h-screen flex flex-col overflow-hidden">
@@ -31,7 +94,10 @@ const AdminLogin: React.FC = () => {
 
         <div className="z-10 w-full h-full flex flex-col justify-center items-center">
           <div className="bg-white w-[30%] h-[50%] rounded-md shadow-md p-6 flex flex-col items-center justify-between whiteCard">
-            <form className="w-full flex flex-col items-center ">
+            <form
+              className="w-full flex flex-col items-center "
+              onSubmit={submit}
+            >
               <div className=" w-[100%] flex items-center justify-between">
                 <h3 className="text-blue-500  text-[25px] capitalize">
                   Input Your Details
@@ -50,6 +116,7 @@ const AdminLogin: React.FC = () => {
               <div className=" flex items-center mt-[10px] justify-between flex-col w-[100%] h-[230px] ">
                 <div className=" h-[60%] flex items-center justify-center flex-col w-[95%]">
                   <input
+                    {...register("email")}
                     className="w-[95%]  mb-4 border border-gray-300 rounded px-3 h-[45px]"
                     required
                     maxLength={50}
@@ -59,6 +126,7 @@ const AdminLogin: React.FC = () => {
 
                   <div className="flex items-center  w-[95%] border border-gray-300  h-[45px] rounded ">
                     <input
+                      {...register("password")}
                       type={showPassword ? "text" : "password"}
                       placeholder="Password"
                       className="w-[100%] md:w-72 h-[100%] rounded px-3"
@@ -71,15 +139,14 @@ const AdminLogin: React.FC = () => {
                     </div>
                   </div>
                 </div>
-               
 
-              <button className="w-[95%] h-12 font-semibold text-white bg-blue-500 rounded cursor-pointer transition-colors duration-500 hover:bg-blue-600">
-              <NavLink
-              to="/upload-page"
-              style={{textDecoration:"none"}}
-              >
-                  Login
-              </NavLink>
+                <button
+                  className="w-[95%] h-12 font-semibold text-white bg-blue-500 rounded cursor-pointer transition-colors duration-500 hover:bg-blue-600"
+                  type="submit"
+                >
+                  <NavLink to="/upload-page" style={{ textDecoration: "none" }}>
+                    Login
+                  </NavLink>
                 </button>
               </div>
             </form>

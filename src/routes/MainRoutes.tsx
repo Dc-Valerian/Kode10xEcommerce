@@ -20,7 +20,7 @@ export const element = createBrowserRouter([
         element: <ShopNow />,
       },
       {
-        path: "/product-details",
+        path: "/product-details/:id",
         element: <DetailPage />,
       },
     ],

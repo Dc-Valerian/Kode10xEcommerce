@@ -38,6 +38,7 @@ const Casio = () => {
       <Slider {...settings} className="w-full">
         {categoriesData.map((category, index) => (
           <div key={index} className="flex justify-center">
+            
             <AllCategory imageUrl={category.imageUrl} text={category.text} />
           </div>
         ))}
