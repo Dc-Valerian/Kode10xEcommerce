@@ -4,7 +4,8 @@
 width: 90%;
 display: flex;
 flex-direction: column;
-gap: 15px;
+align-items: center;
+gap: 10px;
 }
 }
 
@@ -15,4 +16,41 @@ width: 95%;
 box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 }
+@media screen and (max-width:500px){
+.holderholderholder{
+    background-color: #F3F4F6;
+}
+}
+
+
+
+
+
+
+
+@media screen and (max-width:500px){
+.holderHolder{
+    display: flex;
+    gap: 60px;
+    
+}
+}
+
+@media screen and (max-width:500px){
+.uploadImageHolder{
+    height: 300px;
+}
+}
+@media screen and (max-width:500px){
+.imageHolder{
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: rgb(209 213 219);
+}
+}
+
+
 
