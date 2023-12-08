@@ -47,9 +47,9 @@ const DetailPage = () => {
     toast.success("Added to Cart successfully");
   };
   return (
-    <div className="w-[100%] h-screen  flex justify-center items-center overflow-y-hidden mt-[60px] mainDetailStyle">
-      <div className="w-[80%] h-[80%] bg-[#F3F4F6] rounded-[20px] flex justify-around items-center mainDefaultStyle">
-        <div className="w-[40%] h-[80%] rounded-[10px] bg-gray-300 flex justify-center items-center detailImageHolder ">
+    <div className="w-[100%]   flex justify-center items-center overflow-y-hidden mt-[70px] mainDetailStyle">
+      <div className="w-[80%] h-[450px] mt-[30px]  bg-gray-300 rounded-[20px] flex justify-around items-center mainDefaultStyle">
+        <div className="w-[40%] h-[80%] rounded-[10px]  bg-gray-200 flex justify-center items-center detailImageHolder ">
           <img
             src={getData?.data?.data?.productImage}
             alt=""
