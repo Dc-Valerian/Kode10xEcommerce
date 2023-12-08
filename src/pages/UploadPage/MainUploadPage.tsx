@@ -1,8 +1,12 @@
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useEffect } from "react";
 import { api, getAllCategory } from "../../api/Apicall";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const MainUploadPage: React.FC = () => {
+  const [loading, setLoading] = useState<boolean>(false);
   const [title, setTitle] = useState<string>("");
   const [summary, setSummary] = useState<string>("");
   const [category, setCategory] = useState<string>("");
@@ -27,22 +31,49 @@ const MainUploadPage: React.FC = () => {
   const categories = getCategories?.data?.data;
 
   const uploadData = async () => {
-    const formData = new FormData();
+    setLoading(true);
+    try {
+      const formData = new FormData();
 
-    formData.append("title", title);
-    formData.append("productImage", image);
-    formData.append("desc", summary);
-    formData.append("price", price);
-    formData.append("category", category);
+      formData.append("title", title);
+      formData.append("productImage", image);
+      formData.append("desc", summary);
+      formData.append("price", price);
+      formData.append("category", category);
 
-    await axios.post(`${api}/products/new-product`, formData).then((res) => {
-      console.log(res);
-      alert("Uploaded");
-
-      // navigate("/product");
-    });
+      await axios.post(`${api}/products/new-product`, formData);
+      toast.success("Uploaded");
+    } catch (error) {
+      console.error(error);
+      toast.error("Upload failed");
+    } finally {
+      setLoading(false); // Stop loading regardless of success or failure
+    }
   };
 
+  const [toastWidth, setToastWidth] = useState<string>("auto");
+  const [toastPosition, setToastPosition] = useState<
+    "top-right" | "bottom-left"
+  >("top-right");
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width <= 500) {
+        setToastWidth("300px");
+        setToastPosition("top-right");
+      } else {
+        setToastWidth("auto");
+        setToastPosition("bottom-left");
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <div className="flex justify-center items-center flex-col mainUploadHolder">
       <div className="w-[90%] p-4 mt-5 flex h-[400px]  items-center justify-between uploadUploadHolder">
@@ -117,6 +148,18 @@ const MainUploadPage: React.FC = () => {
           )}
         </div>
       </div>
+      <ToastContainer
+        position={toastPosition}
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        style={{ maxWidth: "500px", width: toastWidth }}
+      />
     </div>
   );
 };
