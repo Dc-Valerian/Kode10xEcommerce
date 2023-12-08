@@ -1,8 +1,13 @@
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useEffect } from "react";
 import { api, getAllCategory } from "../../api/Apicall";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { BeatLoader } from "react-spinners";
+
 const MainUploadPage: React.FC = () => {
+  const [loading, setLoading] = useState<boolean>(false);
   const [title, setTitle] = useState<string>("");
   const [summary, setSummary] = useState<string>("");
   const [category, setCategory] = useState<string>("");
@@ -27,22 +32,51 @@ const MainUploadPage: React.FC = () => {
   const categories = getCategories?.data?.data;
 
   const uploadData = async () => {
-    const formData = new FormData();
+    setLoading(true);
+    try {
+      const formData = new FormData();
 
-    formData.append("title", title);
-    formData.append("productImage", image);
-    formData.append("desc", summary);
-    formData.append("price", price);
-    formData.append("category", category);
+      formData.append("title", title);
+      formData.append("productImage", image);
+      formData.append("desc", summary);
+      formData.append("price", price);
+      formData.append("category", category);
 
-    await axios.post(`${api}/products/new-product`, formData).then((res) => {
-      console.log(res);
-      alert("Uploaded");
-
-      // navigate("/product");
-    });
+      await axios.post(`${api}/products/new-product`, formData);
+      toast.success("Uploaded");
+    } catch (error: any) {
+      console.error(error);
+      toast.error(
+        `Upload failed: ${error.message || "Unknown error occurred"}`
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
+  const [toastWidth, setToastWidth] = useState<string>("auto");
+  const [toastPosition, setToastPosition] = useState<
+    "top-right" | "bottom-left"
+  >("top-right");
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width <= 500) {
+        setToastWidth("300px");
+        setToastPosition("top-right");
+      } else {
+        setToastWidth("auto");
+        setToastPosition("bottom-left");
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <div className="flex justify-center items-center flex-col mainUploadHolder">
       <div className="w-[90%] p-4 mt-5 flex h-[400px]  items-center justify-between uploadUploadHolder">
@@ -77,7 +111,7 @@ const MainUploadPage: React.FC = () => {
           <div className=" flex items-center justify-between p-[10px] uploadInput ">
             <input
               onChange={(e) => setTitle(e.target.value)}
-              placeholder="Enter Title"
+              placeholder="Enter Name"
               className="border border-gray-300 rounded px-2 py-[10px]  w-[32%] uploadMainInput"
             />
             <input
@@ -108,7 +142,20 @@ const MainUploadPage: React.FC = () => {
               onClick={uploadData}
               className="mt-4 px-4 py-2 rounded text-white bg-red-500 cursor-pointer transition-all duration-350 hover:scale-95"
             >
-              Submit
+              {loading ? (
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  {" "}
+                  <BeatLoader color="white" />{" "}
+                </div>
+              ) : (
+                "Submit"
+              )}
             </button>
           ) : (
             <button className="mt-4 px-4 py-2 ml-[13px] rounded text-white bg-gray-400 cursor-not-allowed">
@@ -117,6 +164,18 @@ const MainUploadPage: React.FC = () => {
           )}
         </div>
       </div>
+      <ToastContainer
+        position={toastPosition}
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        style={{ maxWidth: "900px", width: toastWidth }}
+      />
     </div>
   );
 };

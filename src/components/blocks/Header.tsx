@@ -131,7 +131,9 @@ const Header = () => {
             </NavLink>
           </div>
 
-          <div className={`icons flex w-[6%] items-center justify-between `}>
+          <div
+            className={`icons flex w-[9%] items-center justify-end `}
+          >
             <div
               className="
               hover:cursor-pointer transition duration-300 ease-in-out hover:scale-[1.09]
@@ -179,14 +181,14 @@ const Header = () => {
                   <div>
                     <h3
                       onClick={onCloseHandler}
-                      className="mr-[55px] m-[10px] text-[20px] font-sm text-[var(--black)]  cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100"
+                      className="mr-[55px] m-[10px] text-[20px] font-sm text-[var(--black)]  cursor-pointer border-b-2 border-transparent hover:border-grey-500 transition transform hover:scale-x-100"
                     >
                       Home
                     </h3>
 
                     <h3
                       onClick={onCloseHandler}
-                      className="mr-[55px] m-[10px] text-[20px] font-sm cursor-pointer border-b-2 border-transparent text-[var(--black)]  hover:border-yellow-500 transition transform hover:scale-x-100"
+                      className="mr-[55px] m-[10px] text-[20px] font-sm cursor-pointer border-b-2 border-transparent text-[var(--black)]  hover:border-grey-500 transition transform hover:scale-x-100"
                     >
                       Shop
                     </h3>
@@ -195,7 +197,7 @@ const Header = () => {
                       to="/admin-login"
                       style={{ textDecoration: "none" }}
                     >
-                      <h3 className="mr-[55px] m-[10px]  text-[20px] text-[var(--black)]  font-sm cursor-pointer border-b-2 border-transparent hover:border-yellow-500 transition transform hover:scale-x-100">
+                      <h3 className="m-[10px]  text-[20px] text-[var(--black)]  font-sm cursor-pointer border-b-2 border-transparent hover:border-grey-500 transition transform hover:scale-x-100">
                         Admin Login
                       </h3>
                     </NavLink>

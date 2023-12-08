@@ -19,8 +19,10 @@ const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
     setOpen(false);
   };
 
-  const phoneNumber = "+2349133589306";
-  const message = encodeURIComponent(`Someone has been ordered `);
+  const phoneNumber = "+2347018549555";
+  const message = encodeURIComponent(
+    `Please I need  4 quantity of rolex watch`
+  );
   const TotalPrice = (item: any) =>
     item.reduce(
       (allItems: number, oneItem: any) =>

@@ -26,8 +26,9 @@ const Discount = () => {
         </div>
         <div className="w-[45%] flex items-center justify-center h-[500px] discountCard">
           <img
-            src="https://www.pngall.com/wp-content/uploads/9/Gadget-PNG-Pic.png"
+            src="https://res.cloudinary.com/dbpcptmco/image/upload/v1702037848/e0678504-e704-42e3-ad8b-546302f22f10_ju9kqd.jpg"
             alt=""
+            className="h-[80%] w-[80%] object-cover rounded-[20px]"
           />
         </div>
       </div>

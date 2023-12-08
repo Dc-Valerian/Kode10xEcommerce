@@ -88,7 +88,7 @@ const AdminLogin: React.FC = () => {
             "url(https://images.unsplash.com/photo-1613177794106-be20802b11d3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FzaW8lMjB3YXRjaHxlbnwwfHwwfHx8MA%3D%3D)",
         }}
       >
-        <h2 className="z-20 text-white absolute top-20 md:top-34 text-4xl md:text-2xl ">
+        <h2 className="z-20 text-white absolute top-20 md:top-34 text-[30px] md:text-[35px]">
           Welcome Back Admin
         </h2>
 
