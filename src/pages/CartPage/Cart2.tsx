@@ -1,9 +1,6 @@
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { MdCancel } from "react-icons/md";
-// import { useAppDispatch, useAppSelector } from "../../APIS/Store";
-// import { useParams } from "react-router-dom";
-// import { SingleProducts2 } from "../../APIS/Api";
 import { UseAppDispatch, useAppSelector } from "../../global/Store";
 import {
   addToCart,
@@ -11,7 +8,6 @@ import {
   remove,
   removeFromCart,
 } from "../../global/ReduxState";
-// import { addToCart, removeFromCart } from "../../APIS/ReduxState";
 
 interface ExampleProps {
   open: boolean;
@@ -23,33 +19,8 @@ const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
     setOpen(false);
   };
 
-  // const { productID } = useParams();
-  // const dispatch = useAppDispatch();
-
-  // const readMyCart = useAppSelector((state) => state.cart);
-
-  // const readSingleItem = readMyCart.filter((item) => item._id === productID);
-
-  // const TotalPrice = (item: any) =>
-  //   item.reduce(
-  //     (allItems: number, oneItem: any) =>
-  //       allItems + oneItem.CartQuantity * oneItem.price,
-  //     0
-  //   );
-
-  // const disabledStyle = "disabled-div";
-
-  // const OneProducts = useQuery({
-  //   queryKey: ["oneProduct", productID],
-  //   queryFn: () => {
-  //     return SingleProducts2(productID);
-  //   },
-  // });
-
   const phoneNumber = "+2349059493764";
   const message = encodeURIComponent(`Someone has been ordered `);
-
-  // const productQuantity = OneProducts?.data?.data?.quantity || 0;
   const TotalPrice = (item: any) =>
     item.reduce(
       (allItems: number, oneItem: any) =>
@@ -100,7 +71,7 @@ const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+            <div className="inline-block align-bottom bg-[white] w-[140%] rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6 mt-[70px]">
               <div className="sm:flex sm:items-start">
                 <div className="flex items-center justify-between w-full">
                   <Dialog.Title
@@ -150,20 +121,20 @@ const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
                             </div>
                           </div>
                           <div className="flex flex-1 items-end justify-between text-sm">
-                            <div className="w-[45%] h-[80%] flex items-center justify-center ">
+                            <div className="w-[45%] h-[80%] flex items-center justify-center bg-[red]">
                               <div
-                                className="w-[20%] h-[60%] bg-[white] border-solid border-[1px] border-[#ebe8e8] flex justify-center items-center hover:cursor-pointer detailFunctionButton"
+                                className="w-[35%] h-[60%] bg-[white] border-solid border-[1px] border-[#ebe8e8] flex justify-center items-center hover:cursor-pointer detailFunctionButton"
                                 onClick={() => {
                                   dispatch(removeFromCart(product));
                                 }}
                               >
                                 -
                               </div>
-                              <div className="w-[20%] h-[60%] bg-[white] border-solid border-[1px] border-[#ebe8e8] flex justify-center items-center hover:cursor-pointer detailFunctionButton">
+                              <div className="w-[30%] h-[60%] bg-[white] border-solid border-[1px] border-[#ebe8e8] flex justify-center items-center hover:cursor-pointer detailFunctionButton">
                                 {product.cartQuantity}
                               </div>
                               <div
-                                className={`w-[20%] h-[60%] bg-[white] border-solid border-[1px] border-[#ebe8e8] flex justify-center items-center hover:cursor-pointer detailFunctionButton 
+                                className={`w-[35%] h-[60%] bg-[white] border-solid border-[1px] border-[#ebe8e8] flex justify-center items-center hover:cursor-pointer detailFunctionButton 
                        `}
                                 onClick={() => {
                                   dispatch(addToCart(product));
@@ -200,10 +171,16 @@ const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
                   <p>Subtotal</p>
                   <p>{totalTotal}</p>
                 </div>
-                <p className="mt-0.5 text-sm text-gray-500">
-                  Shipping and taxes calculated at checkout.
-                </p>
-                <div className="mt-6">
+
+                <button
+                  className="bg-[grey] text-[white] w-[100px] h-[40px] rounded-md flex items-center justify-center mt-[10px]"
+                  onClick={() => {
+                    dispatch(clearCart());
+                  }}
+                >
+                  Clear Cart
+                </button>
+                <div className="mt-[10px]">
                   <a
                     href={`https://wa.me/${phoneNumber}?text=${message}`}
                     target="_blank"
@@ -216,22 +193,14 @@ const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
                 <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                   <p className="text-[17px]">
                     or{" "}
-                    <button
-                      type="button"
-                      className="font-medium text-[--myColor] hover:text-[black]"
-                      onClick={() => {
-                        dispatch(clearCart());
-                      }}
-                    >
-                      Clear Cart
-                    </button>
-                    <br />
-                    <button
-                      type="button"
-                      className="font-medium text-[--myColor] hover:text-[black]"
-                    >
-                      Continue Shopping <span aria-hidden="true">&rarr;</span>
-                    </button>
+                    <a href="/">
+                      <button
+                        type="button"
+                        className="font-medium text-[--myColor] hover:text-[black]"
+                      >
+                        Continue Shopping <span aria-hidden="true">&rarr;</span>
+                      </button>
+                    </a>
                   </p>
                 </div>
               </div>
