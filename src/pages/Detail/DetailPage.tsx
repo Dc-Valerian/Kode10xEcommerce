@@ -1,15 +1,38 @@
-// import { useParams } from "react-router-dom";
-// import { useAppSelector } from "../../APIS/Store";
 import { useParams } from "react-router-dom";
 import "./DetailPageStyle.css";
 import { SingleProduct } from "../../api/Apicall";
 import { useQuery } from "@tanstack/react-query";
 import { addToCart } from "../../global/ReduxState";
 import { UseAppDispatch } from "../../global/Store";
-// import { SingleProducts2 } from "../../APIS/Api";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useState, useEffect } from "react";
 
 const DetailPage = () => {
   const { id } = useParams();
+  const [toastWidth, setToastWidth] = useState<string>("auto");
+  const [toastPosition, setToastPosition] = useState<
+    "top-right" | "bottom-left"
+  >("top-right");
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width <= 500) {
+        setToastWidth("300px");
+        setToastPosition("top-right");
+      } else {
+        setToastWidth("auto");
+        setToastPosition("bottom-left");
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const getData = useQuery({
     queryKey: ["product", id],
@@ -19,30 +42,18 @@ const DetailPage = () => {
   });
   const dispatch = UseAppDispatch();
 
-  // const readMyCart = useAppSelector((state) => state.cart);
-
-  // const TotalPrice = (item: any) =>
-  //   item.reduce(
-  //     (allItems: number, oneItem: any) =>
-  //       allItems + oneItem.CartQuantity * oneItem.price,
-  //     0
-  //   );
-
-  // const OneProducts = useQuery({
-  //   queryKey: ["oneProduct", productID],
-  //   queryFn: () => {
-  //     return SingleProducts2(productID);
-  //   },
-  // });
-
+  const handleAddToCart = () => {
+    dispatch(addToCart(getData?.data?.data));
+    toast.success("Added to Cart successfully");
+  };
   return (
     <div className="w-[100%] h-screen  flex justify-center items-center overflow-y-hidden mt-[60px] mainDetailStyle">
       <div className="w-[80%] h-[80%] bg-[#F3F4F6] rounded-[20px] flex justify-around items-center mainDefaultStyle">
-        <div className="w-[40%] h-[80%]   flex justify-center items-center rounded-[20px] detailImageHolder">
+        <div className="w-[40%] h-[80%] rounded-[10px] bg-gray-300 flex justify-center items-center detailImageHolder ">
           <img
             src={getData?.data?.data?.productImage}
             alt=""
-            className="w-[90%] h-[90%] flex justify-center items-center object-contain detailImage"
+            className="w-[90%] h-[90%] rounded-[10px] object-cover detailImage"
           />
         </div>
 
@@ -52,7 +63,6 @@ const DetailPage = () => {
               Famous Shop Store
             </p>
             <p className="font-bold text-4xl detailInfo1 ">
-              {/* {OneProducts?.data?.data.title} */}
               {getData?.data?.data?.title}
             </p>
             <p className="font-semi-bold text-grey text-[15px]">
@@ -73,13 +83,22 @@ const DetailPage = () => {
           <div className="w-[90%]   flex flex-col  justify-center detailFunction mt-[50px]">
             <button
               className="w-[150px] h-[45px] bg-[#3B82F6] text-white rounded-[8px] font-bold "
-              onClick={() => {
-                dispatch(addToCart(getData?.data?.data));
-                alert("added successfully");
-              }}
+              onClick={handleAddToCart}
             >
               Add to Cart
             </button>
+            <ToastContainer
+              position={toastPosition}
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              style={{ maxWidth: "500px", width: toastWidth }}
+            />
           </div>
         </div>
       </div>
