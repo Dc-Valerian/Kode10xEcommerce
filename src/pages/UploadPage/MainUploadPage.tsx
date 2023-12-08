@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { BeatLoader } from "react-spinners";
 
 const MainUploadPage: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -43,11 +44,13 @@ const MainUploadPage: React.FC = () => {
 
       await axios.post(`${api}/products/new-product`, formData);
       toast.success("Uploaded");
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
-      toast.error("Upload failed");
+      toast.error(
+        `Upload failed: ${error.message || "Unknown error occurred"}`
+      );
     } finally {
-      setLoading(false); // Stop loading regardless of success or failure
+      setLoading(false);
     }
   };
 
@@ -108,7 +111,7 @@ const MainUploadPage: React.FC = () => {
           <div className=" flex items-center justify-between p-[10px] uploadInput ">
             <input
               onChange={(e) => setTitle(e.target.value)}
-              placeholder="Enter Title"
+              placeholder="Enter Name"
               className="border border-gray-300 rounded px-2 py-[10px]  w-[32%] uploadMainInput"
             />
             <input
@@ -139,7 +142,20 @@ const MainUploadPage: React.FC = () => {
               onClick={uploadData}
               className="mt-4 px-4 py-2 rounded text-white bg-red-500 cursor-pointer transition-all duration-350 hover:scale-95"
             >
-              Submit
+              {loading ? (
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  {" "}
+                  <BeatLoader color="white" />{" "}
+                </div>
+              ) : (
+                "Submit"
+              )}
             </button>
           ) : (
             <button className="mt-4 px-4 py-2 ml-[13px] rounded text-white bg-gray-400 cursor-not-allowed">
@@ -158,7 +174,7 @@ const MainUploadPage: React.FC = () => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        style={{ maxWidth: "500px", width: toastWidth }}
+        style={{ maxWidth: "900px", width: toastWidth }}
       />
     </div>
   );
