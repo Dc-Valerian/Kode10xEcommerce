@@ -19,7 +19,7 @@ const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
     setOpen(false);
   };
 
-  const phoneNumber = "+2349059493764";
+  const phoneNumber = "+2349133589306";
   const message = encodeURIComponent(`Someone has been ordered `);
   const TotalPrice = (item: any) =>
     item.reduce(
@@ -121,7 +121,7 @@ const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
                             </div>
                           </div>
                           <div className="flex flex-1 items-end justify-between text-sm">
-                            <div className="w-[45%] h-[80%] flex items-center justify-center bg-[red]">
+                            <div className="w-[45%] h-[80%] flex items-center justify-center ">
                               <div
                                 className="w-[35%] h-[60%] bg-[white] border-solid border-[1px] border-[#ebe8e8] flex justify-center items-center hover:cursor-pointer detailFunctionButton"
                                 onClick={() => {
