@@ -1,5 +1,5 @@
 import SlidingBorderButton from "../../../components/Props/ButtonProps";
-import CountdownTimer from "./CountDownTimer";
+import CountdownTimer2 from "./CountDownTimer2";
 import "./DiscountStyle.css";
 
 const Discount = () => {
@@ -19,7 +19,7 @@ const Discount = () => {
               <div className="text-[45px] w-[70%] text-center leading-[55px] discountText">
                 Upto 25% Discount Check it out
               </div>
-              <CountdownTimer targetTime={targetTime} />
+              <CountdownTimer2 />
               <SlidingBorderButton direction="top" text="Shop Now" />
             </div>
           </div>
