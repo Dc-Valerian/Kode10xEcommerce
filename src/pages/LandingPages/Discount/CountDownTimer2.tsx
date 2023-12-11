@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./DiscountStyle.css";
 
-function CountdownTimer() {
+function CountdownTimer2() {
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -9,7 +9,7 @@ function CountdownTimer() {
 
   useEffect(() => {
     const time = new Date().getTime();
-    const thatDay = new Date("12/12/2023 00:00:00").getTime();
+    const thatDay = new Date("12/31/2023 00:00:00").getTime();
 
     const difference = thatDay - time;
 
@@ -58,4 +58,4 @@ function CountdownTimer() {
   );
 }
 
-export default CountdownTimer;
+export default CountdownTimer2;
