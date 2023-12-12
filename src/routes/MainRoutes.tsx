@@ -5,6 +5,7 @@ import AdminLogin from "../pages/auth/AdminLogin";
 import UploadPage from "../pages/UploadPage/UploadPage";
 import DetailPage from "../pages/Detail/DetailPage";
 import ShopNow from "../pages/ShopCollections/ShopNow";
+import NotFoundPage from "../pages/ErrorPage/ErrorPage";
 
 export const element = createBrowserRouter([
   {
@@ -32,5 +33,9 @@ export const element = createBrowserRouter([
   {
     path: "/upload-page",
     element: <UploadPage />,
+  },
+  {
+    path: "*",
+    element: <NotFoundPage />,
   },
 ]);
