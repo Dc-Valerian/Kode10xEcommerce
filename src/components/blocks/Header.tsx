@@ -179,12 +179,15 @@ const Header = () => {
 
                 <div className="flex flex-col py-3 px-2 overflow-y-auto text-[var(--accent)] justify-between  h-[80%]">
                   <div>
+                  <NavLink to="/">
                     <h3
                       onClick={onCloseHandler}
                       className="mr-[55px] m-[10px] text-[20px] font-sm text-[var(--black)]  cursor-pointer border-b-2 border-transparent hover:border-grey-500 transition transform hover:scale-x-100"
                     >
                       Home
                     </h3>
+                    </NavLink>
+                    <NavLink to="/shop-now">
 
                     <h3
                       onClick={onCloseHandler}
@@ -192,6 +195,8 @@ const Header = () => {
                     >
                       Shop
                     </h3>
+            </NavLink>
+
 
                     <NavLink
                       to="/admin-login"

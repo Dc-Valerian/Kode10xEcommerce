@@ -2,8 +2,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Category.css";
-import { categoriesData } from "./CategoryData";
 import AllCategory from "./AllCategory";
+import { CasioData } from "./CasioData";
+import { NavLink } from "react-router-dom";
 
 const Casio = () => {
   const settings = {
@@ -35,14 +36,15 @@ const Casio = () => {
   };
   return (
     <div className="card p-[10px]" id="category">
-      <Slider {...settings} className="w-full">
-        {categoriesData.map((category, index) => (
-          <div key={index} className="flex justify-center">
-            
-            <AllCategory imageUrl={category.imageUrl} text={category.text} />
-          </div>
-        ))}
-      </Slider>
+      <NavLink to="/shop-now">
+        <Slider {...settings} className="w-full">
+          {CasioData.map((category, index) => (
+            <div key={index} className="flex justify-center">
+              <AllCategory imageUrl={category.imageUrl} text={category.text} />
+            </div>
+          ))}
+        </Slider>
+      </NavLink>
     </div>
   );
 };

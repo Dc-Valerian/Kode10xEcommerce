@@ -1,4 +1,5 @@
 import Casio from "./Casio";
+import Other from "./Other";
 import Rolex from "./Rolex";
 
 const Category = () => {
@@ -14,6 +15,10 @@ const Category = () => {
           <div>
             <h2 className="text-[black] text-[25px]">Casio</h2>
             <Casio />
+          </div>
+          <div>
+            <h2 className="text-[black] text-[25px]">Others</h2>
+            <Other />
           </div>
         </div>
       </div>

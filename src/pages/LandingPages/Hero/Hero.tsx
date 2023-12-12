@@ -9,25 +9,34 @@ import CountdownTimer from "../Discount/CountDownTimer";
 
 const slides = [
   {
-    bgImage:
-      "https://res.cloudinary.com/dbpcptmco/image/upload/v1702037847/download_7_f4dsde.jpg",
-    title: "Rolex Watch Series",
-
-    sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
-  },
-  {
-    bgImage:
-      "https://res.cloudinary.com/dbpcptmco/image/upload/v1702038640/Tissot_ztw1oc.jpg",
-    title: "Rolex Watch Series",
-
-    sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
-  },
-  {
     bgImage: "https://zonnova.vercel.app/assets/watch-2a5a0ee6.png",
+    title: "Smart Watch Series",
+
+    sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
+  },
+  {
+    bgImage:
+      "https://res.cloudinary.com/dbpcptmco/image/upload/v1702037848/e0678504-e704-42e3-ad8b-546302f22f10_ju9kqd.jpg",
+    title: "Rolex Watch Series",
+
+    sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
+  },
+  {
+    bgImage:
+      "https://media.istockphoto.com/id/650233226/photo/military-style-watch.jpg?s=612x612&w=0&k=20&c=PknuHX2Dh0SN2JTKF60Ftxowdiwoudc_zTu9Vd2UD-w=",
     title: "Casio Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
   },
+
+  {
+    bgImage:
+      "https://res.cloudinary.com/dbpcptmco/image/upload/v1702038640/Tissot_ztw1oc.jpg",
+    title: "Tissot Watch Series",
+
+    sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
+  },
+
   {
     bgImage:
       "https://res.cloudinary.com/dbpcptmco/image/upload/v1702037849/images_8_efjmf6.jpg",
@@ -36,31 +45,25 @@ const slides = [
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
   },
 
-  {
-    bgImage:
-      "https://media.istockphoto.com/id/650233226/photo/military-style-watch.jpg?s=612x612&w=0&k=20&c=PknuHX2Dh0SN2JTKF60Ftxowdiwoudc_zTu9Vd2UD-w=",
-    title: "Rolex Watch Series",
-
-    sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
-  },
+ 
   {
     bgImage:
       "https://res.cloudinary.com/dbpcptmco/image/upload/v1702038652/gshock2_p2m2ya.jpg",
-    title: "Rolex Watch Series",
+    title: "G Shock Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
   },
   {
     bgImage:
       "https://res.cloudinary.com/dbpcptmco/image/upload/v1702037861/MRW200H-2BV_ns6kri.jpg",
-    title: "Rolex Watch Series",
+    title: "Skmei Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
   },
   {
     bgImage:
       "https://res.cloudinary.com/dbpcptmco/image/upload/v1702037849/images_7_qcksmh.jpg",
-    title: "Rolex Watch Series",
+    title: "Cartier Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
   },
