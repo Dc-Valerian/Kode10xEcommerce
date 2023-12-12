@@ -1,12 +1,12 @@
-import AllCategory from "./AllCategory";
-import { categoriesData } from "./CategoryData";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Category.css";
+import AllCategory from "./AllCategory";
+import { OtherData } from "./Others";
 import { NavLink } from "react-router-dom";
 
-const Rolex = () => {
+const Other = () => {
   const settings = {
     infinite: true,
     slidesToShow: 6,
@@ -14,6 +14,7 @@ const Rolex = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     speed: 700,
+    rtl: true,
     responsive: [
       {
         breakpoint: 768,
@@ -33,12 +34,11 @@ const Rolex = () => {
       },
     ],
   };
-
   return (
-    <div className="card p-[10px]" id="rolex">
+    <div className="card p-[10px]" id="category">
       <NavLink to="/shop-now">
         <Slider {...settings} className="w-full">
-          {categoriesData.map((category, index) => (
+          {OtherData.map((category, index) => (
             <div key={index} className="flex justify-center">
               <AllCategory imageUrl={category.imageUrl} text={category.text} />
             </div>
@@ -49,4 +49,4 @@ const Rolex = () => {
   );
 };
 
-export default Rolex;
+export default Other;

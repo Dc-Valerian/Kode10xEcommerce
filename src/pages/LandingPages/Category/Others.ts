@@ -1,33 +1,33 @@
-export const categoriesData = [
+export const OtherData = [
   {
     imageUrl:
       "https://res.cloudinary.com/dbpcptmco/image/upload/v1702038651/gschok7_xjo9jt.jpg",
-    text: "Rolex",
+    text: "G shock ",
   },
   {
     imageUrl:
       "https://res.cloudinary.com/dbpcptmco/image/upload/v1702038651/gschok6_emg7it.jpg",
-    text: "Rolex",
+    text: "Casio",
   },
   {
     imageUrl:
       "https://res.cloudinary.com/dbpcptmco/image/upload/v1702038646/Armani3_xnhihk.jpg",
-    text: "Rolex",
+    text: "Naviforce",
   },
   {
     imageUrl:
       "https://res.cloudinary.com/dbpcptmco/image/upload/v1702038646/Armani1_xtmyln.jpg",
-    text: "Rolex",
+    text: "Skmei",
   },
   {
     imageUrl:
       "https://res.cloudinary.com/dbpcptmco/image/upload/v1702038646/Tissot2_t60wxk.jpg",
-    text: "Rolex",
+    text: "Cartier",
   },
   {
     imageUrl:
       "https://res.cloudinary.com/dbpcptmco/image/upload/v1702037862/MRW200H-4BV_ewjz4n.jpg",
-    text: "Rolex",
+    text: "Patek Philippe",
   },
   {
     imageUrl:
@@ -37,16 +37,16 @@ export const categoriesData = [
   {
     imageUrl:
       "https://res.cloudinary.com/dbpcptmco/image/upload/v1702037862/W96H-1BV_kaepck.jpg",
-    text: "Rolex",
+    text: "Richard Mille",
   },
   {
     imageUrl:
       "https://res.cloudinary.com/dbpcptmco/image/upload/v1702037862/naviforce_vbfffh.jpg",
-    text: "Rolex",
+    text: "Tissot ",
   },
   {
     imageUrl:
       "https://res.cloudinary.com/dbpcptmco/image/upload/v1702037862/W96H-1AV_czbkb8.jpg",
-    text: "Rolex",
+    text: "Rado",
   },
 ];

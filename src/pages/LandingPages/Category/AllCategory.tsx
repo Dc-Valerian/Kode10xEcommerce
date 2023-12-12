@@ -16,7 +16,7 @@ const AllCategory: React.FC<AllCategoryProps> = ({ imageUrl, text }) => {
           alt="Casio"
         />
         <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-50 flex items-center justify-center ">
-          <h1 className="text-white z-[50px]">{text}</h1>
+          <h1 className="text-white z-[100px]">{text}</h1>
         </div>
         <h2>{text}</h2>
       </div>
