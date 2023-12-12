@@ -9,7 +9,7 @@ function CountdownTimer() {
 
   useEffect(() => {
     const time = new Date().getTime();
-    const thatDay = new Date("12/12/2023 00:00:00").getTime();
+    const thatDay = new Date("12/25/2023 00:00:00").getTime();
 
     const difference = thatDay - time;
 

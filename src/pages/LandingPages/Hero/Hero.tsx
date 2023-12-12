@@ -112,7 +112,7 @@ const Superhero = () => {
                     {slide.title}
                   </h1>
 
-                  <CountdownTimer/>
+                  <CountdownTimer />
 
                   <div className=" mt-[20px] flex items-center">
                     <SlidingBorderButton direction="top" text="Shop Now" />
