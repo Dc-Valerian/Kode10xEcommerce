@@ -1,7 +1,7 @@
 export const categoriesData = [
   {
     imageUrl:
-      "https://res.cloudinary.com/dbpcptmco/image/upload/v1702038651/gschok7_xjo9jt.jpg",
+      "https://i.etsystatic.com/9338951/c/1000/1000/0/0/il/52bdb1/1341269435/il_600x600.1341269435_copj.jpg",
     text: "Casio",
   },
   {
