@@ -21,7 +21,7 @@ height: fit-content;
 
 @media screen and (max-width:500px){
 .detailImageHolder{
-width: 100%;
+width: 90%;
 height: 280px;
 margin-bottom: 20px;
 
