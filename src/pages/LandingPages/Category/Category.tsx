@@ -9,7 +9,7 @@ const Category = () => {
         <h2 className="text-[black] text-[25px] ">Categories</h2>
         <div className=" mt-[20px]">
           <div className="mb-[20px]">
-            <h1 className="text-[black] text-[25px]">Rolex</h1>
+            <h1 className="text-[black] text-[25px]">Casio</h1>
             <Rolex />
           </div>
           <div>
