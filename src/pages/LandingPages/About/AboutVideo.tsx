@@ -1,8 +1,10 @@
 import SlidingBorderButton from "../../../components/Props/ButtonProps";
+import "./AboutStyle.css";
+
 
 const AboutVideo = () => {
   return (
-    <div className="relative w-[40%] h-[500px] overflow-hidden rounded-[10px]">
+    <div className="relative w-[40%] h-[500px] overflow-hidden rounded-[10px] aboutCard">
       <video
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
@@ -18,7 +20,7 @@ const AboutVideo = () => {
         <div className="absolute inset-0 bg-black opacity-30"></div>
 
         <div className="absolute inset-0  flex items-center justify-center p-[20px] flex-col">
-          <div className="w-[100%] text-center h-[50%] text-[white] flex items-center justify-center">
+          <div className="w-[100%] text-center mb-[20px] text-[white] flex items-center justify-center">
             The wrist watch is more than just a way to tell time - it's a symbol
             of individuality, taste, and personal style. A wrist watch can tell
             a story about its owner - their passions, interests, and
