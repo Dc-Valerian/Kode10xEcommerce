@@ -19,10 +19,6 @@ const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
     setOpen(false);
   };
 
-  const phoneNumber = "+2347018549555";
-  const message = encodeURIComponent(
-    `Please I need  4 quantity of rolex watch`
-  );
   const TotalPrice = (item: any) =>
     item.reduce(
       (allItems: number, oneItem: any) =>
@@ -36,6 +32,11 @@ const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
 
   const dispatch = UseAppDispatch();
   const readCart = useAppSelector((state) => state.cart);
+
+  const phoneNumber = "+2347018549555";
+  const message = encodeURIComponent(
+    `Please I need  ${readCart} quantity of watch`
+  );
 
   return (
     <Transition.Root show={open} as={Fragment}>
