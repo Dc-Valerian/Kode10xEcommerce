@@ -31,7 +31,7 @@ const slides = [
 
   {
     bgImage:
-      "https://res.cloudinary.com/dbpcptmco/image/upload/v1702038640/Tissot_ztw1oc.jpg",
+      "https://i.etsystatic.com/9338951/c/1000/1000/0/0/il/780e45/1304685380/il_600x600.1304685380_n6pi.jpg",
     title: "Tissot Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
@@ -39,7 +39,7 @@ const slides = [
 
   {
     bgImage:
-      "https://res.cloudinary.com/dbpcptmco/image/upload/v1702037849/images_8_efjmf6.jpg",
+      "https://i.etsystatic.com/32599319/r/il/32f039/4025533912/il_600x600.4025533912_39fd.jpg",
     title: "NaviForce Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
@@ -48,7 +48,7 @@ const slides = [
  
   {
     bgImage:
-      "https://res.cloudinary.com/dbpcptmco/image/upload/v1702038652/gshock2_p2m2ya.jpg",
+      "https://i.etsystatic.com/42408549/c/900/900/49/48/il/fd4089/5423872854/il_600x600.5423872854_5cv9.jpg",
     title: "G Shock Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
@@ -62,7 +62,7 @@ const slides = [
   },
   {
     bgImage:
-      "https://res.cloudinary.com/dbpcptmco/image/upload/v1702037849/images_7_qcksmh.jpg",
+      "https://i.etsystatic.com/9186495/c/3000/3000/0/0/il/83fddc/5044732319/il_600x600.5044732319_7kvd.jpg",
     title: "Cartier Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
@@ -98,7 +98,7 @@ const Superhero = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="w-full h-[95vh] flex justify-center  overflow-hidden mainHero "
+            className="w-full h-[100vh] flex justify-center  overflow-hidden mainHero "
           >
             <div className="bg-[#F3F4F6] w-full bg-opacity-50 items-center justify-center flex h-[90%] mt-[30px] ">
               <div className="w-[95%] flex items-center justify-center h-[95%] mainHero">

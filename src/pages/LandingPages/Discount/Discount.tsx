@@ -7,7 +7,10 @@ const Discount = () => {
   targetTime.setDate(targetTime.getDate() + 40);
 
   return (
-    <div className="bg-[#F3F4F6] w-[100%] flex items-center justify-center " id="shop">
+    <div
+      className="bg-[#F3F4F6] w-[100%] flex items-center justify-center "
+      id="shop"
+    >
       <div className="w-[95%] flex justify-between flex-wrap">
         <div className=" w-[45%] h-[500px]  discountCard flex  justify-center items-center">
           <div className=" w-[70%] h-[90%] flex items-center justify-center flex-col">
@@ -26,7 +29,7 @@ const Discount = () => {
         </div>
         <div className="w-[45%] flex items-center justify-center h-[500px] discountCard">
           <img
-            src="https://res.cloudinary.com/dbpcptmco/image/upload/v1702037848/e0678504-e704-42e3-ad8b-546302f22f10_ju9kqd.jpg"
+            src="https://i.etsystatic.com/32558044/r/il/506f7c/5598037925/il_600x600.5598037925_pdej.jpg"
             alt=""
             className="h-[80%] w-[80%] object-cover rounded-[20px]"
           />

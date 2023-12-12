@@ -7,7 +7,7 @@ const About = () => {
         <AboutProps
           firsttext=" SMART DRONE"
           secondtext="Just starting at ₦5999.00"
-          image="https://res.cloudinary.com/dbpcptmco/image/upload/v1702038646/Armani2_j3qkya.jpg"
+          image="https://i.etsystatic.com/42620100/r/il/883f76/5452369629/il_600x600.5452369629_3izp.jpg"
         />
 
      <AboutVideo/>
