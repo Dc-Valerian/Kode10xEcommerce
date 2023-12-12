@@ -80,7 +80,7 @@ const MainUploadPage: React.FC = () => {
   return (
     <div className="flex justify-center items-center flex-col mainUploadHolder">
       <div className="w-[90%] p-4 mt-5 flex h-[400px]  items-center justify-between uploadUploadHolder">
-        <div className=" flex flex-col items-center justify-center w-[30%] h-[80%] uploadImageHold">
+        <div className=" flex flex-col items-center justify-center w-[30%] h-[80%] uploadImageHold ">
           <div className="rounded-[10px] bg-gray-300 h-[250px] w-60 flex justify-center items-center uploadImageHolder">
             {previewImage ? (
               <img
@@ -107,22 +107,27 @@ const MainUploadPage: React.FC = () => {
           />
         </div>
 
-        <div className="w-[65%] h-[80%] uploadBottom">
-          <div className=" flex items-center justify-between p-[10px] uploadInput ">
+        <div className="w-[68%] h-[80%] uploadBottom ">
+          <div className=" flex items-center justify-between py-[10px] uploadInput ">
             <input
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Enter Name"
-              className="border border-gray-300 rounded px-2 py-[10px]  w-[32%] uploadMainInput"
+              className="border border-gray-300 rounded px-2 py-[10px]  w-[24%] uploadMainInput"
             />
             <input
               onChange={(e) => setPrice(e.target.value)}
-              placeholder="Enter Price"
-              className="border border-gray-300 rounded px-2 py-[10px]  w-[32%] uploadMainInput "
+              placeholder="Enter Old Price"
+              className="border border-gray-300 rounded px-2 py-[10px]  w-[24%] uploadMainInput "
+            />
+            <input
+              onChange={(e) => setPrice(e.target.value)}
+              placeholder="Enter New Price"
+              className="border border-gray-300 rounded px-2 py-[10px]  w-[24%] uploadMainInput "
             />
 
             <select
               onChange={(e) => setCategory(e.target.value)}
-              className="border border-gray-300 rounded px-2 py-[10px]  w-[32%]  uploadMainInput h-[45px]"
+              className="border border-gray-300 rounded px-2 py-[10px]  w-[24%]  uploadMainInput h-[45px]"
             >
               {categories?.map((el: any) => (
                 <option>{el?.name}</option>
@@ -132,7 +137,7 @@ const MainUploadPage: React.FC = () => {
           <div className="flex items-center justify-between p-[10px] uploadInput">
             <textarea
               onChange={(e) => setSummary(e.target.value)}
-              placeholder="Summary..."
+              placeholder="Description..."
               className="border border-gray-300 rounded px-2 py-[10px]  w-[100%] h-[130px] resize-none uploadMainInput"
             ></textarea>
           </div>

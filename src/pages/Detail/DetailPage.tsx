@@ -48,12 +48,12 @@ const DetailPage = () => {
   };
   return (
     <div className="w-[100%]   flex justify-center items-center overflow-y-hidden mt-[70px] mainDetailStyle">
-      <div className="w-[80%] h-[450px] mt-[30px]  bg-gray-300 rounded-[20px] flex justify-around items-center mainDefaultStyle">
-        <div className="w-[40%] h-[80%] rounded-[10px]  bg-gray-200 flex justify-center items-center detailImageHolder ">
+      <div className="w-[80%] py-[20px] mt-[30px]  bg-gray-300 rounded-[20px] flex justify-around items-center mainDefaultStyle">
+        <div className="w-[40%] p-[20px] rounded-[10px]  bg-gray-200 flex justify-center items-center detailImageHolder ">
           <img
             src={getData?.data?.data?.productImage}
             alt=""
-            className="w-[90%] h-[90%] rounded-[10px] object-cover detailImage"
+            className="w-[80%] h-[40%] rounded-[10px] object-cover detailImage"
           />
         </div>
 
@@ -65,12 +65,24 @@ const DetailPage = () => {
             <p className="font-bold text-4xl detailInfo1 ">
               {getData?.data?.data?.title}
             </p>
-            <p className="font-semi-bold text-grey text-[15px]">
+         <div
+         className="flex flex-wrap gap-[20px]"
+         >
+             <p className="font-semi-bold text-grey text-[15px] line-through">
+              <span className="text-grey  text-xl ">
+                ₦:
+              80000
+              </span>
+            </p>
+         <p className="font-semi-bold text-grey text-[15px]">
               <span className="text-grey  text-xl ">
                 ₦:
                 {getData?.data?.data?.price}
               </span>
             </p>
+         
+         </div>
+
             <div className="text-[18px]">{getData?.data?.data?.desc}</div>
             <p className="font-semi-bold text-xl ">
               Category:

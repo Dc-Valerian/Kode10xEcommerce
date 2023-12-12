@@ -1,8 +1,8 @@
 @media screen and (max-width:500px){
     .icons{
-        width: 25%;
+        width: 30%;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
  }
   }
