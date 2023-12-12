@@ -13,11 +13,11 @@ const Category = () => {
             <Rolex />
           </div>
           <div>
-            <h2 className="text-[black] text-[25px]">Casio</h2>
+            <h2 className="text-[black] text-[25px]">Other Watches</h2>
             <Casio />
           </div>
           <div>
-            <h2 className="text-[black] text-[25px]">Others</h2>
+            <h2 className="text-[black] text-[25px]">Others Products</h2>
             <Other />
           </div>
         </div>
