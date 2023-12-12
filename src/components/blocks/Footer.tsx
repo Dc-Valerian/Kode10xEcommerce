@@ -35,12 +35,13 @@ const Footer = () => {
       id="contact"
       className="w-full min-h-[150px]  flex flex-col md:flex-row md:justify-between md:items-center text-[black] font-roboto overflow-hidden pt-[40px] pb-[40px] pl-[20px] md:p-0  items-center justify-center"
     >
-      <div className="md:text-center  leading-4 md:ml-[50px] font-roboto mb-[20px] md:mb-0 h-[130px] w-[130px] flex  flex-col items-center gap-[10px] hover:cursor-pointer ">
+      <div className="md:text-center  leading-4 md:ml-[50px] font-roboto mb-[20px] md:mb-0 h-[130px] w-[130px] flex  flex-col items-center gap-[8px] hover:cursor-pointer">
         <img
           src="https://res.cloudinary.com/dbpcptmco/image/upload/v1701695953/WhatsApp_Image_2023-12-02_at_04.56.01_9fa268ad-removebg-preview_qmfbvw.png"
-          className=" w-[100%] h-[60%] object-cover "
+          className=" w-[100%] h-[50%] object-cover "
         />
         <text className="text-[18px]">0701 854 9555</text>
+        <text className="text-[18px]">0704 904 6788</text>
       </div>
 
       <div className=" font-roboto mb-[20px] md:mb-0 ">
