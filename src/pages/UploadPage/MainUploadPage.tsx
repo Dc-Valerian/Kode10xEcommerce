@@ -12,7 +12,7 @@ const MainUploadPage: React.FC = () => {
   const [summary, setSummary] = useState<string>("");
   const [category, setCategory] = useState<string>("");
   const [price, setPrice] = useState("");
-  const [Oldprice, setOldPrice] = useState("");
+  const [oldPrice, setOldPrice] = useState("");
   const [image, setImage] = useState<File | string>("");
   const [previewImage, setPreviewImage] = useState<string>("");
 
@@ -41,6 +41,7 @@ const MainUploadPage: React.FC = () => {
       formData.append("productImage", image);
       formData.append("desc", summary);
       formData.append("price", price);
+      formData.append("oldPrice", oldPrice);
       formData.append("category", category);
 
       await axios.post(`${api}/products/new-product`, formData);
@@ -146,7 +147,7 @@ const MainUploadPage: React.FC = () => {
 
           {title !== "" &&
           summary !== "" &&
-          Oldprice !== "" &&
+          oldPrice !== "" &&
           price !== "" &&
           image !== "" ? (
             <button

@@ -1,4 +1,4 @@
-import SlidingBorderButton from "../../../components/Props/ButtonProps";
+import DownloadButton from "../../../components/Props/ButtonProps";
 import "./AboutStyle.css";
 import React from "react";
 
@@ -22,12 +22,14 @@ const AboutProps: React.FC<AboutCardProps> = ({
             {secondtext}
           </h2>
 
-          <SlidingBorderButton direction="bottom" text="Shop Now" />
+          <DownloadButton />
         </div>
-        <div
-        className="h-[70%] w-[80%] flex items-center justify-center"
-        >
-        <img src={image} alt="" className="w-[90%] h-[90%] object-cover rounded-[10px] " />
+        <div className="h-[70%] w-[80%] flex items-center justify-center">
+          <img
+            src={image}
+            alt=""
+            className="w-[90%] h-[90%] object-cover rounded-[10px] "
+          />
         </div>
       </div>
     </div>

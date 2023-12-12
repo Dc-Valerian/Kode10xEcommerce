@@ -1,6 +1,5 @@
-import SlidingBorderButton from "../../../components/Props/ButtonProps";
+import DownloadButton from "../../../components/Props/ButtonProps";
 import "./AboutStyle.css";
-
 
 const AboutVideo = () => {
   return (
@@ -29,7 +28,7 @@ const AboutVideo = () => {
             for others it's a functional tool, and for many, it's a precious
             heirloom or a cherished gift.
           </div>
-          <SlidingBorderButton direction="top" text="Get One Now!" />
+          <DownloadButton />
         </div>
       </div>
     </div>
