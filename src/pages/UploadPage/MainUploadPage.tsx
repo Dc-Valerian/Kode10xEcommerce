@@ -12,6 +12,7 @@ const MainUploadPage: React.FC = () => {
   const [summary, setSummary] = useState<string>("");
   const [category, setCategory] = useState<string>("");
   const [price, setPrice] = useState("");
+  const [Oldprice, setOldPrice] = useState("");
   const [image, setImage] = useState<File | string>("");
   const [previewImage, setPreviewImage] = useState<string>("");
 
@@ -114,8 +115,9 @@ const MainUploadPage: React.FC = () => {
               placeholder="Enter Name"
               className="border border-gray-300 rounded px-2 py-[10px]  w-[24%] uploadMainInput"
             />
+
             <input
-              onChange={(e) => setPrice(e.target.value)}
+              onChange={(e) => setOldPrice(e.target.value)}
               placeholder="Enter Old Price"
               className="border border-gray-300 rounded px-2 py-[10px]  w-[24%] uploadMainInput "
             />
@@ -142,7 +144,11 @@ const MainUploadPage: React.FC = () => {
             ></textarea>
           </div>
 
-          {title !== "" && summary !== "" && price !== "" && image !== "" ? (
+          {title !== "" &&
+          summary !== "" &&
+          Oldprice !== "" &&
+          price !== "" &&
+          image !== "" ? (
             <button
               onClick={uploadData}
               className="mt-4 px-4 py-2 rounded text-white bg-red-500 cursor-pointer transition-all duration-350 hover:scale-95"
