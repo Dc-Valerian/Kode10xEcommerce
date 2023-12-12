@@ -14,7 +14,7 @@ const AboutProps: React.FC<AboutCardProps> = ({
   image,
 }) => {
   return (
-    <div className="bg-[#F3F4F6] w-[4%] h-[500px] flex justify-center rounded-[10px] items-center aboutCard">
+    <div className="bg-[#F3F4F6] w-[40%] h-[500px] flex justify-center rounded-[10px] items-center aboutCard">
       <div className="w-[80%]  h-[88%] flex items-center justify-between flex-col gap-[20px] ">
         <div className="flex items-center flex-col justify-center gap-[10px]">
           <h3 className="text-[black] text-[16px] font-medium">{firsttext}</h3>
