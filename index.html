@@ -4,9 +4,34 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="https://i-lunaweb.vercel.app/assets/logo-2b18457a.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <base href="/" />
     <title>Famous Shop</title>
-   
+    <script>
+      (function () {
+          // Check if the path matches an existing file or directory on the server
+          function pathExists(path) {
+              // You may need to customize this logic depending on your server setup
+              // Here, we assume that if the path starts with a slash and contains a dot (.) or ends with a slash (/), it's a file or directory
+              return /^\/.+\..+|\/$/.test(path);
+          }
+
+          // Handle routing on the client side
+          function handleRoute() {
+              const currentPath = window.location.pathname;
+
+              // If the path doesn't exist on the server, redirect to the root
+              if (!pathExists(currentPath)) {
+                  window.location.replace('/');
+              }
+          }
+
+          // Listen for changes in the URL and handle routing
+          window.addEventListener('popstate', handleRoute);
+
+          // Initial route handling when the page loads
+          handleRoute();
+      })();
+  </script>
   </head>
   <body>
     <div id="root"></div>
