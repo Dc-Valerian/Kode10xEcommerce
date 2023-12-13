@@ -1,10 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { TypedUseSelectorHook } from "react-redux/es/types";
-
+import { TypedUseSelectorHook } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import storage from "redux-persist/lib/storage";
 import myReducer from "./ReduxState";
+
 import {
   persistReducer,
   PAUSE,
@@ -32,8 +31,6 @@ export const Store = configureStore({
       },
     }),
 });
-
-//this will define your dispatch and selector functions
 
 export const UseAppDispatch: () => typeof Store.dispatch = useDispatch;
 

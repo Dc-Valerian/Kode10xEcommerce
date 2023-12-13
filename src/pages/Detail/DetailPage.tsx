@@ -65,23 +65,20 @@ const DetailPage = () => {
             <p className="font-bold text-4xl detailInfo1 ">
               {getData?.data?.data?.title}
             </p>
-         <div
-         className="flex flex-wrap gap-[20px]"
-         >
-             <p className="font-semi-bold text-grey text-[15px] line-through">
-              <span className="text-grey  text-xl ">
-                ₦:
-              80000
-              </span>
-            </p>
-         <p className="font-semi-bold text-grey text-[15px]">
-              <span className="text-grey  text-xl ">
-                ₦:
-                {getData?.data?.data?.price}
-              </span>
-            </p>
-         
-         </div>
+            <div className="flex flex-wrap gap-[20px]">
+              <p className="font-semi-bold text-grey text-[15px] line-through">
+                <span className="text-grey  text-xl ">
+                  ₦:
+                  {getData?.data?.data?.oldPrice}
+                </span>
+              </p>
+              <p className="font-semi-bold text-grey text-[15px]">
+                <span className="text-grey  text-xl ">
+                  ₦:
+                  {getData?.data?.data?.price}
+                </span>
+              </p>
+            </div>
 
             <div className="text-[18px]">{getData?.data?.data?.desc}</div>
             <p className="font-semi-bold text-xl ">

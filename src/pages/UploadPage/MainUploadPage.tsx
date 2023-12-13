@@ -12,7 +12,7 @@ const MainUploadPage: React.FC = () => {
   const [summary, setSummary] = useState<string>("");
   const [category, setCategory] = useState<string>("");
   const [price, setPrice] = useState("");
-  const [Oldprice, setOldPrice] = useState("");
+  const [oldPrice, setOldPrice] = useState("");
   const [image, setImage] = useState<File | string>("");
   const [previewImage, setPreviewImage] = useState<string>("");
 
@@ -41,6 +41,7 @@ const MainUploadPage: React.FC = () => {
       formData.append("productImage", image);
       formData.append("desc", summary);
       formData.append("price", price);
+      formData.append("oldPrice", oldPrice);
       formData.append("category", category);
 
       await axios.post(`${api}/products/new-product`, formData);
@@ -140,13 +141,15 @@ const MainUploadPage: React.FC = () => {
             <textarea
               onChange={(e) => setSummary(e.target.value)}
               placeholder="Description..."
+              maxLength={400}
               className="border border-gray-300 rounded px-2 py-[10px]  w-[100%] h-[130px] resize-none uploadMainInput"
             ></textarea>
+          
           </div>
 
           {title !== "" &&
           summary !== "" &&
-          Oldprice !== "" &&
+          oldPrice !== "" &&
           price !== "" &&
           image !== "" ? (
             <button

@@ -1,3 +1,4 @@
+import DownloadButton from "../../../components/Props/ButtonProps";
 import SlidingBorderButton from "../../../components/Props/ButtonProps";
 import CountdownTimer2 from "./CountDownTimer2";
 import "./DiscountStyle.css";
@@ -23,7 +24,7 @@ const Discount = () => {
                 Upto 25% Discount Check it out
               </div>
               <CountdownTimer2 />
-              <SlidingBorderButton direction="top" text="Shop Now" />
+              <DownloadButton text="Shop Now" />
             </div>
           </div>
         </div>
