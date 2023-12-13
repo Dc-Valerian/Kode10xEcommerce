@@ -33,9 +33,16 @@ const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
   const dispatch = UseAppDispatch();
   const readCart = useAppSelector((state) => state.cart);
 
+  const totalQuantity = readCart.reduce(
+    (total: number, product) => total + product.cartQuantity,
+    0
+  );
+
   const phoneNumber = "+2347018549555";
   const message = encodeURIComponent(
-    `Please I need  ${readCart} quantity of watch`
+    `Please I need ${totalQuantity} quantity of ${readCart
+      .map((product) => product.title)
+      .join(", ")} watch`
   );
 
   return (
@@ -124,16 +131,16 @@ const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
                             </div>
                           </div>
                           <div className="flex flex-1 items-end justify-between text-sm">
-                            <div className="w-[45%] h-[80%] flex items-center justify-center ">
+                            <div className="w-[45%]  flex items-center justify-center ">
                               <div
-                                className="w-[35%] h-[60%] bg-[white] border-solid border-[1px] border-[#ebe8e8] flex justify-center items-center hover:cursor-pointer detailFunctionButton"
+                                className="w-[35%] bg-[white] border-solid border-[1px] border-[#ebe8e8] flex justify-center items-center hover:cursor-pointer detailFunctionButton"
                                 onClick={() => {
                                   dispatch(removeFromCart(product));
                                 }}
                               >
                                 -
                               </div>
-                              <div className="w-[30%] h-[60%] bg-[white] border-solid border-[1px] border-[#ebe8e8] flex justify-center items-center hover:cursor-pointer detailFunctionButton">
+                              <div className="w-[30%]  bg-[white] border-solid border-[1px] border-[#ebe8e8] flex justify-center items-center hover:cursor-pointer detailFunctionButton">
                                 {product.cartQuantity}
                               </div>
                               <div
@@ -146,9 +153,7 @@ const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
                                 +
                               </div>
                             </div>
-                            <p className="text-gray-500">
-                              Qty {product.quantity}
-                            </p>
+                            <p className="text-gray-500">Qty {totalQuantity}</p>
 
                             <div className="flex">
                               <button
@@ -175,14 +180,16 @@ const Example: React.FC<ExampleProps> = ({ open, setOpen }) => {
                   <p>{totalTotal}</p>
                 </div>
 
-                <button
-                  className="bg-[grey] text-[white] w-[100px] h-[40px] rounded-md flex items-center justify-center mt-[10px]"
-                  onClick={() => {
-                    dispatch(clearCart());
-                  }}
-                >
-                  Clear Cart
-                </button>
+                {totalQuantity > 0 && ( // Render button only if totalQuantity is greater than 0
+                  <button
+                    className="bg-[grey] text-[white] w-[100px] h-[40px] rounded-md flex items-center justify-center mt-[10px]"
+                    onClick={() => {
+                      dispatch(clearCart());
+                    }}
+                  >
+                    Clear Cart
+                  </button>
+                )}
                 <div className="mt-[10px]">
                   <a
                     href={`https://wa.me/${phoneNumber}?text=${message}`}
