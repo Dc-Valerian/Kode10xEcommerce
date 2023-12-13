@@ -4,8 +4,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Fade } from "react-awesome-reveal";
 import "./HeroStyle.css";
-import SlidingBorderButton from "../../../components/Props/ButtonProps";
 import CountdownTimer from "../Discount/CountDownTimer";
+import DownloadButton from "../../../components/Props/ButtonProps";
 
 const slides = [
   {
@@ -118,7 +118,7 @@ const Superhero = () => {
                   <CountdownTimer />
 
                   <div className=" mt-[20px] flex items-center">
-                    <SlidingBorderButton direction="top" text="Shop Now" />
+                  <DownloadButton text="Shop Now!"/>
                   </div>
                 </div>
 

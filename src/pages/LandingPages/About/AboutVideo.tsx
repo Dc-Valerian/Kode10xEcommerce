@@ -28,7 +28,7 @@ const AboutVideo = () => {
             for others it's a functional tool, and for many, it's a precious
             heirloom or a cherished gift.
           </div>
-          <DownloadButton />
+          <DownloadButton text="Get Yours Now" />
         </div>
       </div>
     </div>

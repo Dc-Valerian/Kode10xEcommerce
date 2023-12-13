@@ -22,7 +22,7 @@ const AboutProps: React.FC<AboutCardProps> = ({
             {secondtext}
           </h2>
 
-          <DownloadButton />
+          <DownloadButton text="Get Now" />
         </div>
         <div className="h-[70%] w-[80%] flex items-center justify-center">
           <img

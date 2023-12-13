@@ -141,8 +141,10 @@ const MainUploadPage: React.FC = () => {
             <textarea
               onChange={(e) => setSummary(e.target.value)}
               placeholder="Description..."
+              maxLength={400}
               className="border border-gray-300 rounded px-2 py-[10px]  w-[100%] h-[130px] resize-none uploadMainInput"
             ></textarea>
+          
           </div>
 
           {title !== "" &&
