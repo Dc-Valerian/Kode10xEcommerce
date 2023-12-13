@@ -32,13 +32,13 @@ box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 .holderHolder{
     display: flex;
     gap: 60px;
-    
+    height: fit-content;
 }
 }
 
 @media screen and (max-width:500px){
 .uploadImageHolder{
-    height: 300px;
+    height: fit-content;
 }
 }
 @media screen and (max-width:500px){
