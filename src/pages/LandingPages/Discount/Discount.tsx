@@ -1,5 +1,4 @@
 import DownloadButton from "../../../components/Props/ButtonProps";
-import SlidingBorderButton from "../../../components/Props/ButtonProps";
 import CountdownTimer2 from "./CountDownTimer2";
 import "./DiscountStyle.css";
 
