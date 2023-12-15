@@ -12,12 +12,22 @@ const UploadHead = () => {
 
   const handleLogout = () => {
     Swal.fire({
-      title: "You logged out",
-      icon: "success",
-      timer: 1500, // Optional: Automatically close the alert after 1.5 seconds
-    }).then(() => {
-      dispatch(logoutUser());
-      navigate("/");
+      title: "Are you sure you want to Logout?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#40404a",
+      cancelButtonColor: "#ff5d1b",
+      confirmButtonText: "Yes, Logout my account",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          "Logged Out!",
+          "Your account has been logged out.",
+          "success"
+        );
+        dispatch(logoutUser());
+        navigate("/");
+      }
     });
   };
   return (
@@ -39,7 +49,7 @@ const UploadHead = () => {
                 Upload Products
               </button>
               <div
-                className="bg-[orange] w-[40px] flex items-center justify-center rounded-[50%] h-[40px] text-[white] text-[18px]"
+                className="bg-[orange] w-[40px] flex items-center justify-center rounded-[50%] h-[40px] text-[white] text-[18px] hover:cursor-pointer"
                 onClick={handleLogout}
               >
                 <FiLogOut />
