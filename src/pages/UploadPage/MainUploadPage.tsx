@@ -132,6 +132,7 @@ const MainUploadPage: React.FC = () => {
               onChange={(e) => setCategory(e.target.value)}
               className="border border-gray-300 rounded px-2 py-[10px]  w-[24%]  uploadMainInput h-[45px]"
             >
+            <option value="">select a category</option>
               {categories?.map((el: any) => (
                 <option>{el?.name}</option>
               ))}
