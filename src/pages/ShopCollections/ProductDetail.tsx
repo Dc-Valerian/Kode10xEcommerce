@@ -119,12 +119,12 @@ export const ProductDetail = () => {
           placeholder="Search by title..."
           value={searchTerm}
           onChange={handleSearch}
-          className="pl-[10px] h-[40px] w-[40%] searchInput border border-gray rounded px-3"
+          className="pl-[10px] h-[45px] w-[40%] searchInput border border-gray rounded px-3  outline-[#EB713D]"
         />
         <select
           value={sortOrder}
           onChange={handleSort}
-          className="pl-[10px] h-[40px] w-[30%] rounded-[10px] searchInput border border-gray px-3"
+          className="pl-[10px] h-[45px] w-[30%] rounded-[10px] searchInput border border-gray px-3 outline-[#EB713D]"
         >
           <option value="">Sort by</option>
           <option value="lowToHigh">Price: Low to High</option>
@@ -161,7 +161,7 @@ export const ProductDetail = () => {
                   <div className="w-[280px] h-[300px]  rounded-[10px] bg-gray-300 flex justify-center items-center uploadImageHolder">
                     <img
                       src={el?.productImage}
-                      className="h-[90%] object-cover w-[92%] transform transition duration-300 ease-in-out hover:scale-[1.04] rounded-[10px]"
+                      className="h-[90%] object-cover w-[90%] transform transition duration-300 ease-in-out hover:scale-[1.04] rounded-[10px] imageItself"
                     />
                   </div>
                 </NavLink>

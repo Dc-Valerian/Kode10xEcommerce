@@ -47,8 +47,8 @@ const DetailPage = () => {
     toast.success("Added to Cart successfully");
   };
   return (
-    <div className="w-[100%]   flex justify-center items-center overflow-y-hidden mt-[70px] mainDetailStyle">
-      <div className="w-[80%] py-[20px] mt-[30px]  bg-gray-300 rounded-[20px] flex justify-around items-center mainDefaultStyle">
+    <div className="w-[100%] flex justify-center items-center overflow-y-hidden mt-[70px] pb-[40px] mainDetailStyle ">
+      <div className="w-[85%] py-[20px] mt-[30px]  bg-gray-300 rounded-[20px] flex justify-around items-center mainDefaultStyle">
         <div className="w-[40%] p-[20px] rounded-[10px]  bg-gray-200 flex justify-center items-center detailImageHolder ">
           <img
             src={getData?.data?.data?.productImage}
@@ -59,7 +59,7 @@ const DetailPage = () => {
 
         <div className="w-[48%]   flex items-center justify-center flex-col  detailDetail ">
           <div className="w-[90%] flex  flex-col gap-5 detailInfo">
-            <p className="font-semi-bold text-xl text-[#3B82F6] ">
+            <p className="font-semi-bold text-xl text-[#4DC4CC] ">
               Famous Shop Store
             </p>
             <p className="font-bold text-4xl detailInfo1 ">
@@ -73,7 +73,7 @@ const DetailPage = () => {
                 </span>
               </p>
               <p className="font-semi-bold text-grey text-[15px]">
-                <span className="text-grey  text-xl ">
+                <span className=" text-[#E5774B]  text-xl ">
                   ₦:
                   {getData?.data?.data?.price}
                 </span>
@@ -81,9 +81,9 @@ const DetailPage = () => {
             </div>
 
             <div className="text-[18px]">{getData?.data?.data?.desc}</div>
-            <p className="font-semi-bold text-xl ">
-              Category:
-              <span className="font-semi-bold text-xl text-[#3B82F6]">
+            <p className="font-semi-bold text-xl  text-[#E5774B] ">
+              Category : {" "}
+              <span className="font-semi-bold text-xl text-[black]">
                 {getData?.data?.data?.category}
               </span>
             </p>
@@ -91,7 +91,7 @@ const DetailPage = () => {
 
           <div className="w-[90%]   flex flex-col  justify-center detailFunction mt-[50px]">
             <button
-              className="w-[150px] h-[45px] bg-[#3B82F6] text-white rounded-[8px] font-bold "
+              className="w-[150px] h-[45px] bg-[#4DC4CC] text-white rounded-[8px] font-bold "
               onClick={handleAddToCart}
             >
               Add to Cart
