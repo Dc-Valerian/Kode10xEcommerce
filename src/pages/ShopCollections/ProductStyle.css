@@ -38,12 +38,22 @@ box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
 @media screen and (max-width:500px){
 .uploadImageHolder{
-    height: fit-content;
+    height: 300px;
+    background-color:rgb(209 213 400);
 }
 }
+
+@media screen and (max-width:500px){
+.imageItself{
+    height: 90%;
+    width: 90%;
+    object-fit: cover;
+}
+} 
+
 @media screen and (max-width:500px){
 .imageHolder{
-    height: 400px;
+    height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
