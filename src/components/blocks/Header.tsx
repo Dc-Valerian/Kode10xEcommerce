@@ -10,8 +10,11 @@ import { RiShoppingCartLine } from "react-icons/ri";
 import { Link } from "react-scroll";
 import Example from "../../pages/CartPage/Cart2";
 import { useAppSelector } from "../../global/Store";
+import moment from "moment";
 
 const Header = () => {
+  const currentYear = moment().format("YYYY");
+
   const readCartQuantity = useAppSelector((state) => state.totalQuantity);
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -131,9 +134,7 @@ const Header = () => {
             </NavLink>
           </div>
 
-          <div
-            className={`icons flex w-[9%] items-center justify-end `}
-          >
+          <div className={`icons flex w-[9%] items-center justify-end `}>
             <div
               className="
               hover:cursor-pointer transition duration-300 ease-in-out hover:scale-[1.09]
@@ -179,24 +180,22 @@ const Header = () => {
 
                 <div className="flex flex-col py-3 px-2 overflow-y-auto text-[var(--accent)] justify-between  h-[80%]">
                   <div>
-                  <NavLink to="/">
-                    <h3
-                      onClick={onCloseHandler}
-                      className="mr-[55px] m-[10px] text-[20px] font-sm text-[var(--black)]  cursor-pointer border-b-2 border-transparent hover:border-grey-500 transition transform hover:scale-x-100"
-                    >
-                      Home
-                    </h3>
+                    <NavLink to="/">
+                      <h3
+                        onClick={onCloseHandler}
+                        className="mr-[55px] m-[10px] text-[20px] font-sm text-[var(--black)]  cursor-pointer border-b-2 border-transparent hover:border-grey-500 transition transform hover:scale-x-100"
+                      >
+                        Home
+                      </h3>
                     </NavLink>
                     <NavLink to="/shop-now">
-
-                    <h3
-                      onClick={onCloseHandler}
-                      className="mr-[55px] m-[10px] text-[20px] font-sm cursor-pointer border-b-2 border-transparent text-[var(--black)]  hover:border-grey-500 transition transform hover:scale-x-100"
-                    >
-                      Shop
-                    </h3>
-            </NavLink>
-
+                      <h3
+                        onClick={onCloseHandler}
+                        className="mr-[55px] m-[10px] text-[20px] font-sm cursor-pointer border-b-2 border-transparent text-[var(--black)]  hover:border-grey-500 transition transform hover:scale-x-100"
+                      >
+                        Shop
+                      </h3>
+                    </NavLink>
 
                     <NavLink
                       to="/admin-login"
@@ -210,8 +209,22 @@ const Header = () => {
 
                   <div>
                     <h3 className="text-[15px] flex  text-center text-[var(--black)] ">
-                      Copyright © KODE10X 2023 | Built by Valerian & Faithia
+                      Copyright © KODE10X {currentYear} Built by
                     </h3>
+                    <div className=" flex items-center justify-center">
+                      <h3 className="text-[15px]  text-[var(--myColor)] animate-pulse">
+                        <a
+                          href="https://dc-valerian.vercel.app/"
+                          style={{ textDecoration: "none" }}
+                          target="_blank"
+                        >
+                          VALERIAN &nbsp;{" "}
+                        </a>
+                      </h3>
+                      <h3 className="text-[15px] text-[var(--myColor)] animate-pulse">
+                        & &nbsp;FAITHIA
+                      </h3>
+                    </div>
                   </div>
                 </div>
               </div>
