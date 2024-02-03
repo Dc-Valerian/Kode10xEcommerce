@@ -3,6 +3,7 @@ import { SiFacebook } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
 import { ImWhatsapp } from "react-icons/im";
 import { motion } from "framer-motion";
+import moment from "moment";
 
 interface ButtonData {
   icon: JSX.Element;
@@ -10,6 +11,8 @@ interface ButtonData {
 }
 
 const Footer = () => {
+  const currentDate = moment().format("YYYY");
+
   const buttonData: ButtonData[] = [
     {
       icon: <FaInstagram />,
@@ -108,7 +111,7 @@ const Footer = () => {
         </div>
 
         <div className="font-bold text-[16px] mt-[15px] flex items-center justify-center w-[100%] text-center">
-          All Right Reserved. C.2023
+          All Right Reserved. C.{currentDate}
         </div>
       </div>
     </div>
