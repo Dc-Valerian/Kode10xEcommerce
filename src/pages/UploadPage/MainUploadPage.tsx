@@ -28,7 +28,7 @@ const MainUploadPage: React.FC = () => {
       const url = URL.createObjectURL(file);
       setPreviewImage(url);
     }
-  };
+  };  
 
   const categories = getCategories?.data?.data;
 

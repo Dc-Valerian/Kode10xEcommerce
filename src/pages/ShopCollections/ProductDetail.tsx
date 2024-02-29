@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { NavLink } from "react-router-dom";
 import { getAllProduct } from "../../api/Apicall";
 import React, { useState } from "react";
-import { Oval } from "react-loader-spinner";
+import { Oval } from "react-loader-spinner"
 import "./ProductStyle.css";
 
 interface PaginationProps {
@@ -153,7 +153,7 @@ export const ProductDetail = () => {
                 key={el?._id}
                 className="flex flex-wrap gap-[20px] mt-[10px] items-center justify-center  imageHolder w-[300px] h-[400px]"
               >
-                {/* <div className="w-[300px] h-[350px] flex justify-center items-center flex-col bg-[gold]"> */}
+              
                 <NavLink
                   to={`/product-details/${el?._id}`}
                   style={{ textDecoration: "none" }}
@@ -176,7 +176,7 @@ export const ProductDetail = () => {
                   <p className="text-center text-[#00000096] font-semi-bold">
                     ₦{el?.price}
                   </p>
-                  {/* </div> */}
+                
                 </div>
               </div>
             ))
