@@ -9,7 +9,7 @@ import DownloadButton from "../../../components/Props/ButtonProps";
 
 const slides = [
   {
-    bgImage: "https://zonnova.vercel.app/assets/watch-2a5a0ee6.png",
+    bgImage: "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     title: "Smart Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
