@@ -13,6 +13,7 @@ const slides = [
     title: "Smart Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
+    alt:"Image 1"
   },
   {
     bgImage:
@@ -20,6 +21,7 @@ const slides = [
     title: "Rolex Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
+    alt:"Image 2"
   },
   {
     bgImage:
@@ -27,6 +29,7 @@ const slides = [
     title: "Casio Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
+    alt:"Image 3"
   },
 
   {
@@ -35,6 +38,7 @@ const slides = [
     title: "Tissot Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
+    alt:"Image 4"
   },
 
   {
@@ -43,6 +47,7 @@ const slides = [
     title: "NaviForce Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
+    alt:"Image 5"
   },
 
  
@@ -52,6 +57,7 @@ const slides = [
     title: "G Shock Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
+    alt:"Image 6"
   },
   {
     bgImage:
@@ -59,6 +65,7 @@ const slides = [
     title: "Skmei Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
+    alt:"Image 7"
   },
   {
     bgImage:
@@ -66,6 +73,7 @@ const slides = [
     title: "Cartier Watch Series",
 
     sub: "Featured packed at better value than ever. Powerful sensor to monitor your fitness",
+    alt:"Image 8"
   },
 ];
 
@@ -125,6 +133,7 @@ const Superhero = () => {
                 <div className=" w-[50%] h-[90%] flex items-center justify-center mainHeroSecond">
                   <img
                     src={slide.bgImage}
+                    alt={slide.alt}
                     className="w-[95%] h-[95%] object-cover rounded-[20px]"
                   />
                 </div>
